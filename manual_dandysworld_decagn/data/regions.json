@@ -1,0 +1,105 @@
+{
+  "$schema": "https://github.com/ManualForArchipelago/Manual/raw/main/schemas/Manual.regions.schema.json",
+  "Start": {
+    "starting": true,
+    "connects_to": [
+      "Shop1",
+      "Uncommon"
+    ],
+    "requires": ""
+  },
+  "Goal": {
+    "connects_to": [],
+    "requires": "|@Collect:50|"
+  },
+  "Shop1": {
+    "connects_to": [
+      "Shop2"
+    ],
+    "requires": "|@Collect:3|"
+  },
+  "Shop2": {
+    "connects_to": [
+      "Shop3"
+    ],
+    "requires": "|@Collect:5|"
+  },
+  "Shop3": {
+    "connects_to": [
+      "Shop4"
+    ],
+    "requires": "|@Collect:7|"
+  },
+  "Shop4": {
+    "connects_to": [
+      "Shop5"
+    ],
+    "requires": "|@Collect:9|"
+  },
+  "Shop5": {
+    "connects_to": [
+      "Shop6"
+    ],
+    "requires": "|@Collect:11|"
+  },
+  "Shop6": {
+    "connects_to": [
+      "Shop7"
+    ],
+    "requires": "|@Collect:13|"
+  },
+  "Shop7": {
+    "connects_to": [
+      "Shop8"
+    ],
+    "requires": "|@Collect:15|"
+  },
+  "Shop8": {
+    "connects_to": [
+      "Shop9"
+    ],
+    "requires": "|@Collect:17|"
+  },
+  "Shop9": {
+    "connects_to": [
+      "Shop10"
+    ],
+    "requires": "|@Collect:19|"
+  },
+  "Shop10": {
+    "connects_to": [
+      "Shop11"
+    ],
+    "requires": "|@Collect:21|"
+  },
+  "Shop11": {
+    "connects_to": [
+      "Goal"
+    ],
+    "requires": "|@Collect:23|"
+  },
+  "Uncommon": {
+    "connects_to": [
+      "Rare"
+    ],
+    "requires": "|@Trinket:9|"
+  },
+  "Rare": {
+    "connects_to": [
+      "Main"
+    ],
+    "requires": "|@Trinket:17|"
+  },
+  "Main": {
+    "connects_to": [
+      "Lethal"
+    ],
+    "requires": "|@Trinket:22|"
+  },
+  "Lethal": {
+    "connects_to": [
+      "Goal"
+    ],
+    "requires": "|@Trinket:24|"
+  }
+}

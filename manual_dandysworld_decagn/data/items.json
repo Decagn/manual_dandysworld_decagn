@@ -1,0 +1,955 @@
+{
+  "$schema": "https://github.com/ManualForArchipelago/Manual/raw/main/schemas/Manual.items.schema.json",
+  "data": [
+    {
+      "count": 1,
+      "name": "Blot",
+      "category": [
+        "Collect",
+        "Toon"
+      ],
+      "progression": true
+    },
+    {
+      "count": 1,
+      "name": "Boxten",
+      "category": [
+        "Collect",
+        "Toon"
+      ],
+      "progression": true
+    },
+    {
+      "count": 1,
+      "name": "Brightney",
+      "category": [
+        "Collect",
+        "Toon"
+      ],
+      "progression": true
+    },
+    {
+      "count": 1,
+      "name": "Brusha",
+      "category": [
+        "Collect",
+        "Toon"
+      ],
+      "progression": true
+    },
+    {
+      "count": 1,
+      "name": "Connie",
+      "category": [
+        "Collect",
+        "Toon"
+      ],
+      "progression": true
+    },
+    {
+      "count": 1,
+      "name": "Cosmo",
+      "category": [],
+      "progression": true
+    },
+    {
+      "count": 1,
+      "name": "Finn",
+      "category": [
+        "Collect",
+        "Toon"
+      ],
+      "progression": true
+    },
+    {
+      "count": 1,
+      "name": "Flutter",
+      "category": [
+        "Collect",
+        "Toon"
+      ],
+      "progression": true
+    },
+    {
+      "count": 1,
+      "name": "Gigi",
+      "category": [
+        "Collect",
+        "Toon"
+      ],
+      "progression": true
+    },
+    {
+      "count": 1,
+      "name": "Glisten",
+      "category": [
+        "Collect",
+        "Toon"
+      ],
+      "progression": true
+    },
+    {
+      "count": 1,
+      "name": "Goob",
+      "category": [
+        "Collect",
+        "Toon"
+      ],
+      "progression": true
+    },
+    {
+      "count": 1,
+      "name": "Looey",
+      "category": [
+        "Collect",
+        "Toon"
+      ],
+      "progression": true
+    },
+    {
+      "count": 1,
+      "name": "Poppy",
+      "category": [
+        "Collect",
+        "Toon"
+      ],
+      "progression": true
+    },
+    {
+      "count": 1,
+      "name": "Razzle&Dazzle",
+      "category": [
+        "Collect",
+        "Toon"
+      ],
+      "progression": true
+    },
+    {
+      "count": 1,
+      "name": "Rodger",
+      "category": [
+        "Collect",
+        "Toon"
+      ],
+      "progression": true
+    },
+    {
+      "count": 1,
+      "name": "Scraps",
+      "category": [
+        "Collect",
+        "Toon"
+      ],
+      "progression": true
+    },
+    {
+      "count": 1,
+      "name": "Shrimpo",
+      "category": [
+        "Collect",
+        "Toon"
+      ],
+      "progression": true
+    },
+    {
+      "count": 1,
+      "name": "Squirm",
+      "category": [
+        "Collect",
+        "Toon"
+      ],
+      "progression": true
+    },
+    {
+      "count": 1,
+      "name": "Teagan",
+      "category": [
+        "Collect",
+        "Toon"
+      ],
+      "progression": true
+    },
+    {
+      "count": 1,
+      "name": "Tisha",
+      "category": [
+        "Collect",
+        "Toon"
+      ],
+      "progression": true
+    },
+    {
+      "count": 1,
+      "name": "Toodles",
+      "category": [
+        "Collect",
+        "Toon"
+      ],
+      "progression": true
+    },
+    {
+      "count": 1,
+      "name": "Waxwell",
+      "category": [
+        "Collect",
+        "Toon"
+      ],
+      "progression": true
+    },
+    {
+      "count": 1,
+      "name": "Yatta",
+      "category": [
+        "Collect",
+        "Toon"
+      ],
+      "progression": true
+    },
+    {
+      "count": 1,
+      "name": "Astro",
+      "category": [
+        "Main",
+        "Collect",
+        "Toon"
+      ],
+      "progression": true
+    },
+    {
+      "count": 1,
+      "name": "Bassie",
+      "category": [
+        "Main",
+        "Easter",
+        "Collect",
+        "Toon"
+      ],
+      "progression": true
+    },
+    {
+      "count": 1,
+      "name": "Bobette",
+      "category": [
+        "Main",
+        "Christmas",
+        "Collect",
+        "Toon"
+      ],
+      "progression": true
+    },
+    {
+      "count": 1,
+      "name": "Gourdy",
+      "category": [
+        "Main",
+        "Halloween",
+        "Collect",
+        "Toon"
+      ],
+      "progression": true
+    },
+    {
+      "count": 1,
+      "name": "Pebble",
+      "category": [
+        "Main",
+        "Collect",
+        "Toon"
+      ],
+      "progression": true
+    },
+    {
+      "count": 1,
+      "name": "Shelly",
+      "category": [
+        "Main",
+        "Collect",
+        "Toon"
+      ],
+      "progression": true
+    },
+    {
+      "count": 1,
+      "name": "Sprout",
+      "category": [
+        "Main",
+        "Collect",
+        "Toon"
+      ],
+      "progression": true
+    },
+    {
+      "count": 1,
+      "name": "Vee",
+      "category": [
+        "Main",
+        "Collect",
+        "Toon"
+      ],
+      "progression": true
+    },
+    {
+      "count": 1,
+      "name": "Cocoa",
+      "category": [
+        "Easter",
+        "Collect",
+        "Toon"
+      ],
+      "progression": true
+    },
+    {
+      "count": 1,
+      "name": "Eggson",
+      "category": [
+        "Easter",
+        "Collect",
+        "Toon"
+      ],
+      "progression": true
+    },
+    {
+      "count": 1,
+      "name": "Flyte",
+      "category": [
+        "Easter",
+        "Collect",
+        "Toon"
+      ],
+      "progression": true
+    },
+    {
+      "count": 1,
+      "name": "Eclipse",
+      "category": [
+        "Halloween",
+        "Collect",
+        "Toon"
+      ],
+      "progression": true
+    },
+    {
+      "count": 1,
+      "name": "Ribecca",
+      "category": [
+        "Halloween",
+        "Collect",
+        "Toon"
+      ],
+      "progression": true
+    },
+    {
+      "count": 1,
+      "name": "Soulvester",
+      "category": [
+        "Halloween",
+        "Collect",
+        "Toon"
+      ],
+      "progression": true
+    },
+    {
+      "count": 1,
+      "name": "Coal_Toon",
+      "category": [
+        "Christmas",
+        "Collect",
+        "Toon"
+      ],
+      "progression": true
+    },
+    {
+      "count": 1,
+      "name": "Ginger",
+      "category": [
+        "Christmas",
+        "Collect",
+        "Toon"
+      ],
+      "progression": true
+    },
+    {
+      "count": 1,
+      "name": "Rudie",
+      "category": [
+        "Christmas",
+        "Collect",
+        "Toon"
+      ],
+      "progression": true
+    },
+    {
+      "count": 1,
+      "name": "Coin_Purse",
+      "category": [
+        "Collect",
+        "Trinket"
+      ],
+      "progression": true
+    },
+    {
+      "count": 1,
+      "name": "Research_Map",
+      "category": [
+        "Collect",
+        "Trinket"
+      ],
+      "progression": true
+    },
+    {
+      "count": 1,
+      "name": "Wrench",
+      "category": [
+        "Collect",
+        "Trinket"
+      ],
+      "progression": true
+    },
+    {
+      "count": 1,
+      "name": "Machine_Manual",
+      "category": [
+        "Collect",
+        "Trinket"
+      ],
+      "progression": true
+    },
+    {
+      "count": 1,
+      "name": "Speedy_Shoes",
+      "category": [
+        "Collect",
+        "Trinket"
+      ],
+      "progression": true
+    },
+    {
+      "count": 1,
+      "name": "Speedometer",
+      "category": [
+        "Collect",
+        "Trinket"
+      ],
+      "progression": true
+    },
+    {
+      "count": 1,
+      "name": "Thinking_Cap",
+      "category": [
+        "Collect",
+        "Trinket"
+      ],
+      "progression": true
+    },
+    {
+      "count": 1,
+      "name": "Alarm",
+      "category": [
+        "Collect",
+        "Trinket"
+      ],
+      "progression": true
+    },
+    {
+      "count": 1,
+      "name": "Thermos",
+      "category": [
+        "Collect",
+        "Trinket"
+      ],
+      "progression": true
+    },
+    {
+      "count": 1,
+      "name": "Pull_Toy",
+      "category": [
+        "Collect",
+        "Trinket"
+      ],
+      "progression": true
+    },
+    {
+      "count": 1,
+      "name": "Pop_Pack",
+      "category": [
+        "Collect",
+        "Trinket"
+      ],
+      "progression": true
+    },
+    {
+      "count": 1,
+      "name": "Megaphone",
+      "category": [
+        "Collect",
+        "Trinket"
+      ],
+      "progression": true
+    },
+    {
+      "count": 1,
+      "name": "Cooler",
+      "category": [
+        "Collect",
+        "Trinket"
+      ],
+      "progression": true
+    },
+    {
+      "count": 1,
+      "name": "Cardboard_Armor",
+      "category": [
+        "Collect",
+        "Trinket"
+      ],
+      "progression": true
+    },
+    {
+      "count": 1,
+      "name": "Blue_Bandana",
+      "category": [
+        "Collect",
+        "Trinket"
+      ],
+      "progression": true
+    },
+    {
+      "count": 1,
+      "name": "Paint_Bucket",
+      "category": [
+        "Collect",
+        "Trinket"
+      ],
+      "progression": true
+    },
+    {
+      "count": 1,
+      "name": "Sweet_Charm",
+      "category": [
+        "Collect",
+        "Trinket"
+      ],
+      "progression": true
+    },
+    {
+      "count": 1,
+      "name": "Clown_Horn",
+      "category": [
+        "Collect",
+        "Trinket"
+      ],
+      "progression": true
+    },
+    {
+      "count": 1,
+      "name": "Pink_Bow",
+      "category": [
+        "Collect",
+        "Trinket"
+      ],
+      "progression": true
+    },
+    {
+      "count": 1,
+      "name": "Brick",
+      "category": [
+        "Collect",
+        "Trinket"
+      ],
+      "progression": true
+    },
+    {
+      "count": 1,
+      "name": "Feather_Duster",
+      "category": [
+        "Collect",
+        "Trinket"
+      ],
+      "progression": true
+    },
+    {
+      "count": 1,
+      "name": "Party_Popper",
+      "category": [
+        "Collect",
+        "Trinket"
+      ],
+      "progression": true
+    },
+    {
+      "count": 1,
+      "name": "Spare_Bulb",
+      "category": [
+        "Collect",
+        "Trinket"
+      ],
+      "progression": true
+    },
+    {
+      "count": 1,
+      "name": "Ghost_Snakes_In_A_Can",
+      "category": [
+        "Collect",
+        "Trinket"
+      ],
+      "progression": true
+    },
+    {
+      "count": 1,
+      "name": "Fishing_Rod",
+      "category": [
+        "Collect",
+        "Trinket"
+      ],
+      "progression": true
+    },
+    {
+      "count": 1,
+      "name": "Ribbon_Spool",
+      "category": [
+        "Collect",
+        "Trinket"
+      ],
+      "progression": true
+    },
+    {
+      "count": 1,
+      "name": "Magnifying_Glass",
+      "category": [
+        "Collect",
+        "Trinket"
+      ],
+      "progression": true
+    },
+    {
+      "count": 1,
+      "name": "Fancy_Purse",
+      "category": [
+        "Collect",
+        "Trinket"
+      ],
+      "progression": true
+    },
+    {
+      "count": 1,
+      "name": "Dog_Plush",
+      "category": [
+        "Collect",
+        "Trinket"
+      ],
+      "progression": true
+    },
+    {
+      "count": 1,
+      "name": "Mime_Makeup",
+      "category": [
+        "Collect",
+        "Trinket"
+      ],
+      "progression": true
+    },
+    {
+      "count": 1,
+      "name": "Diary",
+      "category": [
+        "Collect",
+        "Trinket"
+      ],
+      "progression": true
+    },
+    {
+      "count": 1,
+      "name": "Lucky_Coin",
+      "category": [
+        "Collect",
+        "Trinket"
+      ],
+      "progression": true
+    },
+    {
+      "count": 1,
+      "name": "Vanity_Mirror",
+      "category": [
+        "Collect",
+        "Trinket"
+      ],
+      "progression": true
+    },
+    {
+      "count": 1,
+      "name": "Friendship_Bracelet",
+      "category": [
+        "Collect",
+        "Trinket"
+      ],
+      "progression": true
+    },
+    {
+      "count": 1,
+      "name": "Crayon_Set",
+      "category": [
+        "Collect",
+        "Trinket"
+      ],
+      "progression": true
+    },
+    {
+      "count": 1,
+      "name": "Stress_Ball",
+      "category": [
+        "Collect",
+        "Trinket"
+      ],
+      "progression": true
+    },
+    {
+      "count": 1,
+      "name": "Cherished_Blanket",
+      "category": [
+        "Collect",
+        "Trinket"
+      ],
+      "progression": true
+    },
+    {
+      "count": 1,
+      "name": "Star_Pillow",
+      "category": [
+        "Main",
+        "Collect",
+        "Trinket"
+      ],
+      "progression": true
+    },
+    {
+      "count": 1,
+      "name": "Bone",
+      "category": [
+        "Main",
+        "Collect",
+        "Trinket"
+      ],
+      "progression": true
+    },
+    {
+      "count": 1,
+      "name": "Participation_Award",
+      "category": [
+        "Main",
+        "Collect",
+        "Trinket"
+      ],
+      "progression": true
+    },
+    {
+      "count": 1,
+      "name": "Savory_Charm",
+      "category": [
+        "Main",
+        "Collect",
+        "Trinket"
+      ],
+      "progression": true
+    },
+    {
+      "count": 1,
+      "name": "Vees_Remote",
+      "category": [
+        "Main",
+        "Collect",
+        "Trinket"
+      ],
+      "progression": true
+    },
+    {
+      "count": 1,
+      "name": "Dandy_Plush",
+      "category": [
+        "Lethal",
+        "Collect",
+        "Trinket"
+      ],
+      "progression": true
+    },
+    {
+      "count": 1,
+      "name": "Egg_Radar",
+      "category": [
+        "Easter",
+        "Collect",
+        "Trinket"
+      ],
+      "progression": true
+    },
+    {
+      "count": 1,
+      "name": "Bone_Needle_And_Thread",
+      "category": [
+        "Halloween",
+        "Collect",
+        "Trinket"
+      ],
+      "progression": true
+    },
+    {
+      "count": 1,
+      "name": "Festive_Lights",
+      "category": [
+        "Christmas",
+        "Collect",
+        "Trinket"
+      ],
+      "progression": true
+    },
+    {
+      "count": 1,
+      "name": "Scrapbook",
+      "category": [
+        "Easter",
+        "Collect",
+        "Trinket"
+      ],
+      "progression": true
+    },
+    {
+      "count": 1,
+      "name": "Peppermint_Icing",
+      "category": [
+        "Christmas",
+        "Collect",
+        "Trinket"
+      ],
+      "progression": true
+    },
+    {
+      "count": 1,
+      "name": "Soul_Sword",
+      "category": [
+        "Halloween",
+        "Collect",
+        "Trinket"
+      ],
+      "progression": true
+    },
+    {
+      "count": 1,
+      "name": "Glazed_Fondant_Bag",
+      "category": [
+        "Easter",
+        "Collect",
+        "Trinket"
+      ],
+      "progression": true
+    },
+    {
+      "count": 1,
+      "name": "Coal_Trinket",
+      "category": [
+        "Christmas",
+        "Collect",
+        "Trinket"
+      ],
+      "progression": true
+    },
+    {
+      "count": 1,
+      "name": "Moon_Pack_Heirloom",
+      "category": [
+        "Halloween",
+        "Collect",
+        "Trinket"
+      ],
+      "progression": true
+    },
+    {
+      "count": 1,
+      "name": "Whispering_Flower",
+      "category": [
+        "Easter",
+        "Collect",
+        "Trinket"
+      ],
+      "progression": true
+    },
+    {
+      "count": 1,
+      "name": "Toy_Kit",
+      "category": [
+        "Christmas",
+        "Collect",
+        "Trinket"
+      ],
+      "progression": true
+    },
+    {
+      "count": 1,
+      "name": "Memory_Locket",
+      "category": [
+        "Halloween",
+        "Collect",
+        "Trinket"
+      ],
+      "progression": true
+    },
+    {
+      "count": 1,
+      "name": "Blushy_Bat",
+      "category": [
+        "Misc",
+        "Collect",
+        "Trinket"
+      ],
+      "progression": true
+    },
+    {
+      "count": 1,
+      "name": "Train_Whistle",
+      "category": [
+        "Lethal",
+        "Collect",
+        "Trinket"
+      ],
+      "progression": true
+    },
+    {
+      "count": 1,
+      "name": "Bandage_Start_Item",
+      "category": [
+        "Start_Item"
+      ],
+      "useful": true
+    },
+    {
+      "count": 1,
+      "name": "Medkit_Start_Item",
+      "category": [
+        "Start_Item"
+      ],
+      "useful": true
+    },
+    {
+      "count": 1,
+      "name": "Valve_Start_Item",
+      "category": [
+        "Start_Item"
+      ],
+      "useful": true
+    },
+    {
+      "count": "60",
+      "name": "Ichor(500)",
+      "category": [
+        "Ichor"
+      ],
+      "filler": true
+    },
+    {
+      "count": "34",
+      "name": "Ichor(1000)",
+      "category": [
+        "Ichor"
+      ],
+      "filler": true
+    }
+  ]
+}
