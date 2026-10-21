@@ -65,46 +65,77 @@ Manual_DandysWorld_Decagn:
 
   goal:
     # How to End your Randomized playthrough.
+    # Currently this is simply achieved by beating a specific floor number
+    # or by beating Dyle's floor
     beat final floor: 50
     beat dyle floor: 0
 
-  DLC_enabled:
-    # Is the Dlc enabled?
-    'false': 0
-    'true': 50
+  Starting_Toon:
+    # Specify what toon you would like to start with.
+    # A later version might allow for better customising.
+    random: 50
+    boxten: 0
+    poppy: 0
 
-  ###################
-  # Example Options #
-  ###################
-  Example_Toggle:
-    # This is a Toggle
-    # A simple boolean, aka True or False set the initial value with "default"
+  Toons_Trinkets_To_Include_Exclude:
+    # Here you can specify which toons/trinkets you own or don't own.
+    # You only need to fill out excluding or including options.
+    # Some players may be missing more toons/trinkets than others, so enter what is easier.
+    # Leave blank if any toons can be used to reach the goal.
+    # Example toons: ["Astro", "Razzle&Dazzle", "Pebble"]
+    # Example trinkets: ["Star_Pillow", "Ghost_Snakes_In_A_Can", "Brick"]
+    include_toons: 50
+    include_trinkets: 0
+    exclude_toons: 0
+    exclude_trinkets: 0
+
+  Event_Twisteds:
+    # Here you can select what event (if any) is occurring.
+    # This will include the relevant twisteds into logic.
     'false': 50
     'true': 0
 
-  Example_Choice:
-    # This is a Choice
-    # Let the user pick from a list of values
-    # allow_custom_value let a player define their own text value
-    # Currently the only use for Choice in Manual outside of hooks is the goal
-    start: 50
-    test: 0
-
-  Example_Range:
-    # This is a Range
-    # Allow the player to specify a value between 'start' and 'end'
-    # if you include a "values" you can define the label for certain values
-    # Currently the only use for Range in Manual outside of hooks is 'filler_trap'
+  ################
+  # Goal_Options #
+  ################
+  Final_Floor_Num:
+    # This is the final floor number to beat to win the game (if Final Floor is the goal)
+    # You can adjust this value to a number you prefer.
+    # If Dyle floor is the goal, this value will only be ignored unless set above 43.
+    # (This is because Dyle Floor is forced to be encountered at floor 43. 45 if there is an event.
+    # Setting this value to 0 will go back to the default.
+    # DEFAULT: 20
     #
     # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 5
+    # Minimum value is 1
+    # Maximum value is 1
+    20: 50
     random: 0
     random-low: 0 # random value weighted towards lower values
     random-high: 0 # random value weighted towards higher values
-    random-range-0-5: 0 # random value between 0 and 5
-    example: 0 # equivalent to 2
-    default: 50 # equivalent to 1
+    random-range-1-1: 0 # random value between 1 and 1
+
+  Number_Of_Toons_To_Reach_Goal:
+    # Here you can specify how many toons you must reach the goal with in order to win.
+    # Because there are 40 toons in the game, you can set this value to any number between 1 and 40.
+    # DEFAULT: 1
+    #
+    # You can define additional values between the minimum and maximum values.
+    # Minimum value is 1
+    # Maximum value is 40
+    1: 50
+    random: 0
+    random-low: 0 # random value weighted towards lower values
+    random-high: 0 # random value weighted towards higher values
+    random-range-1-40: 0 # random value between 1 and 40
+
+  Toons_To_Win_With:
+    # Here you can specify which toons you must win the game with. or to be random
+    # Leave blank if any toons can be used to reach the goal.
+    # If the number_Of_Toons_To_Reach_Goal is less than the toons specified here, this will be prioritised.
+    # Example: ["Astro", "Razzle&Dazzle", "Pebble"]
+    random: 50
+    specific: 0
 
   ###########################
   # Item & Location Options #

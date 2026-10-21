@@ -7,7 +7,11 @@
                 "Using 'goal' as the name of an option let you override some of the generated goal parameters"
             ],
             "display_name": "The End Objective",
-            "description": "How to End your Randomized playthrough.",
+            "description": [
+                "How to End your Randomized playthrough.",
+                "Currently this is simply achieved by beating a specific floor number",
+                "or by beating Dyle's floor"
+            ],
             "aliases": {"easiest": 0},
             "hidden": false
         },
@@ -22,11 +26,93 @@
         }
     },
     "user": {
+        "Final_Floor_Num":{
+            "type": "Range",
+            "range_start": 1,
+            "default": 20,
+            "group": "Goal_Options",
+            "description": [
+                "This is the final floor number to beat to win the game (if Final Floor is the goal)",
+                "You can adjust this value to a number you prefer.",
+                "If Dyle floor is the goal, this value will only be ignored unless set above 43.",
+                "(This is because Dyle Floor is forced to be encountered at floor 43. 45 if there is an event.",
+                "Setting this value to 0 will go back to the default.",
+                "DEFAULT: 20"
+            ]
+        },
+        "Number_Of_Toons_To_Reach_Goal":{
+            "type": "Range",
+            "range_start": 1,
+            "range_end": 40,
+            "default": 1,
+            "group": "Goal_Options",
+            "description": [
+                "Here you can specify how many toons you must reach the goal with in order to win.",
+                "Because there are 40 toons in the game, you can set this value to any number between 1 and 40.",
+                "DEFAULT: 1"
+            ]
+        },
+        "Toons_To_Win_With":{
+            "type": "Choice",
+            "group": "Goal_Options",
+            "values": {
+                "Random": 0,
+                "Specific": 1
+            },
+            "description": [
+                "Here you can specify which toons you must win the game with. or to be random",
+                "Leave blank if any toons can be used to reach the goal.",
+                "If the number_Of_Toons_To_Reach_Goal is less than the toons specified here, this will be prioritised.",
+                "Example: [\"Astro\", \"Razzle&Dazzle\", \"Pebble\"]"
+            ]
+        },
+        "Starting_Toon":{
+            "type": "Choice",
+            "values": {
+                "Random": 0,
+                "Boxten": 1,
+                "Poppy": 2
+            },
+            "description": [
+                "Specify what toon you would like to start with.",
+                "A later version might allow for better customising."
+            ]
+        },
+        "Toons&Trinkets_To_Include&Exclude":{
+            "type": "Choice",
+            "values": {
+                "include_toons": 0,
+                "include_trinkets": 1,
+                "exclude_toons": 2,
+                "exclude_trinkets": 3
+            },
+            "description": [
+                "Here you can specify which toons/trinkets you own or don't own.",
+                "You only need to fill out excluding or including options.",
+                "Some players may be missing more toons/trinkets than others, so enter what is easier.",
+                "Leave blank if any toons can be used to reach the goal.",
+                "Example toons: [\"Astro\", \"Razzle&Dazzle\", \"Pebble\"]",
+                "Example trinkets: [\"Star_Pillow\", \"Ghost_Snakes_In_A_Can\", \"Brick\"]"
+            ]
+        },
+        "Event_Twisteds":{
+            "type": "Choice",
+            "values": {
+                "None": 0,
+                "Christmas": 1,
+                "Easter": 2,
+                "Halloween": 3
+            },
+            "description": [
+                "Here you can select what event (if any) is occurring.",
+                "This will include the relevant twisteds into logic."
+            ]
+        },
         "_commented_out_option":{
             "type": "Toggle",
             "default": true
         },
-        "Example_Toggle":{
+        "_Example_Toggle":{
             "description": [
                 "This is a Toggle",
                 "A simple boolean, aka True or False set the initial value with \"default\""
@@ -35,7 +121,7 @@
             "default": false,
             "group": "Example Options"
         },
-        "Example_Choice":{
+        "_Example_Choice":{
             "type": "Choice",
             "description": [
                 "This is a Choice",
@@ -51,7 +137,7 @@
             "allow_custom_value": false,
             "group": "Example Options"
         },
-        "Example_Range":{
+        "_Example_Range":{
             "type": "Range",
             "description": [
                 "This is a Range",
@@ -66,7 +152,7 @@
             "group": "Example Options"
         },
 
-        "DLC_enabled":{
+        "_DLC_enabled":{
             "display_name": "DLC Enabled",
             "description": "Is the Dlc enabled?",
             "type": "Toggle",
