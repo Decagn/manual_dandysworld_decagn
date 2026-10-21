@@ -192,7 +192,9 @@
             "group": "Content_Options",
             "description": [
                 "Enable or disable the seasonal event Twisted location checks.",
-                "This only affects the event Twisted checks, not event toons or trinkets."
+                "This only affects the event Twisted checks, not event toons or trinkets.",
+                "Currently the only seasonal events are \"Christmas\", \"Easter\", and \"Hallowee\".",
+                "Leave as \"None\" to only stick to original twisteds."
             ]
         },
         "_commented_out_option":{
