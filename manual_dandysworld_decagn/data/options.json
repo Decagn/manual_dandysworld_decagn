@@ -176,13 +176,19 @@
             ],
             "default": [],
             "description": [
-                "Trinkets to remove from the item pool. Exclusions take precedence over the include list."
+                "Optional exclusion list, for if you own most Trinkets. Exclusions take precedence over the include list."
             ]
         },
         "Event_Twisteds":{
-            "type": "Toggle",
-            "display_name": "Event Twisted Checks",
-            "default": true,
+            "type": "Choice",
+            "display_name": "Enable Event Twisted Location Checks",
+            "default": "None",
+            "values": {
+                "None": 0,
+                "Christmas": 1,
+                "Easter": 2,
+                "Halloween": 3
+            },
             "group": "Content_Options",
             "description": [
                 "Enable or disable the seasonal event Twisted location checks.",

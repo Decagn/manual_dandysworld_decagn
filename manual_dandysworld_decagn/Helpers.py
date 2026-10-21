@@ -167,8 +167,14 @@ def _is_location_allowed_by_pool_options(multiworld: MultiWorld, player: int, lo
         item_type = "toon" if "Toon_Goal" in categories else "trinket"
         return _is_pool_item_allowed(multiworld, player, item_name, item_type)
 
-    if "Twisted" in categories and not is_option_enabled(multiworld, player, "Event_Twisteds"):
-        return not set(categories).intersection({"Christmas", "Easter", "Halloween"})
+    if "Twisted" in categories:
+        event_categories = set(categories).intersection({"Christmas", "Easter", "Halloween"})
+        if not event_categories:
+            return True
+
+        selected_event = get_option_value(multiworld, player, "Event_Twisteds")
+        selected_event_name = {1: "Christmas", 2: "Easter", 3: "Halloween"}.get(selected_event)
+        return selected_event_name in event_categories
 
     return True
 
