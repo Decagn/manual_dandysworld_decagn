@@ -70,53 +70,26 @@ Manual_DandysWorld_Decagn:
     beat final floor: 50
     beat dyle floor: 0
 
-  Starting_Toon:
-    # Specify what toon you would like to start with.
-    # A later version might allow for better customising.
-    random: 50
-    boxten: 0
-    poppy: 0
-
-  Toons_Trinkets_To_Include_Exclude:
-    # Here you can specify which toons/trinkets you own or don't own.
-    # You only need to fill out excluding or including options.
-    # Some players may be missing more toons/trinkets than others, so enter what is easier.
-    # Leave blank if any toons can be used to reach the goal.
-    # Example toons: ["Astro", "Razzle&Dazzle", "Pebble"]
-    # Example trinkets: ["Star_Pillow", "Ghost_Snakes_In_A_Can", "Brick"]
-    include_toons: 50
-    include_trinkets: 0
-    exclude_toons: 0
-    exclude_trinkets: 0
-
-  Event_Twisteds:
-    # Here you can select what event (if any) is occurring.
-    # This will include the relevant twisteds into logic.
-    'false': 50
-    'true': 0
-
   ################
   # Goal_Options #
   ################
   Final_Floor_Num:
-    # This is the final floor number to beat to win the game (if Final Floor is the goal)
-    # You can adjust this value to a number you prefer.
-    # If Dyle floor is the goal, this value will only be ignored unless set above 43.
-    # (This is because Dyle Floor is forced to be encountered at floor 43. 45 if there is an event.
-    # Setting this value to 0 will go back to the default.
-    # DEFAULT: 20
+    # The selected final floor for the Beat Final Floor goal.
+    # This value is saved in the generated slot data for future floor-progression logic.
+    # Until floor progression is implemented, use this value as a reminder of the intended goal floor.
     #
     # You can define additional values between the minimum and maximum values.
     # Minimum value is 1
-    # Maximum value is 1
+    # Maximum value is 100
     20: 50
     random: 0
     random-low: 0 # random value weighted towards lower values
     random-high: 0 # random value weighted towards higher values
-    random-range-1-1: 0 # random value between 1 and 1
+    random-range-1-100: 0 # random value between 1 and 100
 
   Number_Of_Toons_To_Reach_Goal:
     # Here you can specify how many toons you must reach the goal with in order to win.
+    # Used by Any and Random goal modes; Specific mode instead requires every toon in Toons_To_Win_With.
     # Because there are 40 toons in the game, you can set this value to any number between 1 and 40.
     # DEFAULT: 1
     #
@@ -129,13 +102,51 @@ Manual_DandysWorld_Decagn:
     random-high: 0 # random value weighted towards higher values
     random-range-1-40: 0 # random value between 1 and 40
 
-  Toons_To_Win_With:
-    # Here you can specify which toons you must win the game with. or to be random
-    # Leave blank if any toons can be used to reach the goal.
-    # If the number_Of_Toons_To_Reach_Goal is less than the toons specified here, this will be prioritised.
-    # Example: ["Astro", "Razzle&Dazzle", "Pebble"]
-    random: 50
+  Toons_Required:
+    # Choose whether the goal requires a number of toons, a random selection of specific toons, or specifically named toons.
+    # The selected toon requirements are checked at the chosen victory location.
+    any: 50
+    random: 0
     specific: 0
+
+  Toons_To_Win_With:
+    # In Specific mode, every toon listed here is required at the victory location.
+    # Enter toon names as a YAML list, for example: [Astro, Razzle&Dazzle, Pebble].
+    []
+
+  ####################
+  # Starting_Options #
+  ####################
+  Starting_Toons:
+    # Choose one or more toons to start with. The default is the two normal starter toons.
+    # Use [Random] to start with one randomly chosen toon. Do not combine Random with toon names.
+    # At least one starting toon is required.
+    ['Boxten', 'Poppy']
+
+  ###################
+  # Content_Options #
+  ###################
+  Include_Toons:
+    # Optional allowlist of toons to keep in the item pool. Leave empty to include all toons.
+    []
+
+  Exclude_Toons:
+    # Toons to remove from the item pool. Exclusions take precedence over the include list.
+    []
+
+  Include_Trinkets:
+    # Optional allowlist of trinkets to keep in the item pool. Leave empty to include all trinkets.
+    []
+
+  Exclude_Trinkets:
+    # Trinkets to remove from the item pool. Exclusions take precedence over the include list.
+    []
+
+  Event_Twisteds:
+    # Enable or disable the seasonal event Twisted location checks.
+    # This only affects the event Twisted checks, not event toons or trinkets.
+    'false': 0
+    'true': 50
 
   ###########################
   # Item & Location Options #

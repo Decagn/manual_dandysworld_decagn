@@ -64,7 +64,7 @@
             "default": 0,
             "group": "Goal_Options",
             "description": [
-                "Choose whether the goal needs any number of toons, a randomly selected number, or specific toons.",
+                "Choose whether the goal requires a number of toons, a random selection of specific toons, or specifically named toons.",
                 "The selected toon requirements are checked at the chosen victory location."
             ]
         },
@@ -97,11 +97,12 @@
                 "Bassie", "Bobette", "Gourdy", "Pebble", "Shelly", "Sprout", "Vee", "Cocoa",
                 "Eggson", "Flyte", "Eclipse", "Ribecca", "Soulvester", "Coal_Toon", "Ginger", "Rudie"
             ],
-            "default": ["Boxten", "Poppy"],
+            "default": ["Random"],
             "description": [
-                "Choose one or more toons to start with. The default is the two normal starter toons.",
-                "Use [Random] to start with one randomly chosen toon. Do not combine Random with toon names.",
-                "At least one starting toon is required."
+                "Choose one or more toons to start with. The default is one random.",
+                "Can start with multiple toons for example:",
+                "[\"Razzle&Dazzle\", \"Random\"] Would start with Razzle&Dazzle and a random toon.",
+                "At least one starting toon is always required."
             ]
         },
         "Include_Toons":{
@@ -117,7 +118,7 @@
             ],
             "default": [],
             "description": [
-                "Optional allowlist of toons to keep in the item pool. Leave empty to include all toons."
+                "Optional include list, for if you don't own a lot of toons. Leave empty to include all toons."
             ]
         },
         "Exclude_Toons":{
@@ -133,7 +134,7 @@
             ],
             "default": [],
             "description": [
-                "Toons to remove from the item pool. Exclusions take precedence over the include list."
+                "Optional exclusion list, for if you own most Toons. Exclusions take precedence over the include list."
             ]
         },
         "Include_Trinkets":{
@@ -154,7 +155,7 @@
             ],
             "default": [],
             "description": [
-                "Optional allowlist of trinkets to keep in the item pool. Leave empty to include all trinkets."
+                "Optional inclusion list, for if you don't own a lot of trinkets. Leave empty to include all toons."
             ]
         },
         "Exclude_Trinkets":{
