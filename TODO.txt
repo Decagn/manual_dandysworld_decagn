@@ -1,0 +1,7 @@
+- Setup options for choosing what events to include (mostly for twisteds appearing).
+- Add costs for toons/trinkets to help with calculating ichor drops.
+- Starting toons should remove shop for that toons (same for excluding)
+- Excluding toons/trinkets needs to be an option
+- Setup options for how many toons to start with
+- Setup ichor hooks to help keep track of how much ichor we have
+- Setup some logic for ichor balancing so that all things can be purchased in the shops.
