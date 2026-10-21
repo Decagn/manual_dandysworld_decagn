@@ -1,5 +1,5 @@
 import sys
-from Options import PerGameCommonOptions, FreeText, Toggle, DefaultOnToggle, Choice, TextChoice, Range, NamedRange, DeathLink, \
+from Options import PerGameCommonOptions, FreeText, Toggle, DefaultOnToggle, Choice, TextChoice, OptionSet, Range, NamedRange, DeathLink, \
     OptionGroup, StartInventoryPool, Visibility, item_and_loc_options, Option
 from .hooks.Options import before_options_defined, after_options_defined, before_option_groups_created, after_option_groups_created
 from .Data import category_table, game_table, option_table
@@ -151,7 +151,7 @@ for option_name, option in option_table.get('core', {}).items():
         logging.debug(f"Manual: Option.json just tried to modify the option '{option_display_name}' but it doesn't currently exists")
 
 
-supported_option_types = ["Toggle", "Choice", "Range"]
+supported_option_types = ["Toggle", "Choice", "OptionSet", "Range"]
 for option_name, option in option_table.get('user', {}).items():
     if option_name.startswith('_'): #To allow commenting out options
         continue
@@ -161,7 +161,8 @@ for option_name, option in option_table.get('user', {}).items():
         logging.warning(f"Manual: An option with the name '{option_display_name}' cannot be added since it already exists in Manual Core Options. \nTo modify an existing option move it to the 'core' section of Option.json")
 
     else:
-        option_type = option.get('type', "").title()
+        option_type = option.get('type', "")
+        option_type = "OptionSet" if option_type.lower() == "optionset" else option_type.title()
 
         if option_type not in supported_option_types:
             raise Exception(f'Option {option_display_name} in options.json has an invalid type of "{option["type"]}".\nIt must be one of the folowing: {supported_option_types}')
@@ -175,6 +176,10 @@ for option_name, option in option_table.get('user', {}).items():
             args = {**args, **createChoiceOptions(option.get('values'), option.get('aliases', {}))}
             option_class = TextChoice if option.get("allow_custom_value", False) else Choice
 
+        elif option_type == "OptionSet":
+            args["valid_keys"] = set(option.get("values", []))
+            option_class = OptionSet
+
         elif option_type == "Range":
             args['range_start'] = option.get('range_start', 0)
             args['range_end'] = option.get('range_end', 1)
@@ -183,8 +188,8 @@ for option_name, option in option_table.get('user', {}).items():
                 args['special_range_names']['default'] = option.get('default', args['range_start'])
             option_class = NamedRange if option.get('values') else Range
 
-        if option.get('default'):
-            args['default'] = option['default']
+        if 'default' in option:
+            args['default'] = set(option['default']) if option_type == "OptionSet" else option['default']
 
         if option.get('rich_text_doc',None) is not None:
             args["rich_text_doc"] = option["rich_text_doc"]

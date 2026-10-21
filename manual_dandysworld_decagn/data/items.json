@@ -49,7 +49,10 @@
     {
       "count": 1,
       "name": "Cosmo",
-      "category": [],
+      "category": [
+        "Collect",
+        "Toon"
+      ],
       "progression": true
     },
     {

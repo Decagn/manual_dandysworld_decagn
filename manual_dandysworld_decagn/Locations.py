@@ -11,6 +11,15 @@ from typing import Any
 count = starting_index
 victory_names: list[str] = []
 
+# Keep a check available for each supported final-floor option so the active goal
+# location can display the selected floor number.
+location_table.extend({
+    "name": f"Beat Final Floor {floor_number}",
+    "region": "Goal",
+    "category": ["Win", "Floor"],
+    "requires": ""
+} for floor_number in range(1, 101))
+
 # add sequential generated ids to the lists
 for key, _ in enumerate(location_table):
     if "victory" in location_table[key] and location_table[key]["victory"]:

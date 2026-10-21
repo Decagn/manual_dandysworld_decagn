@@ -28,84 +28,164 @@
     "user": {
         "Final_Floor_Num":{
             "type": "Range",
+            "display_name": "Final Floor Number",
             "range_start": 1,
+            "range_end": 100,
             "default": 20,
             "group": "Goal_Options",
             "description": [
-                "This is the final floor number to beat to win the game (if Final Floor is the goal)",
-                "You can adjust this value to a number you prefer.",
-                "If Dyle floor is the goal, this value will only be ignored unless set above 43.",
-                "(This is because Dyle Floor is forced to be encountered at floor 43. 45 if there is an event.",
-                "Setting this value to 0 will go back to the default.",
-                "DEFAULT: 20"
+                "The selected final floor for the Beat Final Floor goal.",
+                "This value is saved in the generated slot data for future floor-progression logic.",
+                "Until floor progression is implemented, use this value as a reminder of the intended goal floor."
             ]
         },
         "Number_Of_Toons_To_Reach_Goal":{
             "type": "Range",
+            "display_name": "Toons Required for Goal",
             "range_start": 1,
             "range_end": 40,
             "default": 1,
             "group": "Goal_Options",
             "description": [
                 "Here you can specify how many toons you must reach the goal with in order to win.",
+                "Used by Any and Random goal modes; Specific mode instead requires every toon in Toons_To_Win_With.",
                 "Because there are 40 toons in the game, you can set this value to any number between 1 and 40.",
                 "DEFAULT: 1"
             ]
         },
-        "Toons_To_Win_With":{
+        "Toons_Required":{
             "type": "Choice",
+            "display_name": "Toons Required to beat the goal",
+            "values": {
+                "Any": 0,
+                "Random": 1,
+                "Specific": 2
+            },
+            "default": 0,
             "group": "Goal_Options",
-            "values": {
-                "Random": 0,
-                "Specific": 1
-            },
             "description": [
-                "Here you can specify which toons you must win the game with. or to be random",
-                "Leave blank if any toons can be used to reach the goal.",
-                "If the number_Of_Toons_To_Reach_Goal is less than the toons specified here, this will be prioritised.",
-                "Example: [\"Astro\", \"Razzle&Dazzle\", \"Pebble\"]"
+                "Choose whether the goal needs any number of toons, a randomly selected number, or specific toons.",
+                "The selected toon requirements are checked at the chosen victory location."
             ]
         },
-        "Starting_Toon":{
-            "type": "Choice",
-            "values": {
-                "Random": 0,
-                "Boxten": 1,
-                "Poppy": 2
-            },
+        "Toons_To_Win_With":{
+            "type": "OptionSet",
+            "display_name": "Toons Required for Goal (Specific)",
+            "group": "Goal_Options",
+            "values": [
+                "Blot", "Boxten", "Brightney", "Brusha", "Connie", "Cosmo", "Finn", "Flutter",
+                "Gigi", "Glisten", "Goob", "Looey", "Poppy", "Razzle&Dazzle", "Rodger", "Scraps",
+                "Shrimpo", "Squirm", "Teagan", "Tisha", "Toodles", "Waxwell", "Yatta", "Astro",
+                "Bassie", "Bobette", "Gourdy", "Pebble", "Shelly", "Sprout", "Vee", "Cocoa",
+                "Eggson", "Flyte", "Eclipse", "Ribecca", "Soulvester", "Coal_Toon", "Ginger", "Rudie"
+            ],
+            "default": [],
             "description": [
-                "Specify what toon you would like to start with.",
-                "A later version might allow for better customising."
+                "In Specific mode, every toon listed here is required at the victory location.",
+                "Enter toon names as a YAML list, for example: [Astro, Razzle&Dazzle, Pebble]."
             ]
         },
-        "Toons&Trinkets_To_Include&Exclude":{
-            "type": "Choice",
-            "values": {
-                "include_toons": 0,
-                "include_trinkets": 1,
-                "exclude_toons": 2,
-                "exclude_trinkets": 3
-            },
+        "Starting_Toons":{
+            "type": "OptionSet",
+            "display_name": "Starting Toons",
+            "group": "Starting_Options",
+            "values": [
+                "Random",
+                "Blot", "Boxten", "Brightney", "Brusha", "Connie", "Cosmo", "Finn", "Flutter",
+                "Gigi", "Glisten", "Goob", "Looey", "Poppy", "Razzle&Dazzle", "Rodger", "Scraps",
+                "Shrimpo", "Squirm", "Teagan", "Tisha", "Toodles", "Waxwell", "Yatta", "Astro",
+                "Bassie", "Bobette", "Gourdy", "Pebble", "Shelly", "Sprout", "Vee", "Cocoa",
+                "Eggson", "Flyte", "Eclipse", "Ribecca", "Soulvester", "Coal_Toon", "Ginger", "Rudie"
+            ],
+            "default": ["Boxten", "Poppy"],
             "description": [
-                "Here you can specify which toons/trinkets you own or don't own.",
-                "You only need to fill out excluding or including options.",
-                "Some players may be missing more toons/trinkets than others, so enter what is easier.",
-                "Leave blank if any toons can be used to reach the goal.",
-                "Example toons: [\"Astro\", \"Razzle&Dazzle\", \"Pebble\"]",
-                "Example trinkets: [\"Star_Pillow\", \"Ghost_Snakes_In_A_Can\", \"Brick\"]"
+                "Choose one or more toons to start with. The default is the two normal starter toons.",
+                "Use [Random] to start with one randomly chosen toon. Do not combine Random with toon names.",
+                "At least one starting toon is required."
+            ]
+        },
+        "Include_Toons":{
+            "type": "OptionSet",
+            "display_name": "Include Toons",
+            "group": "Content_Options",
+            "values": [
+                "Blot", "Boxten", "Brightney", "Brusha", "Connie", "Cosmo", "Finn", "Flutter",
+                "Gigi", "Glisten", "Goob", "Looey", "Poppy", "Razzle&Dazzle", "Rodger", "Scraps",
+                "Shrimpo", "Squirm", "Teagan", "Tisha", "Toodles", "Waxwell", "Yatta", "Astro",
+                "Bassie", "Bobette", "Gourdy", "Pebble", "Shelly", "Sprout", "Vee", "Cocoa",
+                "Eggson", "Flyte", "Eclipse", "Ribecca", "Soulvester", "Coal_Toon", "Ginger", "Rudie"
+            ],
+            "default": [],
+            "description": [
+                "Optional allowlist of toons to keep in the item pool. Leave empty to include all toons."
+            ]
+        },
+        "Exclude_Toons":{
+            "type": "OptionSet",
+            "display_name": "Exclude Toons",
+            "group": "Content_Options",
+            "values": [
+                "Blot", "Boxten", "Brightney", "Brusha", "Connie", "Cosmo", "Finn", "Flutter",
+                "Gigi", "Glisten", "Goob", "Looey", "Poppy", "Razzle&Dazzle", "Rodger", "Scraps",
+                "Shrimpo", "Squirm", "Teagan", "Tisha", "Toodles", "Waxwell", "Yatta", "Astro",
+                "Bassie", "Bobette", "Gourdy", "Pebble", "Shelly", "Sprout", "Vee", "Cocoa",
+                "Eggson", "Flyte", "Eclipse", "Ribecca", "Soulvester", "Coal_Toon", "Ginger", "Rudie"
+            ],
+            "default": [],
+            "description": [
+                "Toons to remove from the item pool. Exclusions take precedence over the include list."
+            ]
+        },
+        "Include_Trinkets":{
+            "type": "OptionSet",
+            "display_name": "Include Trinkets",
+            "group": "Content_Options",
+            "values": [
+                "Coin_Purse", "Research_Map", "Wrench", "Machine_Manual", "Speedy_Shoes", "Speedometer",
+                "Thinking_Cap", "Alarm", "Thermos", "Pull_Toy", "Pop_Pack", "Megaphone", "Cooler",
+                "Cardboard_Armor", "Blue_Bandana", "Paint_Bucket", "Sweet_Charm", "Clown_Horn", "Pink_Bow",
+                "Brick", "Feather_Duster", "Party_Popper", "Spare_Bulb", "Ghost_Snakes_In_A_Can",
+                "Fishing_Rod", "Ribbon_Spool", "Magnifying_Glass", "Fancy_Purse", "Dog_Plush", "Mime_Makeup",
+                "Diary", "Lucky_Coin", "Vanity_Mirror", "Friendship_Bracelet", "Crayon_Set", "Stress_Ball",
+                "Cherished_Blanket", "Star_Pillow", "Bone", "Participation_Award", "Savory_Charm",
+                "Vees_Remote", "Dandy_Plush", "Egg_Radar", "Bone_Needle_And_Thread", "Festive_Lights",
+                "Scrapbook", "Peppermint_Icing", "Soul_Sword", "Glazed_Fondant_Bag", "Coal_Trinket",
+                "Moon_Pack_Heirloom", "Whispering_Flower", "Toy_Kit", "Memory_Locket", "Blushy_Bat", "Train_Whistle"
+            ],
+            "default": [],
+            "description": [
+                "Optional allowlist of trinkets to keep in the item pool. Leave empty to include all trinkets."
+            ]
+        },
+        "Exclude_Trinkets":{
+            "type": "OptionSet",
+            "display_name": "Exclude Trinkets",
+            "group": "Content_Options",
+            "values": [
+                "Coin_Purse", "Research_Map", "Wrench", "Machine_Manual", "Speedy_Shoes", "Speedometer",
+                "Thinking_Cap", "Alarm", "Thermos", "Pull_Toy", "Pop_Pack", "Megaphone", "Cooler",
+                "Cardboard_Armor", "Blue_Bandana", "Paint_Bucket", "Sweet_Charm", "Clown_Horn", "Pink_Bow",
+                "Brick", "Feather_Duster", "Party_Popper", "Spare_Bulb", "Ghost_Snakes_In_A_Can",
+                "Fishing_Rod", "Ribbon_Spool", "Magnifying_Glass", "Fancy_Purse", "Dog_Plush", "Mime_Makeup",
+                "Diary", "Lucky_Coin", "Vanity_Mirror", "Friendship_Bracelet", "Crayon_Set", "Stress_Ball",
+                "Cherished_Blanket", "Star_Pillow", "Bone", "Participation_Award", "Savory_Charm",
+                "Vees_Remote", "Dandy_Plush", "Egg_Radar", "Bone_Needle_And_Thread", "Festive_Lights",
+                "Scrapbook", "Peppermint_Icing", "Soul_Sword", "Glazed_Fondant_Bag", "Coal_Trinket",
+                "Moon_Pack_Heirloom", "Whispering_Flower", "Toy_Kit", "Memory_Locket", "Blushy_Bat", "Train_Whistle"
+            ],
+            "default": [],
+            "description": [
+                "Trinkets to remove from the item pool. Exclusions take precedence over the include list."
             ]
         },
         "Event_Twisteds":{
-            "type": "Choice",
-            "values": {
-                "None": 0,
-                "Christmas": 1,
-                "Easter": 2,
-                "Halloween": 3
-            },
+            "type": "Toggle",
+            "display_name": "Event Twisted Checks",
+            "default": true,
+            "group": "Content_Options",
             "description": [
-                "Here you can select what event (if any) is occurring.",
-                "This will include the relevant twisteds into logic."
+                "Enable or disable the seasonal event Twisted location checks.",
+                "This only affects the event Twisted checks, not event toons or trinkets."
             ]
         },
         "_commented_out_option":{

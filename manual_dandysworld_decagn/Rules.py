@@ -343,6 +343,50 @@ def set_rules(world: "ManualWorld", multiworld: MultiWorld, player: int):
 
             set_rule(locFromWorld, allRegionsAccessible)
 
+    goal_mode = get_option_value(multiworld, player, "Goal_Toon_Mode")
+    required_toon_count = get_option_value(multiworld, player, "Number_Of_Toons_To_Reach_Goal")
+    available_toons = sorted(
+        item["name"] for item in world.item_name_to_item.values()
+        if "Toon" in item.get("category", []) and (
+            is_item_enabled(multiworld, player, item) or world.start_inventory.get(item["name"], 0) > 0
+        )
+    )
+    if required_toon_count > len(available_toons) and goal_mode in (0, 1):
+        raise ValueError(
+            f"Number_Of_Toons_To_Reach_Goal is {required_toon_count}, but only "
+            f"{len(available_toons)} toons are available in the item pool."
+        )
+
+    if goal_mode == 0:
+        world.goal_toons = []
+    elif goal_mode == 1:
+        world.goal_toons = world.random.sample(available_toons, required_toon_count)
+    elif goal_mode == 2:
+        selected_toons = get_option_value(multiworld, player, "Toons_To_Win_With")
+        if not isinstance(selected_toons, set) or not selected_toons:
+            raise ValueError("Toons_To_Win_With must list at least one toon when Goal_Toon_Mode is Specific.")
+        unavailable_toons = selected_toons - set(available_toons)
+        if unavailable_toons:
+            raise ValueError(
+                "Toons_To_Win_With includes toons that are excluded from the item pool or unavailable: "
+                + ", ".join(sorted(unavailable_toons))
+            )
+        world.goal_toons = sorted(selected_toons)
+    else:
+        raise ValueError(f"Unsupported Goal_Toon_Mode value: {goal_mode}")
+
+    victory_location_name = world.victory_names[get_option_value(multiworld, player, "goal")]
+    if victory_location_name == "Beat Final Floor":
+        victory_location_name = f"Beat Final Floor {get_option_value(multiworld, player, 'Final_Floor_Num')}"
+    victory_location = multiworld.get_location(victory_location_name, player)
+    if goal_mode == 0:
+        add_rule(
+            victory_location,
+            lambda state: sum(state.count(toon, player) for toon in available_toons) >= required_toon_count
+        )
+    else:
+        add_rule(victory_location, lambda state: all(state.has(toon, player) for toon in world.goal_toons))
+
     # Victory requirement
     multiworld.completion_condition[player] = lambda state: state.has("__Victory__", player)
 
@@ -614,4 +658,3 @@ def YamlCompare(world: "ManualWorld", multiworld: MultiWorld, state: CollectionS
         result = world.yaml_compare_rule_cache[cacheindex]
 
     return not result if reverse_result else result
-

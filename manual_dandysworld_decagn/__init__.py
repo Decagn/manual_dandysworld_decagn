@@ -103,10 +103,15 @@ class ManualWorld(World):
 
         create_events(self, self.multiworld, self.player)
 
-        location_game_complete = self.multiworld.get_location(victory_names[get_option_value(self.multiworld, self.player, 'goal')], self.player)
+        victory_location_name = victory_names[get_option_value(self.multiworld, self.player, 'goal')]
+        if victory_location_name == "Beat Final Floor":
+            victory_location_name = f"Beat Final Floor {get_option_value(self.multiworld, self.player, 'Final_Floor_Num')}"
+
+        location_game_complete = self.multiworld.get_location(victory_location_name, self.player)
         location_game_complete.address = None
 
-        for unused_goal in [self.multiworld.get_location(name, self.player) for name in victory_names if name != location_game_complete.name]:
+        for unused_goal in [self.multiworld.get_location(name, self.player) for name in victory_names
+                            if name != location_game_complete.name and name != "Beat Final Floor"]:
             unused_goal.parent_region.locations.remove(unused_goal)
 
         location_game_complete.place_locked_item(
@@ -201,6 +206,41 @@ class ManualWorld(World):
         pool = before_create_items_starting(pool, self, self.multiworld, self.player)
 
         items_started: list[Item] = []
+
+        starting_toon_selection = get_option_value(self.multiworld, self.player, "Starting_Toons")
+        if not isinstance(starting_toon_selection, set):
+            raise TypeError("Starting_Toons must be a list of toon names.")
+        if not starting_toon_selection:
+            logging.warning("Starting_Toons was empty; assigning one random toon to ensure the player can progress.")
+            starting_toon_selection = {"Random"}
+        if "Random" in starting_toon_selection and len(starting_toon_selection) != 1:
+            raise ValueError("Starting_Toons cannot combine Random with specific toon names.")
+
+        known_toon_names = {
+            name for name, item in self.item_name_to_item.items()
+            if "Toon" in item.get("category", [])
+        }
+        if "Random" in starting_toon_selection:
+            if not known_toon_names:
+                raise ValueError("No toon items are defined, so a random starting toon cannot be assigned.")
+            starting_toon_names = [self.random.choice(sorted(known_toon_names))]
+        else:
+            starting_toon_names = sorted(starting_toon_selection)
+            unknown_starting_toons = set(starting_toon_names) - known_toon_names
+            if unknown_starting_toons:
+                raise ValueError(
+                    "Starting_Toons includes unknown toons: "
+                    + ", ".join(sorted(unknown_starting_toons))
+                )
+
+        for starting_toon_name in starting_toon_names:
+            starting_toon = next((item for item in pool if item.name == starting_toon_name), None)
+            if starting_toon is None:
+                starting_toon = self.create_item(starting_toon_name)
+            else:
+                remove_specific_item(pool, starting_toon)
+            items_started.append(starting_toon)
+            self.multiworld.push_precollected(starting_toon)
 
         if starting_items:
             for starting_item_block in starting_items:
@@ -418,7 +458,11 @@ class ManualWorld(World):
         for option_key, _ in self.options_dataclass.type_hints.items():
             if option_key in common_options:
                 continue
-            slot_data[option_key] = get_option_value(self.multiworld, self.player, option_key)
+            option_value = get_option_value(self.multiworld, self.player, option_key)
+            slot_data[option_key] = sorted(option_value) if isinstance(option_value, set) else option_value
+
+        if hasattr(self, "goal_toons"):
+            slot_data["assigned_goal_toons"] = self.goal_toons
 
         slot_data["visible_events"] = {}
         for _, event in self.event_name_to_event.items():

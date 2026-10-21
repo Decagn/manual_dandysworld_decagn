@@ -90,7 +90,7 @@ def is_item_enabled(multiworld: MultiWorld, player: int, item: dict[str, Any]) -
     if hook_result is not None:
         return hook_result
 
-    return _is_manualobject_enabled(multiworld, player, item)
+    return _is_item_allowed_by_pool_options(multiworld, player, item) and _is_manualobject_enabled(multiworld, player, item)
 
 def is_location_name_enabled(multiworld: MultiWorld, player: int, location_name: str) -> bool:
     """Check if a location named 'location_name' has been disabled by a yaml option."""
@@ -106,7 +106,7 @@ def is_location_enabled(multiworld: MultiWorld, player: int, location: dict[str,
     if hook_result is not None:
         return hook_result
 
-    return _is_manualobject_enabled(multiworld, player, location)
+    return _is_location_allowed_by_pool_options(multiworld, player, location) and _is_manualobject_enabled(multiworld, player, location)
 
 def is_event_enabled(multiworld: MultiWorld, player: int, event: dict[str, Any]) -> bool:
     """Check if an event has been disabled by a yaml option."""
@@ -127,6 +127,50 @@ def _is_manualobject_enabled(multiworld: MultiWorld, player: int, object: dict[s
             break
 
     return enabled
+
+def _option_names(multiworld: MultiWorld, player: int, option_name: str) -> set[str]:
+    value = get_option_value(multiworld, player, option_name)
+    return value if isinstance(value, set) else set()
+
+def _is_pool_item_allowed(multiworld: MultiWorld, player: int, item_name: str, item_type: str) -> bool:
+    option_item_type = item_type.title() + "s"
+    included = _option_names(multiworld, player, f"Include_{option_item_type}")
+    excluded = _option_names(multiworld, player, f"Exclude_{option_item_type}")
+    return item_name not in excluded and (not included or item_name in included)
+
+def _is_item_allowed_by_pool_options(multiworld: MultiWorld, player: int, item: dict[str, Any]) -> bool:
+    categories = item.get("category", [])
+    if "Toon" in categories:
+        return _is_pool_item_allowed(multiworld, player, item["name"], "toon")
+    if "Trinket" in categories:
+        return _is_pool_item_allowed(multiworld, player, item["name"], "trinket")
+    return True
+
+def _is_location_allowed_by_pool_options(multiworld: MultiWorld, player: int, location: dict[str, Any]) -> bool:
+    categories = location.get("category", [])
+    location_name = location.get("name", "")
+
+    floor_goal_match = re.fullmatch(r"Beat Final Floor (\d+)", location_name)
+    if floor_goal_match:
+        return get_option_value(multiworld, player, "goal") == 0 and \
+            get_option_value(multiworld, player, "Final_Floor_Num") == int(floor_goal_match.group(1))
+    if location_name == "Beat Final Floor":
+        return False
+
+    if "Toon" in categories:
+        toon_name = location_name.split("(", 1)[0]
+        toon_name = {"Coal": "Coal_Toon", "Rude": "Rudie"}.get(toon_name, toon_name)
+        return _is_pool_item_allowed(multiworld, player, toon_name, "toon")
+
+    if "Toon_Goal" in categories or "Trinket_Goal" in categories:
+        item_name = location_name.removesuffix("_Mini_Goal")
+        item_type = "toon" if "Toon_Goal" in categories else "trinket"
+        return _is_pool_item_allowed(multiworld, player, item_name, item_type)
+
+    if "Twisted" in categories and not is_option_enabled(multiworld, player, "Event_Twisteds"):
+        return not set(categories).intersection({"Christmas", "Easter", "Halloween"})
+
+    return True
 
 def get_items_for_player(multiworld: MultiWorld, player: int, includePrecollected: bool = False) -> List[Item]:
     """Return list of items of a player including placed items"""
