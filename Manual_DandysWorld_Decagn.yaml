@@ -118,35 +118,41 @@ Manual_DandysWorld_Decagn:
   # Starting_Options #
   ####################
   Starting_Toons:
-    # Choose one or more toons to start with. The default is the two normal starter toons.
-    # Use [Random] to start with one randomly chosen toon. Do not combine Random with toon names.
-    # At least one starting toon is required.
-    ['Boxten', 'Poppy']
+    # Choose one or more toons to start with. The default is one random.
+    # Can start with multiple toons for example:
+    # ["Razzle&Dazzle", "Random"] Would start with Razzle&Dazzle and a random toon.
+    # At least one starting toon is always required.
+    ['Random']
 
   ###################
   # Content_Options #
   ###################
   Include_Toons:
-    # Optional allowlist of toons to keep in the item pool. Leave empty to include all toons.
+    # Optional include list, for if you don't own a lot of toons. Leave empty to include all toons.
     []
 
   Exclude_Toons:
-    # Toons to remove from the item pool. Exclusions take precedence over the include list.
+    # Optional exclusion list, for if you own most Toons. Exclusions take precedence over the include list.
     []
 
   Include_Trinkets:
-    # Optional allowlist of trinkets to keep in the item pool. Leave empty to include all trinkets.
+    # Optional inclusion list, for if you don't own a lot of trinkets. Leave empty to include all toons.
     []
 
   Exclude_Trinkets:
-    # Trinkets to remove from the item pool. Exclusions take precedence over the include list.
+    # Optional exclusion list, for if you own most Trinkets. Exclusions take precedence over the include list.
     []
 
   Event_Twisteds:
     # Enable or disable the seasonal event Twisted location checks.
     # This only affects the event Twisted checks, not event toons or trinkets.
-    'false': 0
-    'true': 50
+    # Currently the only seasonal events are "Christmas", "Easter", and "Hallowee".
+    # Leave as "None" to only stick to original twisteds.
+    none: 0
+    christmas: 0
+    easter: 0
+    halloween: 0
+    None: 50
 
   ###########################
   # Item & Location Options #

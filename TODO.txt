@@ -1,4 +1,5 @@
 - CHECK WHAT THE HECK THE AI HAS DONE FOR THE LOVE OF GOD (it might work though lol).
+- Bug: Setting the exclusions and the 'random' starting toon may not have worked.
 - Setup options for choosing what events to include (mostly for twisteds appearing).
 - Add costs for toons/trinkets to help with calculating ichor drops.
 - Starting toons should remove shop for that toons (same for excluding)
