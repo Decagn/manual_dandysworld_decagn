@@ -104,7 +104,7 @@ Manual_DandysWorld_Decagn:
 
   Toons_Required:
     # Choose whether the goal requires a number of toons, a random selection of specific toons, or specifically named toons.
-    # The selected toon requirements are checked at the chosen victory location.
+    # This option will adjust the amount of toons required to reach the goal and/or if specific toons are required
     any: 50
     random: 0
     specific: 0
@@ -124,11 +124,26 @@ Manual_DandysWorld_Decagn:
     # At least one starting toon is always required.
     ['Random']
 
+  Additional_Random_Start_Toons:
+    # This setting is optional, for those who wish to state with more than 1 Random Starting Toon.
+    # Use the previous option for starting_toons first.
+    # You can add as many additonal toons to start with randomly chosen for you.
+    #
+    # You can define additional values between the minimum and maximum values.
+    # Minimum value is 0
+    # Maximum value is 39
+    0: 50
+    random: 0
+    random-low: 0 # random value weighted towards lower values
+    random-high: 0 # random value weighted towards higher values
+    random-range-0-39: 0 # random value between 0 and 39
+
   ###################
   # Content_Options #
   ###################
   Include_Toons:
-    # Optional include list, for if you don't own a lot of toons. Leave empty to include all toons.
+    # Optional include list, for if you don't own a lot of toons. Excludes toons that aren't listed
+    # Leave empty to include all toons.
     []
 
   Exclude_Toons:
@@ -148,11 +163,10 @@ Manual_DandysWorld_Decagn:
     # This only affects the event Twisted checks, not event toons or trinkets.
     # Currently the only seasonal events are "Christmas", "Easter", and "Hallowee".
     # Leave as "None" to only stick to original twisteds.
-    none: 0
+    none: 50
     christmas: 0
     easter: 0
     halloween: 0
-    None: 50
 
   ###########################
   # Item & Location Options #

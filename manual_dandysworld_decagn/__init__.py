@@ -210,10 +210,8 @@ class ManualWorld(World):
 
         # AI wrote this code until line 246. We are sorting out the starting toons in this code.
         starting_toon_selection = get_option_value(self.multiworld, self.player, "Starting_Toons")
-        if not isinstance(starting_toon_selection, list):
+        if not isinstance(starting_toon_selection, set):
             raise TypeError("Starting_Toons must be a list of toon names.")
-        if len(starting_toon_selection) > 40:
-            raise ValueError("Too many Start_Toons written in the options!")
         if not starting_toon_selection:
             logging.warning("Starting_Toons was empty; assigning one random toon to ensure the player can progress.")
             starting_toon_selection = {"Random"}
@@ -224,16 +222,18 @@ class ManualWorld(World):
         }
 
         # Code before seemed legit, however I wanted to make as many random toons to start with. So I've redone the AI code following this:
-        unique_toon_selection = set(starting_toon_selection.values()) # unique values
-        valid_toons_selection = unique_toon_selection and known_toon_names # only valid toons left in the set
-        available_toons = known_toon_names - unique_toon_selection # the toons left after validating (excluding random)
+        valid_toons_selection = starting_toon_selection and known_toon_names # only valid toons left in the set
+        available_toons = known_toon_names - starting_toon_selection # the toons left after validating (excluding random)
 
-        # replacing each Random with a random toon.
-        random_toon_count = sum(value == "Random" for value in input.dict.values()) # num of "Random" in input.
-        unique_toon_selection.update(random.sample(list(available_toons), random_toon_count))
+        # replacing each Random with a random toon (if any).
+        random_toon_count = get_option_value(self.multiworld, self.player, "Additional_Random_Start_Toons") + ("Random" in starting_toon_selection)
+        random_toon_count = min(random_toon_count, len(known_toon_names) - len(valid_toons_selection)) # limit the number of random toons to the limits.
+        
+        if random_toon_count > 0:
+            valid_toons_selection.update(random.sample(list(available_toons), random_toon_count))
 
         # AI did this part
-        for starting_toon_name in unique_toon_selection:
+        for starting_toon_name in valid_toons_selection:
             starting_toon = next((item for item in pool if item.name == starting_toon_name), None)
             if starting_toon is None:
                 starting_toon = self.create_item(starting_toon_name)

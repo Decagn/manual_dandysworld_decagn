@@ -105,6 +105,18 @@
                 "At least one starting toon is always required."
             ]
         },
+        "Additional_Random_Start_Toons":{
+            "type": "Range",
+            "range_start": 0,
+            "range_end": 39,
+            "default": 0,
+            "group": "Starting_Options",
+            "description": [
+                "This setting is optional, for those who wish to state with more than 1 Random Starting Toon.",
+                "Use the previous option for starting_toons first.",
+                "You can add as many additonal toons to start with randomly chosen for you."
+            ]
+        },
         "Include_Toons":{
             "type": "OptionSet",
             "display_name": "Include Toons",
