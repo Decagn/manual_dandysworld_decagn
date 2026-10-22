@@ -42,7 +42,7 @@ class ManualWorld(World):
     web = world_webworld
 
     options_dataclass = manual_options_data
-    data_version = 2
+    data_version = 3
     required_client_version = (0, 3, 4)
 
     # These properties are set from the imports of the same name above.
@@ -94,8 +94,19 @@ class ManualWorld(World):
             slot_data = self.multiworld.re_gen_passthrough.get(self.game, {})
             if slot_data:
                 for key, value in slot_data.items():
-                    if hasattr(self.options, key):
-                        getattr(self.options, key).value = value
+                    option = getattr(self.options, key, None)
+                    if option is None:
+                        continue
+
+                    if isinstance(option.value, set):
+                        if not isinstance(value, list):
+                            raise TypeError(
+                                f"Regenerated OptionSet {key} must be a list; "
+                                f"got {type(value).__name__}: {value!r}"
+                            )
+                        value = set(value)
+
+                    option.value = value
 
     def create_regions(self):
         before_create_regions(self, self.multiworld, self.player)
@@ -211,18 +222,25 @@ class ManualWorld(World):
         # AI wrote this code until line 246. We are sorting out the starting toons in this code.
         starting_toon_selection = get_option_value(self.multiworld, self.player, "Starting_Toons")
         if not isinstance(starting_toon_selection, set):
-            raise TypeError("Starting_Toons must be a list of toon names.")
+            raise TypeError(f"Starting_Toons must be a list of toon names; Instead got {type(starting_toon_selection).__name__}: {starting_toon_selection!r}")
         if not starting_toon_selection:
             logging.warning("Starting_Toons was empty; assigning one random toon to ensure the player can progress.")
             starting_toon_selection = {"Random"}
 
+        # obtain all toons that are available for the archipelago:
         known_toon_names = {
             name for name, item in self.item_name_to_item.items()
             if "Toon" in item.get("category", [])
         }
+        included_toons = get_option_value(self.multiworld, self.player, "Include_Toons")
+        excluded_toons = get_option_value(self.multiworld, self.player, "Exclude_Toons")
+        if not included_toons:
+            known_toon_names = known_toon_names - excluded_toons
+        else:
+            known_toon_names = known_toon_names & (included_toons - excluded_toons)
 
         # Code before seemed legit, however I wanted to make as many random toons to start with. So I've redone the AI code following this:
-        valid_toons_selection = starting_toon_selection and known_toon_names # only valid toons left in the set
+        valid_toons_selection = starting_toon_selection & known_toon_names # only valid toons left in the set
         available_toons = known_toon_names - starting_toon_selection # the toons left after validating (excluding random)
 
         # replacing each Random with a random toon (if any).
