@@ -2,6 +2,7 @@ import logging
 import os
 from typing import Callable, Optional, ClassVar, Counter, Any
 import webbrowser
+import random
 
 import Utils
 from worlds.generic.Rules import forbid_items_for_player
@@ -207,33 +208,32 @@ class ManualWorld(World):
 
         items_started: list[Item] = []
 
+        # AI wrote this code until line 246. We are sorting out the starting toons in this code.
         starting_toon_selection = get_option_value(self.multiworld, self.player, "Starting_Toons")
-        if not isinstance(starting_toon_selection, set):
+        if not isinstance(starting_toon_selection, list):
             raise TypeError("Starting_Toons must be a list of toon names.")
+        if len(starting_toon_selection) > 40:
+            raise ValueError("Too many Start_Toons written in the options!")
         if not starting_toon_selection:
             logging.warning("Starting_Toons was empty; assigning one random toon to ensure the player can progress.")
             starting_toon_selection = {"Random"}
-        if "Random" in starting_toon_selection and len(starting_toon_selection) != 1:
-            raise ValueError("Starting_Toons cannot combine Random with specific toon names.")
 
         known_toon_names = {
             name for name, item in self.item_name_to_item.items()
             if "Toon" in item.get("category", [])
         }
-        if "Random" in starting_toon_selection:
-            if not known_toon_names:
-                raise ValueError("No toon items are defined, so a random starting toon cannot be assigned.")
-            starting_toon_names = [self.random.choice(sorted(known_toon_names))]
-        else:
-            starting_toon_names = sorted(starting_toon_selection)
-            unknown_starting_toons = set(starting_toon_names) - known_toon_names
-            if unknown_starting_toons:
-                raise ValueError(
-                    "Starting_Toons includes unknown toons: "
-                    + ", ".join(sorted(unknown_starting_toons))
-                )
 
-        for starting_toon_name in starting_toon_names:
+        # Code before seemed legit, however I wanted to make as many random toons to start with. So I've redone the AI code following this:
+        unique_toon_selection = set(starting_toon_selection.values()) # unique values
+        valid_toons_selection = unique_toon_selection and known_toon_names # only valid toons left in the set
+        available_toons = known_toon_names - unique_toon_selection # the toons left after validating (excluding random)
+
+        # replacing each Random with a random toon.
+        random_toon_count = sum(value == "Random" for value in input.dict.values()) # num of "Random" in input.
+        unique_toon_selection.update(random.sample(list(available_toons), random_toon_count))
+
+        # AI did this part
+        for starting_toon_name in unique_toon_selection:
             starting_toon = next((item for item in pool if item.name == starting_toon_name), None)
             if starting_toon is None:
                 starting_toon = self.create_item(starting_toon_name)
@@ -242,6 +242,7 @@ class ManualWorld(World):
             items_started.append(starting_toon)
             self.multiworld.push_precollected(starting_toon)
 
+        # I dunno what this code does, what follows is not AI or me (Decagn~)
         if starting_items:
             for starting_item_block in starting_items:
                 if not resolve_yaml_option(self.multiworld, self.player, starting_item_block):

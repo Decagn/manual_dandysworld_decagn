@@ -65,7 +65,7 @@
             "group": "Goal_Options",
             "description": [
                 "Choose whether the goal requires a number of toons, a random selection of specific toons, or specifically named toons.",
-                "The selected toon requirements are checked at the chosen victory location."
+                "This option will adjust the amount of toons required to reach the goal and/or if specific toons are required"
             ]
         },
         "Toons_To_Win_With":{
@@ -118,7 +118,8 @@
             ],
             "default": [],
             "description": [
-                "Optional include list, for if you don't own a lot of toons. Leave empty to include all toons."
+                "Optional include list, for if you don't own a lot of toons. Excludes toons that aren't listed",
+                "Leave empty to include all toons."
             ]
         },
         "Exclude_Toons":{
@@ -182,7 +183,7 @@
         "Event_Twisteds":{
             "type": "Choice",
             "display_name": "Enable Event Twisted Location Checks",
-            "default": "None",
+            "default": "none",
             "values": {
                 "None": 0,
                 "Christmas": 1,

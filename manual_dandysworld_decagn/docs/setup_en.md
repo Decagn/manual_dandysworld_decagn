@@ -14,7 +14,7 @@ The world options can be set in the player's Archipelago YAML. Toon and trinket 
 
 ```yaml
 Final_Floor_Num: 20
-Goal_Toon_Mode: Random
+Toons_Required: Any
 Number_Of_Toons_To_Reach_Goal: 1
 Starting_Toons: [Random]
 Include_Toons: []
@@ -25,8 +25,8 @@ Event_Twisteds: None
 ```
 
 - `Final_Floor_Num` selects the goal check name (for example, `Beat Final Floor 20`) and is saved in slot data. Floor progression itself is not yet balanced against this value.
-- `Goal_Toon_Mode` can be `Any`, `Random`, or `Specific`. `Any` requires the configured number of collected toons; `Random` assigns that many toons for the goal; `Specific` requires every name in `Toons_To_Win_With`, such as `[Astro, Pebble]`.
-- `Starting_Toons` defaults to `[Boxten, Poppy]`. Use `[Random]` to start with one randomly selected toon. At least one starting toon is required.
+- `Toons_Required` can be `Any`, `Random`, or `Specific`. `Any` requires the configured number of collected toons; `Random` assigns that many toons for the goal; `Specific` requires every name in `Toons_To_Win_With`, such as `[Astro, Pebble]`.
+- `Starting_Toons` defaults to `[Random]` to start with one randomly selected toon. Use `[Boxten]` or `[Poppy, Razzle&Dazzle]` to start with one or more specific toons. At least one starting toon is always required.
 - Leave an `Include_*` list empty to allow all items of that type. `Exclude_*` removes listed items; exclusions take precedence if a name is in both lists. Related toon-shop, toon-goal, and trinket-goal checks are removed with their items.
 - `Event_Twisteds` can be `None`, `Christmas`, `Easter`, or `Halloween`. `None` keeps non-event Twisted checks only; choosing an event keeps that event's Twisted checks alongside the non-event Twisteds. Other event content is unaffected.
 
