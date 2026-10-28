@@ -219,7 +219,7 @@ class ManualWorld(World):
 
         items_started: list[Item] = []
 
-        # AI wrote this code until line 246. We are sorting out the starting toons in this code.
+        # Grab the starting toons from the options.
         starting_toon_selection = get_option_value(self.multiworld, self.player, "Starting_Toons")
         if not isinstance(starting_toon_selection, set):
             raise TypeError(f"Starting_Toons must be a list of toon names; Instead got {type(starting_toon_selection).__name__}: {starting_toon_selection!r}")
@@ -233,18 +233,15 @@ class ManualWorld(World):
             if "Toon" in item.get("category", [])
         }
         included_toons = get_option_value(self.multiworld, self.player, "Include_Toons")
-        excluded_toons = get_option_value(self.multiworld, self.player, "Exclude_Toons")
-        if not included_toons:
-            known_toon_names = known_toon_names - excluded_toons
-        else:
-            known_toon_names = known_toon_names & (included_toons - excluded_toons)
+        if included_toons:
+            known_toon_names = known_toon_names & included_toons
 
         # Code before seemed legit, however I wanted to make as many random toons to start with. So I've redone the AI code following this:
         valid_toons_selection = starting_toon_selection & known_toon_names # only valid toons left in the set
         available_toons = known_toon_names - starting_toon_selection # the toons left after validating (excluding random)
 
         # replacing each Random with a random toon (if any).
-        random_toon_count = get_option_value(self.multiworld, self.player, "Additional_Random_Start_Toons") + ("Random" in starting_toon_selection)
+        random_toon_count = get_option_value(self.multiworld, self.player, "Random_Starting_Toons") + ("Random" in starting_toon_selection)
         random_toon_count = min(random_toon_count, len(known_toon_names) - len(valid_toons_selection)) # limit the number of random toons to the limits.
         
         if random_toon_count > 0:

@@ -108,7 +108,7 @@
         "Random_Starting_Toons":{
             "type": "Range",
             "range_start": 0,
-            "range_end": 40,
+            "range_end": 39,
             "default": 0,
             "group": "Starting_Options",
             "description": [
