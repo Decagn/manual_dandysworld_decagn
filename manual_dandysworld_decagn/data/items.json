@@ -212,7 +212,6 @@
       "count": 1,
       "name": "Astro",
       "category": [
-        "Main",
         "Collect",
         "Toon"
       ],
@@ -222,8 +221,6 @@
       "count": 1,
       "name": "Bassie",
       "category": [
-        "Main",
-        "Easter",
         "Collect",
         "Toon"
       ],
@@ -233,8 +230,6 @@
       "count": 1,
       "name": "Bobette",
       "category": [
-        "Main",
-        "Christmas",
         "Collect",
         "Toon"
       ],
@@ -244,8 +239,6 @@
       "count": 1,
       "name": "Gourdy",
       "category": [
-        "Main",
-        "Halloween",
         "Collect",
         "Toon"
       ],
@@ -255,7 +248,6 @@
       "count": 1,
       "name": "Pebble",
       "category": [
-        "Main",
         "Collect",
         "Toon"
       ],
@@ -265,7 +257,6 @@
       "count": 1,
       "name": "Shelly",
       "category": [
-        "Main",
         "Collect",
         "Toon"
       ],
@@ -275,7 +266,6 @@
       "count": 1,
       "name": "Sprout",
       "category": [
-        "Main",
         "Collect",
         "Toon"
       ],
@@ -285,7 +275,6 @@
       "count": 1,
       "name": "Vee",
       "category": [
-        "Main",
         "Collect",
         "Toon"
       ],
@@ -295,7 +284,6 @@
       "count": 1,
       "name": "Cocoa",
       "category": [
-        "Easter",
         "Collect",
         "Toon"
       ],
@@ -305,7 +293,6 @@
       "count": 1,
       "name": "Eggson",
       "category": [
-        "Easter",
         "Collect",
         "Toon"
       ],
@@ -315,7 +302,6 @@
       "count": 1,
       "name": "Flyte",
       "category": [
-        "Easter",
         "Collect",
         "Toon"
       ],
@@ -325,7 +311,6 @@
       "count": 1,
       "name": "Eclipse",
       "category": [
-        "Halloween",
         "Collect",
         "Toon"
       ],
@@ -335,7 +320,6 @@
       "count": 1,
       "name": "Ribecca",
       "category": [
-        "Halloween",
         "Collect",
         "Toon"
       ],
@@ -345,7 +329,6 @@
       "count": 1,
       "name": "Soulvester",
       "category": [
-        "Halloween",
         "Collect",
         "Toon"
       ],
@@ -355,7 +338,6 @@
       "count": 1,
       "name": "Coal_Toon",
       "category": [
-        "Christmas",
         "Collect",
         "Toon"
       ],
@@ -365,7 +347,6 @@
       "count": 1,
       "name": "Ginger",
       "category": [
-        "Christmas",
         "Collect",
         "Toon"
       ],
@@ -375,7 +356,6 @@
       "count": 1,
       "name": "Rudie",
       "category": [
-        "Christmas",
         "Collect",
         "Toon"
       ],
@@ -718,7 +698,6 @@
       "count": 1,
       "name": "Star_Pillow",
       "category": [
-        "Main",
         "Collect",
         "Trinket"
       ],
@@ -728,7 +707,6 @@
       "count": 1,
       "name": "Bone",
       "category": [
-        "Main",
         "Collect",
         "Trinket"
       ],
@@ -738,7 +716,6 @@
       "count": 1,
       "name": "Participation_Award",
       "category": [
-        "Main",
         "Collect",
         "Trinket"
       ],
@@ -748,7 +725,6 @@
       "count": 1,
       "name": "Savory_Charm",
       "category": [
-        "Main",
         "Collect",
         "Trinket"
       ],
@@ -758,7 +734,6 @@
       "count": 1,
       "name": "Vees_Remote",
       "category": [
-        "Main",
         "Collect",
         "Trinket"
       ],
@@ -768,7 +743,6 @@
       "count": 1,
       "name": "Dandy_Plush",
       "category": [
-        "Lethal",
         "Collect",
         "Trinket"
       ],
@@ -778,7 +752,6 @@
       "count": 1,
       "name": "Egg_Radar",
       "category": [
-        "Easter",
         "Collect",
         "Trinket"
       ],
@@ -788,7 +761,6 @@
       "count": 1,
       "name": "Bone_Needle_And_Thread",
       "category": [
-        "Halloween",
         "Collect",
         "Trinket"
       ],
@@ -798,7 +770,6 @@
       "count": 1,
       "name": "Festive_Lights",
       "category": [
-        "Christmas",
         "Collect",
         "Trinket"
       ],
@@ -808,7 +779,6 @@
       "count": 1,
       "name": "Scrapbook",
       "category": [
-        "Easter",
         "Collect",
         "Trinket"
       ],
@@ -818,7 +788,6 @@
       "count": 1,
       "name": "Peppermint_Icing",
       "category": [
-        "Christmas",
         "Collect",
         "Trinket"
       ],
@@ -828,7 +797,6 @@
       "count": 1,
       "name": "Soul_Sword",
       "category": [
-        "Halloween",
         "Collect",
         "Trinket"
       ],
@@ -838,7 +806,6 @@
       "count": 1,
       "name": "Glazed_Fondant_Bag",
       "category": [
-        "Easter",
         "Collect",
         "Trinket"
       ],
@@ -848,7 +815,6 @@
       "count": 1,
       "name": "Coal_Trinket",
       "category": [
-        "Christmas",
         "Collect",
         "Trinket"
       ],
@@ -858,7 +824,6 @@
       "count": 1,
       "name": "Moon_Pack_Heirloom",
       "category": [
-        "Halloween",
         "Collect",
         "Trinket"
       ],
@@ -868,7 +833,6 @@
       "count": 1,
       "name": "Whispering_Flower",
       "category": [
-        "Easter",
         "Collect",
         "Trinket"
       ],
@@ -878,7 +842,6 @@
       "count": 1,
       "name": "Toy_Kit",
       "category": [
-        "Christmas",
         "Collect",
         "Trinket"
       ],
@@ -888,7 +851,6 @@
       "count": 1,
       "name": "Memory_Locket",
       "category": [
-        "Halloween",
         "Collect",
         "Trinket"
       ],
@@ -898,7 +860,6 @@
       "count": 1,
       "name": "Blushy_Bat",
       "category": [
-        "Misc",
         "Collect",
         "Trinket"
       ],
@@ -908,7 +869,6 @@
       "count": 1,
       "name": "Train_Whistle",
       "category": [
-        "Lethal",
         "Collect",
         "Trinket"
       ],
