@@ -41,6 +41,6 @@
   },
   "Goal": {
     "connects_to": [],
-    "requires": "|@Collect:40 OR |@Shop:5|"
+    "requires": "|@Collect:50| OR |@Shop:5|"
   }
 }

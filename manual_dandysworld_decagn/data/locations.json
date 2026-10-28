@@ -265,6 +265,169 @@
     {"name": "Twisted Ribecca", "region": "Start", "category": ["Twisted"], "twisted_toggle": "Halloween"},
     {"name": "Twisted Soulvester", "region": "Start", "category": ["Twisted"], "twisted_toggle": "Halloween"},
     {"name": "Twisted Eclipse", "region": "Start", "category": ["Twisted"], "twisted_toggle": "Halloween"},
-    {"name": "Twisted Gourdy", "region": "Start", "category": ["Twisted"], "twisted_toggle": "Halloween"}
+    {"name": "Twisted Gourdy", "region": "Start", "category": ["Twisted"], "twisted_toggle": "Halloween"},
+
+
+
+    {
+      "_comment":[
+        "Bonds Description:",
+        "Bonds are optional checks to be added for a bit of fun extra mini goals to aim for.",
+        "The toons named in a bond must all be found on the same floor in any combination of twisteds and toons, with ",
+        "the requirement that the player must be playing as one of them.",
+        "Once such a floor is completed, the check can then be obtained."
+      ]
+    },
+    {
+      "name": "Family Bond: Flutter/Flyte", 
+      "region": "Start", 
+      "category": ["Bonds"], 
+      "requires": "|Flutter| OR |Flyte|",
+      "hint_entrance": "Complete a floor with Flutter and Flyte as either twisteds or toons, while playing as one of them."
+    },
+    {
+      "name": "Family Bond: Cosmo/Ginger", 
+      "region": "Start", 
+      "category": ["Bonds"], 
+      "requires": "|Cosmo| OR |Ginger|",
+      "hint_entrance": "Complete a floor with Cosmo and Ginger as either twisteds or toons, while playing as one of them."
+    },
+    {
+      "name": "Family Bond: Connie/Soulvester", 
+      "region": "Start", 
+      "category": ["Bonds"], 
+      "requires": "|Connie| OR |Soulvester|",
+      "hint_entrance": "Complete a floor with Connie and Soulvester as either twisteds or toons, while playing as one of them."
+    },
+    {
+      "name": "Family Bond: Goob/Scraps", 
+      "region": "Start", 
+      "category": ["Bonds"], 
+      "requires": "|Goob| OR |Scraps|",
+      "hint_entrance": "Complete a floor with Goob and Scraps as either twisteds or toons, while playing as one of them."
+    },
+    {
+      "name": "Family Bond: Rodger/Toodles", 
+      "region": "Start", 
+      "category": ["Bonds"], 
+      "requires": "|Rodger| OR |Scraps|",
+      "hint_entrance": "Complete a floor with Rodger and Toodles as either twisteds or toons, while playing as one of them."
+    },
+    {
+      "name": "Kiddos Bond: Toodles/Gourdy", 
+      "region": "Start", 
+      "category": ["Bonds"], 
+      "requires": "|Toodles| OR |Gourdy|",
+      "hint_entrance": "Complete a floor with Toodles and Gourdy as either twisteds or toons, while playing as one of them."
+    },
+    {
+      "name": "Sweet and Savoury Bond: Cosmo/Sprout", 
+      "region": "Start", 
+      "category": ["Bonds"], 
+      "requires": "|Cosmo| OR |Sprout|",
+      "hint_entrance": "Complete a floor with Cosmo and Sprout as either twisteds or toons, while playing as one of them."
+    },
+    {
+      "name": "Bark Bark Bond: Coal/Pebble", 
+      "region": "Start", 
+      "category": ["Bonds"], 
+      "requires": "|Coal| OR |Pebble|",
+      "hint_entrance": "Complete a floor with Coal and Pebble as either twisteds or toons, while playing as one of them."
+    },
+    {
+      "name": "Wilting Bond: Bassie/Cocoa", 
+      "region": "Start", 
+      "category": ["Bonds"], 
+      "requires": "|Bassie| OR |Cocoa|",
+      "hint_entrance": "Complete a floor with Bassie and Cocoa as either twisteds or toons, while playing as one of them.",
+      "twisted_toggle": "Easter"
+    },
+    {
+      "name": "Showtime Bond: Glisten/Vee", 
+      "region": "Start", 
+      "category": ["Bonds"], 
+      "requires": "|Glisten| OR |Vee|",
+      "hint_entrance": "Complete a floor with Glisten and Vee as either twisteds or toons, while playing as one of them."
+    },
+    {
+      "name": "Bad Guys Bond: Shrimpo/Waxwell", 
+      "region": "Start", 
+      "category": ["Bonds"], 
+      "requires": "|Shrimpo| OR |Waxwell|",
+      "hint_entrance": "Complete a floor with Shrimpo and Waxwell as either twisteds or toons, while playing as one of them."
+    },
+    {
+      "name": "Unfriended Bond: Brusha/Tisha", 
+      "region": "Start", 
+      "category": ["Bonds"], 
+      "requires": "|Brusha| OR |Tisha|",
+      "hint_entrance": "Complete a floor with Brusha and Tisha as either twisteds or toons, while playing as one of them."
+    },
+    {
+      "name": "Starters Bond: Boxten/Poppy", 
+      "region": "Start", 
+      "category": ["Bonds"], 
+      "requires": "|Boxten| OR |Poppy|",
+      "hint_entrance": "Complete a floor with Boxten and Poppy as either twisteds or toons, while playing as one of them."
+    },
+    {
+      "name": "Knight and Prince Bond: Gourdy/Soulvester", 
+      "region": "Start", 
+      "category": ["Bonds"], 
+      "requires": "|Gourdy| OR |Soulvester|",
+      "hint_entrance": "Complete a floor with Gourdy and Soulvester as either twisteds or toons, while playing as one of them.",
+      "twisted_toggle": "Halloween"
+    },
+    {
+      "name": "Old People Bond: Eggson/Eggson", 
+      "region": "Start", 
+      "category": ["Bonds"], 
+      "requires": "|Eggson|",
+      "hint_entrance": "Complete a floor with 2 Eggsons as either a twisted or toon, while playing as Eggson.",
+      "twisted_toggle": "Easter"
+    },
+    {
+      "name": "Circus Bond: Blot/Looey/Yatta", 
+      "region": "Start", 
+      "category": ["Bonds"], 
+      "requires": "|Blot| OR |Looey| OR |Yatta|",
+      "hint_entrance": "Complete a floor with Blot, Looey and Yatta as either twisteds or toons, while playing as one of them."
+    },
+    {
+      "name": "Baking Bond: Cosmo/Ginger/Sprout", 
+      "region": "Start", 
+      "category": ["Bonds"], 
+      "requires": "|Cosmo| OR |Ginger| OR |Sprout|",
+      "hint_entrance": "Complete a floor with Cosmo, Ginger and Sprout as either twisteds or toons, while playing as one of them."
+    },
+    {
+      "name": "QoM Bond: Connie/Eclipse/Ribecca", 
+      "region": "Start", 
+      "category": ["Bonds"], 
+      "requires": "|Connie| OR |Eclipse| OR |Ribecca|",
+      "hint_entrance": "Complete a floor with Connie, Eclipse and Ribecca as either twisteds or toons, while playing as one of them.",
+      "twisted_toggle": "Halloween"
+    },
+    {
+      "name": "Book Club Bond: Astro/Brightney/Razzle_&_Dazzle/Squirm",
+      "region": "Start", 
+      "category": ["Bonds"], 
+      "requires": "|Astro| OR |Brightney| OR |Razzle_&_Dazzle| OR |Squirm|",
+      "hint_entrance": "Complete a floor with Astro, Brightney, Razzle_&_Dazzle and Squirm as either twisteds or toons, while playing as one of them."
+    },
+    {
+      "name": "Mains Bond: Astro/Pebble/Shelly/Sprout/Vee", 
+      "region": "Start", 
+      "category": ["Bonds"], 
+      "requires": "|Astro| OR |Pebble| OR |Shelly| OR |Sprout| OR |Vee|",
+      "hint_entrance": "Complete a floor with Astro, Pebble, Shelly, Sprout and Vee as either twisteds or toons, while playing as one of them."
+    },
+    {
+      "name": "Healers Bond: Cosmo/Ginger/Sprout/Teagan", 
+      "region": "Start", 
+      "category": ["Bonds"], 
+      "requires": "|Cosmo| OR |Ginger| OR |Sprout| OR |Teagan|",
+      "hint_entrance": "Complete a floor with Cosmo, Ginger, Sprout and Teagan as either twisteds or toons, while playing as one of them."
+    }
   ]
 }
