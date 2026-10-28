@@ -26,17 +26,18 @@
         }
     },
     "user": {
-        "Final_Floor_Num":{
+        "_Final_Floor_Num":{
             "type": "Range",
             "display_name": "Final Floor Number",
             "range_start": 1,
             "range_end": 100,
-            "default": 20,
+            "default": 25,
             "group": "Goal_Options",
             "description": [
                 "The selected final floor for the Beat Final Floor goal.",
-                "This value is saved in the generated slot data for future floor-progression logic.",
-                "Until floor progression is implemented, use this value as a reminder of the intended goal floor."
+                "This value is currently not used in logic and so is commented out.", 
+                "Value is only relevant when \"Final Floor Goal\" is selected.", 
+                "Logic should use relevant values of floors 43/45 or floor 6 for dyle/dandy goals."
             ]
         },
         "Number_Of_Toons_To_Reach_Goal":{
@@ -48,9 +49,8 @@
             "group": "Goal_Options",
             "description": [
                 "Here you can specify how many toons you must reach the goal with in order to win.",
-                "Used by Any and Random goal modes; Specific mode instead requires every toon in Toons_To_Win_With.",
-                "Because there are 40 toons in the game, you can set this value to any number between 1 and 40.",
-                "DEFAULT: 1"
+                "Used by Any and Random in \"Toons_Required\"; This is ignored if the \"Specific\" option is selected",
+                "Because there are 40 toons in the game, you can set this value to any number between 1 and 40."
             ]
         },
         "Toons_Required":{
@@ -64,8 +64,8 @@
             "default": 0,
             "group": "Goal_Options",
             "description": [
-                "Choose whether the goal requires a number of toons, a random selection of specific toons, or specifically named toons.",
-                "This option will adjust the amount of toons required to reach the goal and/or if specific toons are required"
+                "Choose whether the goal requires any toon/s, a random toon or set of toons, or specific named toons.", 
+                "Specific requires toons to be named below and ignores the \"Number_Of_Toons_To_Reach_Goal\" value."
             ]
         },
         "Toons_To_Win_With":{
@@ -73,16 +73,15 @@
             "display_name": "Toons Required for Goal (Specific)",
             "group": "Goal_Options",
             "values": [
-                "Blot", "Boxten", "Brightney", "Brusha", "Connie", "Cosmo", "Finn", "Flutter",
-                "Gigi", "Glisten", "Goob", "Looey", "Poppy", "Razzle&Dazzle", "Rodger", "Scraps",
-                "Shrimpo", "Squirm", "Teagan", "Tisha", "Toodles", "Waxwell", "Yatta", "Astro",
-                "Bassie", "Bobette", "Gourdy", "Pebble", "Shelly", "Sprout", "Vee", "Cocoa",
-                "Eggson", "Flyte", "Eclipse", "Ribecca", "Soulvester", "Coal_Toon", "Ginger", "Rudie"
+                "Astro", "Bassie", "Blot", "Bobette", "Boxten", "Brightney", "Brusha", "Coal_Toon", "Cocoa", "Connie", 
+                "Cosmo", "Eclipse", "Eggson", "Finn", "Flutter", "Flyte", "Gigi", "Ginger", "Glisten", "Goob", "Gourdy", 
+                "Looey", "Pebble", "Poppy", "Razzle_&_Dazzle", "Ribecca", "Rodger", "Rudie", "Scraps", "Shelly", 
+                "Shrimpo", "Soulvester", "Sprout", "Squirm", "Teagan", "Tisha", "Toodles", "Vee", "Waxwell", "Yatta" 
             ],
             "default": [],
             "description": [
                 "In Specific mode, every toon listed here is required at the victory location.",
-                "Enter toon names as a YAML list, for example: [Astro, Razzle&Dazzle, Pebble]."
+                "Enter toon names as a YAML list, for example: [Astro, Razzle_&_Dazzle, Pebble]."
             ]
         },
         "Starting_Toons":{
@@ -90,31 +89,33 @@
             "display_name": "Starting Toons",
             "group": "Starting_Options",
             "values": [
-                "Random",
-                "Blot", "Boxten", "Brightney", "Brusha", "Connie", "Cosmo", "Finn", "Flutter",
-                "Gigi", "Glisten", "Goob", "Looey", "Poppy", "Razzle&Dazzle", "Rodger", "Scraps",
-                "Shrimpo", "Squirm", "Teagan", "Tisha", "Toodles", "Waxwell", "Yatta", "Astro",
-                "Bassie", "Bobette", "Gourdy", "Pebble", "Shelly", "Sprout", "Vee", "Cocoa",
-                "Eggson", "Flyte", "Eclipse", "Ribecca", "Soulvester", "Coal_Toon", "Ginger", "Rudie"
+                "Astro", "Bassie", "Blot", "Bobette", "Boxten", "Brightney", "Brusha", "Coal_Toon", "Cocoa", "Connie", 
+                "Cosmo", "Eclipse", "Eggson", "Finn", "Flutter", "Flyte", "Gigi", "Ginger", "Glisten", "Goob", "Gourdy", 
+                "Looey", "Pebble", "Poppy", "Razzle_&_Dazzle", "Ribecca", "Rodger", "Rudie", "Scraps", "Shelly", 
+                "Shrimpo", "Soulvester", "Sprout", "Squirm", "Teagan", "Tisha", "Toodles", "Vee", "Waxwell", "Yatta" 
             ],
-            "default": ["Random"],
+            "default": ["Boxten", "Poppy"],
             "description": [
-                "Choose one or more toons to start with. The default is one random.",
-                "Can start with multiple toons for example:",
-                "[\"Razzle&Dazzle\", \"Random\"] Would start with Razzle&Dazzle and a random toon.",
-                "At least one starting toon is always required."
+                "Choose one or more toons to start with. Below is a list of toon names for quick reference if needed:",
+                ["Astro", "Bassie", "Blot", "Bobette", "Boxten", "Brightney", "Brusha", "Coal_Toon", "Cocoa", "Connie", 
+                "Cosmo", "Eclipse", "Eggson", "Finn", "Flutter", "Flyte", "Gigi", "Ginger", "Glisten", "Goob", "Gourdy", 
+                "Looey", "Pebble", "Poppy", "Razzle_&_Dazzle", "Ribecca", "Rodger", "Rudie", "Scraps", "Shelly", 
+                "Shrimpo", "Soulvester", "Sprout", "Squirm", "Teagan", "Tisha", "Toodles", "Vee", "Waxwell", "Yatta"], 
+                "If left blank, defaults to selecting a random toon to start with.",
+                "WARNING: It is recommended to only start with less than 5 toons, otherwise too much early logic."
             ]
         },
-        "Additional_Random_Start_Toons":{
+        "Random_Starting_Toons":{
             "type": "Range",
             "range_start": 0,
-            "range_end": 39,
+            "range_end": 40,
             "default": 0,
             "group": "Starting_Options",
             "description": [
-                "This setting is optional, for those who wish to state with more than 1 Random Starting Toon.",
-                "Use the previous option for starting_toons first.",
-                "You can add as many additonal toons to start with randomly chosen for you."
+                "This setting is optional, for those who wish to start with Random Toons.", 
+                "The previous option for starting toons is prioritised over this, and this option adds additional toons.",
+                "Because there are 40 toons in the game, you can set this value to any number between 0 and 40.",
+                "WARNING: It is recommended to only start with less than 5 toons, otherwise too much early logic."
             ]
         },
         "Include_Toons":{
@@ -122,32 +123,20 @@
             "display_name": "Include Toons",
             "group": "Content_Options",
             "values": [
-                "Blot", "Boxten", "Brightney", "Brusha", "Connie", "Cosmo", "Finn", "Flutter",
-                "Gigi", "Glisten", "Goob", "Looey", "Poppy", "Razzle&Dazzle", "Rodger", "Scraps",
-                "Shrimpo", "Squirm", "Teagan", "Tisha", "Toodles", "Waxwell", "Yatta", "Astro",
-                "Bassie", "Bobette", "Gourdy", "Pebble", "Shelly", "Sprout", "Vee", "Cocoa",
-                "Eggson", "Flyte", "Eclipse", "Ribecca", "Soulvester", "Coal_Toon", "Ginger", "Rudie"
+                "Astro", "Bassie", "Blot", "Bobette", "Boxten", "Brightney", "Brusha", "Coal_Toon", "Cocoa", "Connie", 
+                "Cosmo", "Eclipse", "Eggson", "Finn", "Flutter", "Flyte", "Gigi", "Ginger", "Glisten", "Goob", "Gourdy", 
+                "Looey", "Pebble", "Poppy", "Razzle_&_Dazzle", "Ribecca", "Rodger", "Rudie", "Scraps", "Shelly", 
+                "Shrimpo", "Soulvester", "Sprout", "Squirm", "Teagan", "Tisha", "Toodles", "Vee", "Waxwell", "Yatta" 
             ],
-            "default": [],
-            "description": [
-                "Optional include list, for if you don't own a lot of toons. Excludes toons that aren't listed",
-                "Leave empty to include all toons."
-            ]
-        },
-        "Exclude_Toons":{
-            "type": "OptionSet",
-            "display_name": "Exclude Toons",
-            "group": "Content_Options",
-            "values": [
-                "Blot", "Boxten", "Brightney", "Brusha", "Connie", "Cosmo", "Finn", "Flutter",
-                "Gigi", "Glisten", "Goob", "Looey", "Poppy", "Razzle&Dazzle", "Rodger", "Scraps",
-                "Shrimpo", "Squirm", "Teagan", "Tisha", "Toodles", "Waxwell", "Yatta", "Astro",
-                "Bassie", "Bobette", "Gourdy", "Pebble", "Shelly", "Sprout", "Vee", "Cocoa",
-                "Eggson", "Flyte", "Eclipse", "Ribecca", "Soulvester", "Coal_Toon", "Ginger", "Rudie"
+            "default": [
+                "Astro", "Bassie", "Blot", "Bobette", "Boxten", "Brightney", "Brusha", "Coal_Toon", "Cocoa", "Connie", 
+                "Cosmo", "Eclipse", "Eggson", "Finn", "Flutter", "Flyte", "Gigi", "Ginger", "Glisten", "Goob", "Gourdy", 
+                "Looey", "Pebble", "Poppy", "Razzle_&_Dazzle", "Ribecca", "Rodger", "Rudie", "Scraps", "Shelly", 
+                "Shrimpo", "Soulvester", "Sprout", "Squirm", "Teagan", "Tisha", "Toodles", "Vee", "Waxwell", "Yatta" 
             ],
-            "default": [],
             "description": [
-                "Optional exclusion list, for if you own most Toons. Exclusions take precedence over the include list."
+                "The inclusion list for what toons are available as items to receive.",
+                "Remove any you don't own. Leaving this field empty will include all toons."
             ]
         },
         "Include_Trinkets":{
@@ -155,59 +144,57 @@
             "display_name": "Include Trinkets",
             "group": "Content_Options",
             "values": [
-                "Coin_Purse", "Research_Map", "Wrench", "Machine_Manual", "Speedy_Shoes", "Speedometer",
-                "Thinking_Cap", "Alarm", "Thermos", "Pull_Toy", "Pop_Pack", "Megaphone", "Cooler",
-                "Cardboard_Armor", "Blue_Bandana", "Paint_Bucket", "Sweet_Charm", "Clown_Horn", "Pink_Bow",
-                "Brick", "Feather_Duster", "Party_Popper", "Spare_Bulb", "Ghost_Snakes_In_A_Can",
-                "Fishing_Rod", "Ribbon_Spool", "Magnifying_Glass", "Fancy_Purse", "Dog_Plush", "Mime_Makeup",
-                "Diary", "Lucky_Coin", "Vanity_Mirror", "Friendship_Bracelet", "Crayon_Set", "Stress_Ball",
-                "Cherished_Blanket", "Star_Pillow", "Bone", "Participation_Award", "Savory_Charm",
-                "Vees_Remote", "Dandy_Plush", "Egg_Radar", "Bone_Needle_And_Thread", "Festive_Lights",
-                "Scrapbook", "Peppermint_Icing", "Soul_Sword", "Glazed_Fondant_Bag", "Coal_Trinket",
-                "Moon_Pack_Heirloom", "Whispering_Flower", "Toy_Kit", "Memory_Locket", "Blushy_Bat", "Train_Whistle"
+                "Alarm", "Blue_Bandana", "Blushy_Bat", "Bone", "Bone_Needle_And_Thread", "Brick", "Cardboard_Armor", 
+                "Cherished_Blanket", "Clown_Horn", "Coal_Trinket", "Coin_Purse", "Cooler", "Crayon_Set", "Dandy_Plush", 
+                "Diary", "Dog_Plush", "Egg_Radar", "Fancy_Purse", "Feather_Duster", "Festive_Lights", "Fishing_Rod", 
+                "Friendship_Bracelet", "Ghost_Snakes_In_A_Can", "Glazed_Fondant_Bag", "Lucky_Coin", "Machine_Manual", 
+                "Magnifying_Glass", "Megaphone", "Memory_Locket", "Mime_Makeup", "Moon_Pack_Heirloom", "Paint_Bucket", 
+                "Participation_Award", "Party_Popper", "Peppermint_Icing", "Pink_Bow", "Pop_Pack", "Pull_Toy", 
+                "Research_Map", "Ribbon_Spool", "Savory_Charm", "Scrapbook", "Soul_Sword", "Spare_Bulb", "Speedometer", 
+                "Speedy_Shoes", "Star_Pillow", "Stress_Ball", "Sweet_Charm", "Thermos", "Thinking_Cap", "Toy_Kit", 
+                "Train_Whistle", "Vanity_Mirror", "Vees_Remote", "Whispering_Flower", "Wrench" 
             ],
-            "default": [],
+            "default": [
+                "Alarm", "Blue_Bandana", "Blushy_Bat", "Bone", "Bone_Needle_And_Thread", "Brick", "Cardboard_Armor", 
+                "Cherished_Blanket", "Clown_Horn", "Coal_Trinket", "Coin_Purse", "Cooler", "Crayon_Set", "Dandy_Plush", 
+                "Diary", "Dog_Plush", "Egg_Radar", "Fancy_Purse", "Feather_Duster", "Festive_Lights", "Fishing_Rod", 
+                "Friendship_Bracelet", "Ghost_Snakes_In_A_Can", "Glazed_Fondant_Bag", "Lucky_Coin", "Machine_Manual", 
+                "Magnifying_Glass", "Megaphone", "Memory_Locket", "Mime_Makeup", "Moon_Pack_Heirloom", "Paint_Bucket", 
+                "Participation_Award", "Party_Popper", "Peppermint_Icing", "Pink_Bow", "Pop_Pack", "Pull_Toy", 
+                "Research_Map", "Ribbon_Spool", "Savory_Charm", "Scrapbook", "Soul_Sword", "Spare_Bulb", "Speedometer", 
+                "Speedy_Shoes", "Star_Pillow", "Stress_Ball", "Sweet_Charm", "Thermos", "Thinking_Cap", "Toy_Kit", 
+                "Train_Whistle", "Vanity_Mirror", "Vees_Remote", "Whispering_Flower", "Wrench" 
+            ],
             "description": [
-                "Optional inclusion list, for if you don't own a lot of trinkets. Leave empty to include all toons."
+                "The inclusion list for what trinkets are available as items to receive.",
+                "Remove any you don't own. Leaving this field empty will include all trinkets."
             ]
         },
-        "Exclude_Trinkets":{
-            "type": "OptionSet",
-            "display_name": "Exclude Trinkets",
+        "Enable_Lethal_Twisteds":{
+            "type": "Toggle",
+            "display_name": "Enable Lethal Twisted Location Checks",
+            "default": true,
             "group": "Content_Options",
-            "values": [
-                "Coin_Purse", "Research_Map", "Wrench", "Machine_Manual", "Speedy_Shoes", "Speedometer",
-                "Thinking_Cap", "Alarm", "Thermos", "Pull_Toy", "Pop_Pack", "Megaphone", "Cooler",
-                "Cardboard_Armor", "Blue_Bandana", "Paint_Bucket", "Sweet_Charm", "Clown_Horn", "Pink_Bow",
-                "Brick", "Feather_Duster", "Party_Popper", "Spare_Bulb", "Ghost_Snakes_In_A_Can",
-                "Fishing_Rod", "Ribbon_Spool", "Magnifying_Glass", "Fancy_Purse", "Dog_Plush", "Mime_Makeup",
-                "Diary", "Lucky_Coin", "Vanity_Mirror", "Friendship_Bracelet", "Crayon_Set", "Stress_Ball",
-                "Cherished_Blanket", "Star_Pillow", "Bone", "Participation_Award", "Savory_Charm",
-                "Vees_Remote", "Dandy_Plush", "Egg_Radar", "Bone_Needle_And_Thread", "Festive_Lights",
-                "Scrapbook", "Peppermint_Icing", "Soul_Sword", "Glazed_Fondant_Bag", "Coal_Trinket",
-                "Moon_Pack_Heirloom", "Whispering_Flower", "Toy_Kit", "Memory_Locket", "Blushy_Bat", "Train_Whistle"
-            ],
-            "default": [],
             "description": [
-                "Optional exclusion list, for if you own most Trinkets. Exclusions take precedence over the include list."
+                "Enable or disable the Lethal Twisted location checks."
             ]
         },
-        "Event_Twisteds":{
+        "Enable_Event_Twisteds":{
             "type": "Choice",
             "display_name": "Enable Event Twisted Location Checks",
             "default": "none",
             "values": {
-                "None": 0,
-                "Christmas": 1,
-                "Easter": 2,
-                "Halloween": 3
+                "none": 0,
+                "christmas": 1,
+                "easter": 2,
+                "halloween": 3
             },
             "group": "Content_Options",
             "description": [
                 "Enable or disable the seasonal event Twisted location checks.",
                 "This only affects the event Twisted checks, not event toons or trinkets.",
-                "Currently the only seasonal events are \"Christmas\", \"Easter\", and \"Hallowee\".",
-                "Leave as \"None\" to only stick to original twisteds."
+                "Currently the only seasonal events are \"christmas\", \"easter\", and \"halloween\".",
+                "Leave on \"none\" to only stick to original twisteds."
             ]
         },
         "_commented_out_option":{

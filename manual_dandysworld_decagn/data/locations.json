@@ -2,1712 +2,269 @@
   "$schema": "https://github.com/ManualForArchipelago/Manual/raw/main/schemas/Manual.locations.schema.json",
   "data": [
     {
-      "name": "Beat Final Floor",
-      "victory": true,
-      "region": "Goal",
-      "category": [
-        "Win",
-        "Floor"
-      ],
-      "requires": ""
-    },
-    {
-      "name": "Beat Dyle Floor",
-      "victory": true,
-      "region": "Goal",
-      "category": [
-        "Win",
-        "Floor"
-      ],
-      "requires": ""
-    },
-    {
-      "name": "Blot(3000)",
-      "region": "Shop6",
-      "category": [
-        "Toon",
-        "Shop"
-      ],
-      "requires": "|Looey| AND |Yatta|"
-    },
-    {
-      "name": "Boxten(250)",
-      "region": "Start",
-      "category": [
-        "Toon",
-        "Shop"
-      ],
-      "requires": ""
-    },
-    {
-      "region": "Shop2",
-      "name": "Brightney(1250)",
-      "category": [
-        "Toon",
-        "Shop"
-      ],
-      "requires": ""
-    },
-    {
-      "name": "Brusha(1250)",
-      "region": "Shop2",
-      "category": [
-        "Toon",
-        "Shop"
-      ],
-      "requires": "|Paint_Bucket|"
-    },
-    {
-      "region": "Shop4",
-      "name": "Connie(2000)",
-      "category": [
-        "Toon",
-        "Shop"
-      ],
-      "requires": "|Ghost_Snakes_In_A_Can|"
-    },
-    {
-      "name": "Cosmo(1000)",
-      "region": "Shop2",
-      "category": [
-        "Toon",
-        "Shop"
-      ],
-      "requires": "|@Toon:4|"
-    },
-    {
-      "name": "Finn(500)",
-      "region": "Shop1",
-      "category": [
-        "Toon",
-        "Shop"
-      ],
-      "requires": ""
-    },
-    {
-      "name": "Flutter(1300)",
-      "region": "Shop2",
-      "category": [
-        "Toon",
-        "Shop"
-      ],
-      "requires": "|Diary|"
-    },
-    {
-      "name": "Gigi(2000)",
-      "region": "Shop4",
-      "category": [
-        "Toon",
-        "Shop"
-      ],
-      "requires": "|Lucky_Coin|"
-    },
-    {
-      "name": "Glisten(2500)",
-      "region": "Shop5",
-      "category": [
-        "Toon",
-        "Shop"
-      ],
-      "requires": "|Vanity_Mirror|"
-    },
-    {
-      "name": "Goob(1750)",
-      "region": "Shop3",
-      "category": [
-        "Toon",
-        "Shop"
-      ],
-      "requires": "|Scraps|"
-    },
-    {
-      "name": "Looey(1000)",
-      "region": "Shop2",
-      "category": [
-        "Toon",
-        "Shop"
-      ],
-      "requires": "|Poppy|"
-    },
-    {
-      "name": "Razzle&Dazzle(2000)",
-      "region": "Shop4",
-      "category": [
-        "Toon",
-        "Shop"
-      ],
-      "requires": ""
-    },
-    {
-      "name": "Rodger(1000)",
-      "region": "Shop2",
-      "category": [
-        "Toon",
-        "Shop"
-      ],
-      "requires": "|@Trinket:1|"
-    },
-    {
-      "name": "Scraps(1500)",
-      "region": "Shop3",
-      "category": [
-        "Toon",
-        "Shop"
-      ],
-      "requires": "|Friendship_Bracelet|"
-    },
-    {
-      "name": "Shrimpo(100)",
-      "region": "Start",
-      "category": [
-        "Toon",
-        "Shop"
-      ],
-      "requires": ""
-    },
-    {
-      "name": "Squirm(3000)",
-      "region": "Shop6",
-      "category": [
-        "Toon",
-        "Shop"
-      ],
-      "requires": "|Stress_Ball|"
-    },
-    {
-      "name": "Teagan(1250)",
-      "region": "Shop2",
-      "category": [
-        "Toon",
-        "Shop"
-      ],
-      "requires": ""
-    },
-    {
-      "region": "Shop1",
-      "name": "Tisha(500)",
-      "category": [
-        "Toon",
-        "Shop"
-      ],
-      "requires": ""
-    },
-    {
-      "name": "Toodles(350)",
-      "region": "Start",
-      "category": [
-        "Toon",
-        "Shop"
-      ],
-      "requires": ""
-    },
-    {
-      "name": "Waxwell(3500)",
-      "region": "Shop7",
-      "category": [
-        "Toon",
-        "Shop"
-      ],
-      "requires": "|Goob| AND |Friendship_Bracelet|"
-    },
-    {
-      "name": "Yatta(2000)",
-      "region": "Shop4",
-      "category": [
-        "Toon",
-        "Shop"
-      ],
-      "requires": "|@Toon:15| AND |Party_Popper|"
-    },
-    {
-      "name": "Astro(5000)",
-      "region": "Shop10",
-      "category": [
-        "Main",
-        "Toon",
-        "Shop"
-      ],
-      "requires": "|Star_Pillow| AND |Dandy_Plush|"
-    },
-    {
-      "name": "Bassie(5500)",
-      "region": "Shop11",
-      "category": [
-        "Easter",
-        "Main",
-        "Toon",
-        "Shop"
-      ],
-      "requires": "|Whispering_Flower|"
-    },
-    {
-      "name": "Bobette(5500)",
-      "region": "Shop11",
-      "category": [
-        "Christmas",
-        "Main",
-        "Toon",
-        "Shop"
-      ],
-      "requires": "|Toy_Kit|"
-    },
-    {
-      "name": "Gourdy(5500)",
-      "region": "Shop11",
-      "category": [
-        "Halloween",
-        "Main",
-        "Toon",
-        "Shop"
-      ],
-      "requires": "|Memory_Locket|"
-    },
-    {
-      "name": "Pebble(3750)",
-      "region": "Shop7",
-      "category": [
-        "Main",
-        "Toon",
-        "Shop"
-      ],
-      "requires": "|Toodles| AND |Bone|"
-    },
-    {
-      "name": "Shelly(4250)",
-      "region": "Shop8",
-      "category": [
-        "Main",
-        "Toon",
-        "Shop"
-      ],
-      "requires": "|Tisha| AND |Participation_Award|"
-    },
-    {
-      "name": "Sprout(4500)",
-      "region": "Shop9",
-      "category": [
-        "Main",
-        "Toon",
-        "Shop"
-      ],
-      "requires": "|Cosmo| AND |Savory_Charm|"
-    },
-    {
-      "name": "Vee(4500)",
-      "region": "Shop9",
-      "category": [
-        "Main",
-        "Toon",
-        "Shop"
-      ],
-      "requires": "|Brightney| AND |Vees_Remote|"
-    },
-    {
-      "name": "Cocoa(1500)",
-      "region": "Shop3",
-      "category": [
-        "Easter",
-        "Toon",
-        "Shop"
-      ],
-      "requires": "|@Trinket:5|"
-    },
-    {
-      "name": "Eggson(300)",
-      "region": "Start",
-      "category": [
-        "Easter",
-        "Toon",
-        "Shop"
-      ],
-      "requires": ""
-    },
-    {
-      "name": "Flyte(700)",
-      "region": "Shop1",
-      "category": [
-        "Easter",
-        "Toon",
-        "Shop"
-      ],
-      "requires": "|Scrapbook|"
-    },
-    {
-      "name": "Eclipse(1500)",
-      "region": "Shop3",
-      "category": [
-        "Halloween",
-        "Toon",
-        "Shop"
-      ],
-      "requires": "|@Toon:5|"
-    },
-    {
-      "name": "Ribecca(300)",
-      "region": "Start",
-      "category": [
-        "Halloween",
-        "Toon",
-        "Shop"
-      ],
-      "requires": ""
-    },
-    {
-      "name": "Soulvester(700)",
-      "region": "Shop1",
-      "category": [
-        "Halloween",
-        "Toon",
-        "Shop"
-      ],
-      "requires": "|Soul_Sword|"
-    },
-    {
-      "name": "Coal(1500)",
-      "region": "Shop3",
-      "category": [
-        "Christmas",
-        "Toon",
-        "Shop"
-      ],
-      "requires": "|@Trinket:15|"
-    },
-    {
-      "name": "Ginger(700)",
-      "region": "Shop1",
-      "category": [
-        "Christmas",
-        "Toon",
-        "Shop"
-      ],
-      "requires": "|Peppermint_Icing|"
-    },
-    {
-      "name": "Rude(300)",
-      "region": "Start",
-      "category": [
-        "Christmas",
-        "Toon",
-        "Shop"
-      ],
-      "requires": ""
-    },
-    {
-      "name": "Blot_Mini_Goal",
-      "region": "Start",
-      "victory": false,
-      "category": [
-        "Toon_Goal"
-      ],
-      "requires": "|Blot|"
-    },
-    {
-      "name": "Boxten_Mini_Goal",
-      "region": "Start",
-      "category": [
-        "Toon_Goal"
-      ],
-      "requires": "|Boxten|"
-    },
-    {
-      "region": "Start",
-      "name": "Brightney_Mini_Goal",
-      "category": [
-        "Toon_Goal"
-      ],
-      "requires": "|Brightney|"
-    },
-    {
-      "region": "Start",
-      "name": "Brusha_Mini_Goal",
-      "category": [
-        "Toon_Goal"
-      ],
-      "requires": "|Brusha|"
-    },
-    {
-      "name": "Connie_Mini_Goal",
-      "region": "Start",
-      "category": [
-        "Toon_Goal"
-      ],
-      "requires": "|Connie|"
-    },
-    {
-      "name": "Cosmo_Mini_Goal",
-      "region": "Start",
-      "category": [
-        "Toon_Goal"
-      ],
-      "requires": "|Cosmo|"
-    },
-    {
-      "name": "Finn_Mini_Goal",
-      "region": "Start",
-      "category": [
-        "Toon_Goal"
-      ],
-      "requires": "|Finn|"
-    },
-    {
-      "name": "Flutter_Mini_Goal",
-      "region": "Start",
-      "category": [
-        "Toon_Goal"
-      ],
-      "requires": "|Flutter|"
-    },
-    {
-      "name": "Gigi_Mini_Goal",
-      "region": "Start",
-      "category": [
-        "Toon_Goal"
-      ],
-      "requires": "|Gigi|"
-    },
-    {
-      "name": "Glisten_Mini_Goal",
-      "region": "Start",
-      "category": [
-        "Toon_Goal"
-      ],
-      "requires": "|Glisten|"
-    },
-    {
-      "name": "Goob_Mini_Goal",
-      "region": "Start",
-      "category": [
-        "Toon_Goal"
-      ],
-      "requires": "|Goob|"
-    },
-    {
-      "name": "Looey_Mini_Goal",
-      "region": "Start",
-      "category": [
-        "Toon_Goal"
-      ],
-      "requires": "|Looey|"
-    },
-    {
-      "name": "Poppy_Mini_Goal",
-      "region": "Start",
-      "category": [
-        "Toon_Goal"
-      ],
-      "requires": "|Poppy|"
-    },
-    {
-      "name": "Razzle&Dazzle_Mini_Goal",
-      "region": "Start",
-      "category": [
-        "Toon_Goal"
-      ],
-      "requires": "|Razzle&Dazzle|"
-    },
-    {
-      "name": "Rodger_Mini_Goal",
-      "region": "Start",
-      "category": [
-        "Toon_Goal"
-      ],
-      "requires": "|Rodger|"
-    },
-    {
-      "name": "Scraps_Mini_Goal",
-      "region": "Start",
-      "category": [
-        "Toon_Goal"
-      ],
-      "requires": "|Scraps|"
-    },
-    {
-      "name": "Shrimpo_Mini_Goal",
-      "region": "Start",
-      "category": [
-        "Toon_Goal"
-      ],
-      "requires": "|Shrimpo|"
-    },
-    {
-      "name": "Squirm_Mini_Goal",
-      "region": "Start",
-      "category": [
-        "Toon_Goal"
-      ],
-      "requires": "|Squirm|"
-    },
-    {
-      "name": "Teagan_Mini_Goal",
-      "region": "Start",
-      "category": [
-        "Toon_Goal"
-      ],
-      "requires": "|Teagan|"
-    },
-    {
-      "name": "Tisha_Mini_Goal",
-      "region": "Start",
-      "category": [
-        "Toon_Goal"
-      ],
-      "requires": "|Tisha|"
-    },
-    {
-      "name": "Toodles_Mini_Goal",
-      "region": "Start",
-      "category": [
-        "Toon_Goal"
-      ],
-      "requires": "|Toodles|"
-    },
-    {
-      "name": "Waxwell_Mini_Goal",
-      "region": "Start",
-      "category": [
-        "Toon_Goal"
-      ],
-      "requires": "|Waxwell|"
-    },
-    {
-      "name": "Yatta_Mini_Goal",
-      "region": "Start",
-      "category": [
-        "Toon_Goal"
-      ],
-      "requires": "|Yatta|"
-    },
-    {
-      "name": "Astro_Mini_Goal",
-      "region": "Start",
-      "category": [
-        "Toon_Goal"
-      ],
-      "requires": "|Astro|"
-    },
-    {
-      "name": "Bassie_Mini_Goal",
-      "region": "Start",
-      "category": [
-        "Easter",
-        "Toon_Goal"
-      ],
-      "requires": "|Bassie|"
-    },
-    {
-      "name": "Bobette_Mini_Goal",
-      "region": "Start",
-      "category": [
-        "Christmas",
-        "Toon_Goal"
-      ],
-      "requires": "|Bobette|"
-    },
-    {
-      "name": "Gourdy_Mini_Goal",
-      "region": "Start",
-      "category": [
-        "Halloween",
-        "Toon_Goal"
-      ],
-      "requires": "|Gourdy|"
-    },
-    {
-      "name": "Pebble_Mini_Goal",
-      "region": "Start",
-      "category": [
-        "Toon_Goal"
-      ],
-      "requires": "|Pebble|"
-    },
-    {
-      "name": "Shelly_Mini_Goal",
-      "region": "Start",
-      "category": [
-        "Toon_Goal"
-      ],
-      "requires": "|Shelly|"
-    },
-    {
-      "name": "Sprout_Mini_Goal",
-      "region": "Start",
-      "category": [
-        "Toon_Goal"
-      ],
-      "requires": "|Sprout|"
-    },
-    {
-      "name": "Vee_Mini_Goal",
-      "region": "Start",
-      "category": [
-        "Toon_Goal"
-      ],
-      "requires": "|Vee|"
-    },
-    {
-      "name": "Cocoa_Mini_Goal",
-      "region": "Start",
-      "category": [
-        "Easter",
-        "Toon_Goal"
-      ],
-      "requires": "|Cocoa|"
-    },
-    {
-      "name": "Eggson_Mini_Goal",
-      "region": "Start",
-      "category": [
-        "Easter",
-        "Toon_Goal"
-      ],
-      "requires": "|Eggson|"
-    },
-    {
-      "name": "Flyte_Mini_Goal",
-      "region": "Start",
-      "category": [
-        "Easter",
-        "Toon_Goal"
-      ],
-      "requires": "|Flyte|"
-    },
-    {
-      "name": "Eclipse_Mini_Goal",
-      "region": "Start",
-      "category": [
-        "Halloween",
-        "Toon_Goal"
-      ],
-      "requires": "|Eclipse|"
-    },
-    {
-      "name": "Ribecca_Mini_Goal",
-      "region": "Start",
-      "category": [
-        "Halloween",
-        "Toon_Goal"
-      ],
-      "requires": "|Ribecca|"
-    },
-    {
-      "name": "Soulvester_Mini_Goal",
-      "region": "Start",
-      "category": [
-        "Halloween",
-        "Toon_Goal"
-      ],
-      "requires": "|Soulvester|"
-    },
-    {
-      "name": "Coal_Toon_Mini_Goal",
-      "region": "Start",
-      "category": [
-        "Christmas",
-        "Toon_Goal"
-      ],
-      "requires": "|Coal_Toon|"
-    },
-    {
-      "name": "Ginger_Mini_Goal",
-      "region": "Start",
-      "category": [
-        "Christmas",
-        "Toon_Goal"
-      ],
-      "requires": "|Ginger|"
-    },
-    {
-      "name": "Rudie_Mini_Goal",
-      "region": "Start",
-      "category": [
-        "Christmas",
-        "Toon_Goal"
-      ],
-      "requires": "|Rudie|"
-    },
-    {
-      "name": "Dandy_Floor",
-      "region": "Start",
-      "category": [
-        "Floor"
-      ],
-      "requires": ""
-    },
-    {
-      "name": "Coin_Purse(200)",
-      "region": "Start",
-      "category": [
-        "Trinket",
-        "Shop"
-      ],
-      "requires": ""
-    },
-    {
-      "name": "Research_Map(200)",
-      "region": "Start",
-      "category": [
-        "Trinket",
-        "Shop"
-      ],
-      "requires": ""
-    },
-    {
-      "name": "Wrench(325)",
-      "region": "Start",
-      "category": [
-        "Trinket",
-        "Shop"
-      ],
-      "requires": ""
-    },
-    {
-      "name": "Machine_Manual(350)",
-      "region": "Start",
-      "category": [
-        "Trinket",
-        "Shop"
-      ],
-      "requires": ""
-    },
-    {
-      "name": "Speedy_Shoes(400)",
-      "region": "Start",
-      "category": [
-        "Trinket",
-        "Shop"
-      ],
-      "requires": ""
-    },
-    {
-      "name": "Speedometer(450)",
-      "region": "Start",
-      "category": [
-        "Trinket",
-        "Shop"
-      ],
-      "requires": ""
-    },
-    {
-      "name": "Thinking_Cap(750)",
-      "region": "Shop1",
-      "category": [
-        "Trinket",
-        "Shop"
-      ],
-      "requires": ""
-    },
-    {
-      "name": "Alarm(1000)",
-      "region": "Shop2",
-      "category": [
-        "Trinket",
-        "Shop"
-      ],
-      "requires": ""
-    },
-    {
-      "name": "Thermos(1250)",
-      "region": "Shop2",
-      "category": [
-        "Trinket",
-        "Shop"
-      ],
-      "requires": ""
-    },
-    {
-      "name": "Pull_Toy(1250)",
-      "region": "Shop2",
-      "category": [
-        "Trinket",
-        "Shop"
-      ],
-      "requires": "|@Trinket:1|"
-    },
-    {
-      "name": "Pop_Pack(1500)",
-      "region": "Shop3",
-      "category": [
-        "Trinket",
-        "Shop"
-      ],
-      "requires": ""
-    },
-    {
-      "name": "Megaphone(1850)",
-      "region": "Shop3",
-      "category": [
-        "Trinket",
-        "Shop"
-      ],
-      "requires": ""
-    },
-    {
-      "name": "Cooler(2250)",
-      "region": "Shop4",
-      "category": [
-        "Trinket",
-        "Shop"
-      ],
-      "requires": ""
-    },
-    {
-      "name": "Cardboard_Armor(2750)",
-      "region": "Shop5",
-      "category": [
-        "Trinket",
-        "Shop"
-      ],
-      "requires": "|Friendship_Bracelet| AND |Crayon_Set|"
-    },
-    {
-      "name": "Coin_Purse_Mini_Goal",
-      "region": "Start",
-      "category": [
-        "Trinket_Goal"
-      ],
-      "requires": "|Coin_Purse|"
-    },
-    {
-      "name": "Research_Map_Mini_Goal",
-      "region": "Start",
-      "category": [
-        "Trinket_Goal"
-      ],
-      "requires": "|Research_Map|"
-    },
-    {
-      "region": "Lethal",
-      "name": "Twisted_Dyle",
-      "category": [
-        "Lethal",
-        "Twisted"
-      ],
-      "requires": ""
-    },
-    {
-      "name": "Twisted_Dandy",
-      "region": "Lethal",
-      "category": [
-        "Lethal",
-        "Twisted"
-      ],
-      "requires": ""
-    },
-    {
-      "name": "Twisted_Vee",
-      "region": "Main",
-      "category": [
-        "Main",
-        "Twisted"
-      ],
-      "requires": ""
-    },
-    {
-      "name": "Twisted_Sprout",
-      "region": "Main",
-      "category": [
-        "Main",
-        "Twisted"
-      ],
-      "requires": ""
-    },
-    {
-      "name": "Twisted_Shelly",
-      "region": "Main",
-      "category": [
-        "Main",
-        "Twisted"
-      ],
-      "requires": ""
-    },
-    {
-      "name": "Twisted_Pebble",
-      "region": "Main",
-      "category": [
-        "Main",
-        "Twisted"
-      ],
-      "requires": ""
-    },
-    {
-      "name": "Twisted_Gourdy",
-      "region": "Main",
-      "category": [
-        "Halloween",
-        "Main",
-        "Twisted"
-      ],
-      "requires": ""
-    },
-    {
-      "name": "Twisted_Bobette",
-      "region": "Main",
-      "category": [
-        "Christmas",
-        "Main",
-        "Twisted"
-      ],
-      "requires": ""
-    },
-    {
-      "name": "Twisted_Bassie",
-      "region": "Main",
-      "category": [
-        "Easter",
-        "Main",
-        "Twisted"
-      ],
-      "requires": ""
-    },
-    {
-      "name": "Twisted_Astro",
-      "region": "Main",
-      "category": [
-        "Main",
-        "Twisted"
-      ],
-      "requires": ""
-    },
-    {
-      "name": "Twisted_Waxwell",
-      "region": "Rare",
-      "category": [
-        "Twisted",
-        "Rare"
-      ],
-      "requires": ""
-    },
-    {
-      "name": "Twisted_Squirm",
-      "region": "Rare",
-      "category": [
-        "Twisted",
-        "Rare"
-      ],
-      "requires": ""
-    },
-    {
-      "name": "Twisted_Scraps",
-      "region": "Rare",
-      "category": [
-        "Twisted",
-        "Rare"
-      ],
-      "requires": ""
-    },
-    {
-      "region": "Rare",
-      "name": "Twisted_Goob",
-      "category": [
-        "Twisted",
-        "Rare"
-      ],
-      "requires": ""
-    },
-    {
-      "name": "Twisted_Glisten",
-      "region": "Rare",
-      "category": [
-        "Twisted",
-        "Rare"
-      ],
-      "requires": ""
-    },
-    {
-      "name": "Twisted_Gigi",
-      "region": "Rare",
-      "category": [
-        "Twisted",
-        "Rare"
-      ],
-      "requires": ""
-    },
-    {
-      "name": "Twisted_Flutter",
-      "region": "Rare",
-      "category": [
-        "Twisted",
-        "Rare"
-      ],
-      "requires": ""
-    },
-    {
-      "region": "Rare",
-      "name": "Twisted_Eclipse",
-      "category": [
-        "Halloween",
-        "Twisted",
-        "Rare"
-      ],
-      "requires": ""
-    },
-    {
-      "name": "Twisted_Cocoa",
-      "region": "Rare",
-      "category": [
-        "Easter",
-        "Twisted",
-        "Rare"
-      ],
-      "requires": ""
-    },
-    {
-      "name": "Twisted_Coal",
-      "region": "Rare",
-      "category": [
-        "Christmas",
-        "Twisted",
-        "Rare"
-      ],
-      "requires": ""
-    },
-    {
-      "region": "Rare",
-      "name": "Twisted_Blot",
-      "category": [
-        "Twisted",
-        "Rare"
-      ],
-      "requires": ""
-    },
-    {
-      "name": "Twisted_Toodles",
-      "region": "Uncommon",
-      "category": [
-        "Twisted",
-        "Uncommon"
-      ],
-      "requires": ""
-    },
-    {
-      "name": "Twisted_Teagan",
-      "region": "Uncommon",
-      "category": [
-        "Twisted",
-        "Uncommon"
-      ],
-      "requires": ""
-    },
-    {
-      "name": "Twisted_Soulvester",
-      "region": "Uncommon",
-      "category": [
-        "Halloween",
-        "Twisted",
-        "Uncommon"
-      ],
-      "requires": ""
-    },
-    {
-      "name": "Twisted_Rodger",
-      "region": "Uncommon",
-      "category": [
-        "Twisted",
-        "Uncommon"
-      ],
-      "requires": ""
-    },
-    {
-      "region": "Uncommon",
-      "name": "Twisted_Razzle&Dazzle",
-      "category": [
-        "Twisted",
-        "Uncommon"
-      ],
-      "requires": ""
-    },
-    {
-      "name": "Twisted_Ginger",
-      "region": "Uncommon",
-      "category": [
-        "Christmas",
-        "Twisted",
-        "Uncommon"
-      ],
-      "requires": ""
-    },
-    {
-      "region": "Uncommon",
-      "name": "Twisted_Flyte",
-      "category": [
-        "Easter",
-        "Twisted",
-        "Uncommon"
-      ],
-      "requires": ""
-    },
-    {
-      "name": "Twisted_Finn",
-      "region": "Uncommon",
-      "category": [
-        "Twisted",
-        "Uncommon"
-      ],
-      "requires": ""
-    },
-    {
-      "region": "Uncommon",
-      "name": "Twisted_Connie",
-      "category": [
-        "Twisted",
-        "Uncommon"
-      ],
-      "requires": ""
-    },
-    {
-      "region": "Uncommon",
-      "name": "Twisted_Brightney",
-      "category": [
-        "Twisted",
-        "Uncommon"
-      ],
-      "requires": ""
-    },
-    {
-      "name": "Twisted_Yatta",
-      "region": "Start",
-      "category": [
-        "Twisted",
-        "Common"
-      ],
-      "requires": ""
-    },
-    {
-      "name": "Twisted_Tisha",
-      "region": "Start",
-      "category": [
-        "Twisted",
-        "Common"
-      ],
-      "requires": ""
-    },
-    {
-      "name": "Twisted_Shrimpo",
-      "region": "Start",
-      "category": [
-        "Twisted",
-        "Common"
-      ],
-      "requires": ""
-    },
-    {
-      "name": "Twisted_Rudie",
-      "region": "Start",
-      "category": [
-        "Christmas",
-        "Twisted",
-        "Common"
-      ],
-      "requires": ""
-    },
-    {
-      "name": "Twisted_Ribecca",
-      "region": "Start",
-      "category": [
-        "Halloween",
-        "Twisted",
-        "Common"
-      ],
-      "requires": ""
-    },
-    {
-      "region": "Start",
-      "name": "Twisted_Poppy",
-      "category": [
-        "Twisted",
-        "Common"
-      ],
-      "requires": ""
-    },
-    {
-      "name": "Twisted_Looey",
-      "region": "Start",
-      "category": [
-        "Twisted",
-        "Common"
-      ],
-      "requires": ""
-    },
-    {
-      "region": "Start",
-      "name": "Twisted_Eggson",
-      "category": [
-        "Easter",
-        "Twisted",
-        "Common"
-      ],
-      "requires": ""
-    },
-    {
-      "region": "Start",
-      "name": "Twisted_Cosmo",
-      "category": [
-        "Twisted",
-        "Common"
-      ],
-      "requires": ""
-    },
-    {
-      "name": "Twisted_Brusha",
-      "region": "Start",
-      "category": [
-        "Twisted",
-        "Common"
-      ],
-      "requires": ""
-    },
-    {
-      "name": "Twisted_Boxten",
-      "region": "Start",
-      "category": [
-        "Twisted",
-        "Common"
-      ],
-      "requires": ""
-    },
-    {
-      "name": "Wrench_Mini_Goal",
-      "region": "Start",
-      "category": [
-        "Trinket_Goal"
-      ],
-      "requires": "|Wrench|"
-    },
-    {
-      "name": "Machine_Manual_Mini_Goal",
-      "region": "Start",
-      "category": [
-        "Trinket_Goal"
-      ],
-      "requires": "|Machine_Manual|"
-    },
-    {
-      "name": "Speedy_Shoes_Mini_Goal",
-      "region": "Start",
-      "category": [
-        "Trinket_Goal"
-      ],
-      "requires": "|Speedy_Shoes|"
-    },
-    {
-      "name": "Speedometer_Mini_Goal",
-      "region": "Start",
-      "category": [
-        "Trinket_Goal"
-      ],
-      "requires": "|Speedometer|"
-    },
-    {
-      "name": "Thinking_Cap_Mini_Goal",
-      "region": "Start",
-      "category": [
-        "Trinket_Goal"
-      ],
-      "requires": "|Thinking_Cap|"
-    },
-    {
-      "name": "Alarm_Mini_Goal",
-      "region": "Start",
-      "category": [
-        "Trinket_Goal"
-      ],
-      "requires": "|Alarm|"
-    },
-    {
-      "name": "Thermos_Mini_Goal",
-      "region": "Start",
-      "category": [
-        "Trinket_Goal"
-      ],
-      "requires": "|Thermos|"
-    },
-    {
-      "name": "Pull_Toy_Mini_Goal",
-      "region": "Start",
-      "category": [
-        "Trinket_Goal"
-      ],
-      "requires": "|Pull_Toy|"
-    },
-    {
-      "name": "Pop_Pack_Mini_Goal",
-      "region": "Start",
-      "category": [
-        "Trinket_Goal"
-      ],
-      "requires": "|Pop_Pack|"
-    },
-    {
-      "name": "Megaphone_Mini_Goal",
-      "region": "Start",
-      "category": [
-        "Trinket_Goal"
-      ],
-      "requires": "|Megaphone|"
-    },
-    {
-      "name": "Cooler_Mini_Goal",
-      "region": "Start",
-      "category": [
-        "Trinket_Goal"
-      ],
-      "requires": "|Cooler|"
-    },
-    {
-      "name": "Cardboard_Armor_Mini_Goal",
-      "region": "Start",
-      "category": [
-        "Trinket_Goal"
-      ],
-      "requires": "|Cardboard_Armor|"
-    },
-    {
-      "name": "Egg_Radar_Mini_Goal",
-      "region": "Start",
-      "category": [
-        "Easter",
-        "Trinket_Goal"
-      ],
-      "requires": "|Egg_Radar|"
-    },
-    {
-      "name": "Bone_Needle_And_Thread_Mini_Goal",
-      "region": "Start",
-      "category": [
-        "Halloween",
-        "Trinket_Goal"
-      ],
-      "requires": "|Bone_Needle_And_Thread|"
-    },
-    {
-      "name": "Festive_Lights_Mini_Goal",
-      "region": "Start",
-      "category": [
-        "Christmas",
-        "Trinket_Goal"
-      ],
-      "requires": "|Festive_Lights|"
-    },
-    {
-      "name": "Scrapbook_Mini_Goal",
-      "region": "Start",
-      "category": [
-        "Easter",
-        "Trinket_Goal"
-      ],
-      "requires": "|Scrapbook|"
-    },
-    {
-      "name": "Peppermint_Icing_Mini_Goal",
-      "region": "Start",
-      "category": [
-        "Christmas",
-        "Trinket_Goal"
-      ],
-      "requires": "|Peppermint_Icing|"
-    },
-    {
-      "name": "Soul_Sword_Mini_Goal",
-      "region": "Start",
-      "category": [
-        "Halloween",
-        "Trinket_Goal"
-      ],
-      "requires": "|Soul_Sword|"
-    },
-    {
-      "name": "Glazed_Fondant_Bag_Mini_Goal",
-      "region": "Start",
-      "category": [
-        "Easter",
-        "Trinket_Goal"
-      ],
-      "requires": "|Glazed_Fondant_Bag|"
-    },
-    {
-      "name": "Coal_Trinket_Mini_Goal",
-      "region": "Start",
-      "category": [
-        "Christmas",
-        "Trinket_Goal"
-      ],
-      "requires": "|Coal_Trinket|"
-    },
-    {
-      "name": "Moon_Pack_Heirloom_Mini_Goal",
-      "region": "Start",
-      "category": [
-        "Halloween",
-        "Trinket_Goal"
-      ],
-      "requires": "|Moon_Pack_Heirloom|"
-    },
-    {
-      "name": "Whispering_Flower_Mini_Goal",
-      "region": "Start",
-      "category": [
-        "Easter",
-        "Trinket_Goal"
-      ],
-      "requires": "|Whispering_Flower|"
-    },
-    {
-      "name": "Toy_Kit_Mini_Goal",
-      "region": "Start",
-      "category": [
-        "Christmas",
-        "Trinket_Goal"
-      ],
-      "requires": "|Toy_Kit|"
-    },
-    {
-      "name": "Memory_Locket_Mini_Goal",
-      "region": "Start",
-      "category": [
-        "Halloween",
-        "Trinket_Goal"
-      ],
-      "requires": "|Memory_Locket|"
-    },
-    {
-      "name": "Blue_Bandana_Mini_Goal",
-      "region": "Start",
-      "category": [
-        "Trinket_Goal"
-      ],
-      "requires": "|Blue_Bandana|"
-    },
-    {
-      "name": "Paint_Bucket_Mini_Goal",
-      "region": "Start",
-      "category": [
-        "Trinket_Goal"
-      ],
-      "requires": "|Paint_Bucket|"
-    },
-    {
-      "name": "Sweet_Charm_Mini_Goal",
-      "region": "Start",
-      "category": [
-        "Trinket_Goal"
-      ],
-      "requires": "|Sweet_Charm|"
-    },
-    {
-      "name": "Clown_Horn_Mini_Goal",
-      "region": "Start",
-      "category": [
-        "Trinket_Goal"
-      ],
-      "requires": "|Clown_Horn|"
-    },
-    {
-      "name": "Pink_Bow_Mini_Goal",
-      "region": "Start",
-      "category": [
-        "Trinket_Goal"
-      ],
-      "requires": "|Pink_Bow|"
-    },
-    {
-      "name": "Brick_Mini_Goal",
-      "region": "Start",
-      "category": [
-        "Trinket_Goal"
-      ],
-      "requires": "|Brick|"
-    },
-    {
-      "name": "Feather_Duster_Mini_Goal",
-      "region": "Start",
-      "category": [
-        "Trinket_Goal"
-      ],
-      "requires": "|Feather_Duster|"
-    },
-    {
-      "name": "Party_Popper_Mini_Goal",
-      "region": "Start",
-      "category": [
-        "Trinket_Goal"
-      ],
-      "requires": "|Party_Popper|"
-    },
-    {
-      "name": "Spare_Bulb_Mini_Goal",
-      "region": "Start",
-      "category": [
-        "Trinket_Goal"
-      ],
-      "requires": "|Spare_Bulb|"
-    },
-    {
-      "name": "Ghost_Snakes_In_A_Can_Mini_Goal",
-      "region": "Start",
-      "category": [
-        "Trinket_Goal"
-      ],
-      "requires": "|Ghost_Snakes_In_A_Can|"
-    },
-    {
-      "name": "Fishing_Rod_Mini_Goal",
-      "region": "Start",
-      "category": [
-        "Trinket_Goal"
-      ],
-      "requires": "|Fishing_Rod|"
-    },
-    {
-      "name": "Ribbon_Spool_Mini_Goal",
-      "region": "Start",
-      "category": [
-        "Trinket_Goal"
-      ],
-      "requires": "|Ribbon_Spool|"
-    },
-    {
-      "name": "Magnifying_Glass_Mini_Goal",
-      "region": "Start",
-      "category": [
-        "Trinket_Goal"
-      ],
-      "requires": "|Magnifying_Glass|"
-    },
-    {
-      "name": "Fancy_Purse_Mini_Goal",
-      "region": "Start",
-      "category": [
-        "Trinket_Goal"
-      ],
-      "requires": "|Fancy_Purse|"
-    },
-    {
-      "name": "Dog_Plush_Mini_Goal",
-      "region": "Start",
-      "category": [
-        "Trinket_Goal"
-      ],
-      "requires": "|Dog_Plush|"
-    },
-    {
-      "name": "Mime_Makeup_Mini_Goal",
-      "region": "Start",
-      "category": [
-        "Trinket_Goal"
-      ],
-      "requires": "|Mime_Makeup|"
-    },
-    {
-      "name": "Diary_Mini_Goal",
-      "region": "Start",
-      "category": [
-        "Trinket_Goal"
-      ],
-      "requires": "|Diary|"
-    },
-    {
-      "name": "Lucky_Coin_Mini_Goal",
-      "region": "Start",
-      "category": [
-        "Trinket_Goal"
-      ],
-      "requires": "|Lucky_Coin|"
-    },
-    {
-      "name": "Vanity_Mirror_Mini_Goal",
-      "region": "Start",
-      "category": [
-        "Trinket_Goal"
-      ],
-      "requires": "|Vanity_Mirror|"
-    },
-    {
-      "name": "Friendship_Bracelet_Mini_Goal",
-      "region": "Start",
-      "category": [
-        "Trinket_Goal"
-      ],
-      "requires": "|Friendship_Bracelet|"
-    },
-    {
-      "name": "Crayon_Set_Mini_Goal",
-      "region": "Start",
-      "category": [
-        "Trinket_Goal"
-      ],
-      "requires": "|Crayon_Set|"
-    },
-    {
-      "name": "Stress_Ball_Mini_Goal",
-      "region": "Start",
-      "category": [
-        "Trinket_Goal"
-      ],
-      "requires": "|Stress_Ball|"
-    },
-    {
-      "name": "Cherished_Blanket_Mini_Goal",
-      "region": "Start",
-      "category": [
-        "Trinket_Goal"
-      ],
-      "requires": "|Cherished_Blanket|"
-    },
-    {
-      "name": "Star_Pillow_Mini_Goal",
-      "region": "Start",
-      "category": [
-        "Trinket_Goal"
-      ],
-      "requires": "|Star_Pillow|"
-    },
-    {
-      "name": "Bone_Mini_Goal",
-      "region": "Start",
-      "category": [
-        "Trinket_Goal"
-      ],
-      "requires": "|Bone|"
-    },
-    {
-      "name": "Participation_Award_Mini_Goal",
-      "region": "Start",
-      "category": [
-        "Trinket_Goal"
-      ],
-      "requires": "|Participation_Award|"
-    },
-    {
-      "name": "Savory_Charm_Mini_Goal",
-      "region": "Start",
-      "category": [
-        "Trinket_Goal"
-      ],
-      "requires": "|Savory_Charm|"
-    },
-    {
-      "name": "Vees_Remote_Mini_Goal",
-      "region": "Start",
-      "category": [
-        "Trinket_Goal"
-      ],
-      "requires": "|Vees_Remote|"
-    },
-    {
-      "name": "Dandy_Plush_Mini_Goal",
-      "region": "Start",
-      "category": [
-        "Trinket_Goal"
-      ],
-      "requires": "|Dandy_Plush|"
-    },
-    {
-      "name": "Train_Whistle_Mini_Goal",
-      "region": "Start",
-      "category": [
-        "Trinket_Goal"
-      ],
-      "requires": "|Train_Whistle|"
-    }
+      "comment": "Minimum floor is set in options to complete.",
+      "name": "Beat Final Floor", 
+      "victory": true, 
+      "region": "Goal", 
+      "category": [
+        "Win"
+      ]
+    },
+    {
+      "comment": "Minimum floor is 43(45 if there is event) to complete.",
+      "name": "Beat Dyle Floor", 
+      "victory": true, 
+      "region": "Goal", 
+      "category": [
+        "Win"
+      ]
+    },
+
+    {
+      "comment": "Minimum floor is 6 to complete.",
+      "name": "Beat Dandy Floor", 
+      "victory": true, 
+      "region": "Goal", 
+      "category": [
+        "Win"
+      ]
+    },
+
+
+
+    {"_comment": [
+      "Toon/Trinket Shops Description:",
+
+      "The following are the shop toons with their associated costs.",
+      "Each is unlocked by obtaining Progressive_Toon_Shop_Unlock items.",
+      "The costs here help to both evaluate total ichor to be put into the,",
+      "the filler pool, and also with the overlay client for the game (if made).",
+      "Also, hint_entrance, dont_place_item_category, and prehint info,",
+      "should be added via code to save time (cuz they all have the same info)"]},
+
+    {"name": "Buy Boxten", "cost": 250, "region": "Common", "category": ["Shop"], "hint_entrance": "Costs 250 Ichor", "dont_place_item_category": ["Ichor"], "prehint": true},
+    {"name": "Buy Brusha", "cost": 1250, "region": "Common", "category": ["Shop"]},
+    {"name": "Buy Cosmo", "cost": 1000, "region": "Common", "category": ["Shop"]},
+    {"name": "Buy Looey", "cost": 1000, "region": "Common", "category": ["Shop"]},
+    {"name": "Buy Poppy", "cost": 250, "region": "Common", "category": ["Shop"]},
+    {"name": "Buy Shrimpo", "cost": 100, "region": "Common", "category": ["Shop"]},
+    {"name": "Buy Tisha", "cost": 500, "region": "Common", "category": ["Shop"]},
+    {"name": "Buy Yatta", "cost": 2000, "region": "Common", "category": ["Shop"]},
+
+    {"name": "Buy Brightney", "cost": 1250, "region": "Uncommon", "category": ["Shop"]},
+    {"name": "Buy Connie", "cost": 2000, "region": "Uncommon", "category": ["Shop"]},
+    {"name": "Buy Finn", "cost": 500, "region": "Uncommon", "category": ["Shop"]},
+    {"name": "Buy Razzle_&_Dazzle", "cost": 2000, "region": "Uncommon", "category": ["Shop"]},
+    {"name": "Buy Rodger", "cost": 1000, "region": "Uncommon", "category": ["Shop"]},
+    {"name": "Buy Teagan", "cost": 1250, "region": "Uncommon", "category": ["Shop"]},
+    {"name": "Buy Toodles", "cost": 350, "region": "Uncommon", "category": ["Shop"]},
+
+    {"name": "Buy Blot", "cost": 3000, "region": "Rare", "category": ["Shop"]},
+    {"name": "Buy Flutter", "cost": 1300, "region": "Rare", "category": ["Shop"]},
+    {"name": "Buy Gigi", "cost": 2000, "region": "Rare", "category": ["Shop"]},
+    {"name": "Buy Glisten", "cost": 2500, "region": "Rare", "category": ["Shop"]},
+    {"name": "Buy Goob", "cost": 1750, "region": "Rare", "category": ["Shop"]},
+    {"name": "Buy Scraps", "cost": 1500, "region": "Rare", "category": ["Shop"]},
+    {"name": "Buy Squirm", "cost": 3000, "region": "Rare", "category": ["Shop"]},
+    {"name": "Buy Waxwell", "cost": 3500, "region": "Rare", "category": ["Shop"]},
+    
+    {"name": "Buy Astro", "cost": 5000, "region": "Main", "category": ["Shop"]},
+    {"name": "Buy Pebble", "cost": 3750, "region": "Main", "category": ["Shop"]},
+    {"name": "Buy Shelly", "cost": 4250, "region": "Main", "category": ["Shop"]},
+    {"name": "Buy Sprout", "cost": 4500, "region": "Main", "category": ["Shop"]},
+    {"name": "Buy Vee", "cost": 4500, "region": "Main", "category": ["Shop"]},
+
+    {"name": "Buy Rudie", "cost": 300, "region": "Common", "category": ["Shop"]},
+    {"name": "Buy Ginger", "cost": 700, "region": "Uncommon", "category": ["Shop"]},
+    {"name": "Buy Coal", "cost": 1500, "region": "Rare", "category": ["Shop"]},
+    {"name": "Buy Bobette", "cost": 5500, "region": "Main", "category": ["Shop"]},
+
+    {"name": "Buy Eggson", "cost": 300, "region": "Common", "category": ["Shop"]},
+    {"name": "Buy Flyte", "cost": 700, "region": "Uncommon", "category": ["Shop"]},
+    {"name": "Buy Cocoa", "cost": 1500, "region": "Rare", "category": ["Shop"]},
+    {"name": "Buy Bassie", "cost": 5500, "region": "Main", "category": ["Shop"]},
+
+    {"name": "Buy Ribecca", "cost": 300, "region": "Common", "category": ["Shop"]},
+    {"name": "Buy Soulvester", "cost": 700, "region": "Uncommon", "category": ["Shop"]},
+    {"name": "Buy Eclipse", "cost": 1500, "region": "Rare", "category": ["Shop"]},
+    {"name": "Buy Gourdy", "cost": 5500, "region": "Main", "category": ["Shop"]},
+
+    {"name": "Buy Alarm", "region": "Trinket_Shop", "cost": 1000, "category": ["Shop"]},
+    {"name": "Buy Cardboard_Armor", "region": "Trinket_Shop", "cost": 2750, "category": ["Shop"]},
+    {"name": "Buy Coin_Purse", "region": "Trinket_Shop", "cost": 200, "category": ["Shop"]},
+    {"name": "Buy Cooler", "region": "Trinket_Shop", "cost": 2250, "category": ["Shop"]},
+    {"name": "Buy Machine_Manual", "region": "Trinket_Shop", "cost": 350, "category": ["Shop"]},
+    {"name": "Buy Megaphone", "region": "Trinket_Shop", "cost": 1850, "category": ["Shop"]},
+    {"name": "Buy Pop_Pack", "region": "Trinket_Shop", "cost": 1500, "category": ["Shop"]},
+    {"name": "Buy Pull_Toy", "region": "Trinket_Shop", "cost": 1250, "category": ["Shop"]},
+    {"name": "Buy Research_Map", "region": "Trinket_Shop", "cost": 200, "category": ["Shop"]},
+    {"name": "Buy Speedy_Shoes", "region": "Trinket_Shop", "cost": 400, "category": ["Shop"]},
+    {"name": "Buy Speedometer", "region": "Trinket_Shop", "cost": 450, "category": ["Shop"]},
+    {"name": "Buy Thermos", "region": "Trinket_Shop", "cost": 1250, "category": ["Shop"]},
+    {"name": "Buy Thinking_Cap", "region": "Trinket_Shop", "cost": 750, "category": ["Shop"]},
+    {"name": "Buy Wrench", "region": "Trinket_Shop", "cost": 325, "category": ["Shop"]},
+    
+
+
+
+
+    {"_comment": [
+      "Goal description:",
+      "The following toons/trinkets mini_goals (for now reach floor 10)",
+      "require the related toon/trinket in order to reach the location."]},
+
+    {"name": "Astro Goal","region": "Start", "category": ["Toon_Goal"], "requires": "|Astro|", "hint_entrance": "Reach floor 10 while playing as Astro."},
+    {"name": "Blot Goal", "region": "Start", "category": ["Toon_Goal"], "requires": "|Blot|"},
+    {"name": "Boxten Goal", "region": "Start", "category": ["Toon_Goal"], "requires": "|Boxten|"},
+    {"name": "Brightney Goal", "region": "Start", "category": ["Toon_Goal"], "requires": "|Brightney|"},
+    {"name": "Brusha Goal", "region": "Start", "category": ["Toon_Goal"], "requires": "|Brusha|"},
+    {"name": "Connie Goal", "region": "Start", "category": ["Toon_Goal"], "requires": "|Connie|"},
+    {"name": "Cosmo Goal", "region": "Start", "category": ["Toon_Goal"], "requires": "|Cosmo|"},
+    {"name": "Finn Goal", "region": "Start", "category": ["Toon_Goal"], "requires": "|Finn|"},
+    {"name": "Flutter Goal", "region": "Start", "category": ["Toon_Goal"], "requires": "|Flutter|"},
+    {"name": "Gigi Goal", "region": "Start", "category": ["Toon_Goal"], "requires": "|Gigi|"},
+    {"name": "Glisten Goal", "region": "Start", "category": ["Toon_Goal"], "requires": "|Glisten|"},
+    {"name": "Goob Goal", "region": "Start", "category": ["Toon_Goal"], "requires": "|Goob|"},
+    {"name": "Looey Goal", "region": "Start", "category": ["Toon_Goal"], "requires": "|Looey|"},
+    {"name": "Pebble Goal", "region": "Start", "category": ["Toon_Goal"], "requires": "|Pebble|"},
+    {"name": "Poppy Goal", "region": "Start", "category": ["Toon_Goal"], "requires": "|Poppy|"},
+    {"name": "Razzle_&_Dazzle Goal", "region": "Start", "category": ["Toon_Goal"], "requires": "|Razzle_&_Dazzle|"},
+    {"name": "Rodger Goal", "region": "Start", "category": ["Toon_Goal"], "requires": "|Rodger|"},
+    {"name": "Scraps Goal", "region": "Start", "category": ["Toon_Goal"], "requires": "|Scraps|"},
+    {"name": "Shelly Goal", "region": "Start", "category": ["Toon_Goal"], "requires": "|Shelly|"},
+    {"name": "Shrimpo Goal", "region": "Start", "category": ["Toon_Goal"], "requires": "|Shrimpo|"},
+    {"name": "Sprout Goal", "region": "Start", "category": ["Toon_Goal"], "requires": "|Sprout|"},
+    {"name": "Squirm Goal", "region": "Start", "category": ["Toon_Goal"], "requires": "|Squirm|"},
+    {"name": "Teagan Goal", "region": "Start", "category": ["Toon_Goal"], "requires": "|Teagan|"},
+    {"name": "Tisha Goal", "region": "Start", "category": ["Toon_Goal"], "requires": "|Tisha|"},
+    {"name": "Toodles Goal", "region": "Start", "category": ["Toon_Goal"], "requires": "|Toodles|"},
+    {"name": "Vee Goal", "region": "Start", "category": ["Toon_Goal"], "requires": "|Vee|"},
+    {"name": "Waxwell Goal", "region": "Start", "category": ["Toon_Goal"], "requires": "|Waxwell|"},
+    {"name": "Yatta Goal", "region": "Start", "category": ["Toon_Goal"], "requires": "|Yatta|"},
+
+    {"name": "Bobette Goal", "region": "Start", "category": ["Toon_Goal"], "requires": "|Bobette|"},
+    {"name": "Coal_Toon Goal", "region": "Start", "category": ["Toon_Goal"], "requires": "|Coal_Toon|"},
+    {"name": "Ginger Goal", "region": "Start", "category": ["Toon_Goal"], "requires": "|Ginger|"},
+    {"name": "Rudie Goal", "region": "Start", "category": ["Toon_Goal"], "requires": "|Rudie|"},
+
+    {"name": "Bassie Goal", "region": "Start", "category": ["Toon_Goal"], "requires": "|Bassie|"},
+    {"name": "Cocoa Goal", "region": "Start", "category": ["Toon_Goal"], "requires": "|Cocoa|"},
+    {"name": "Eggson Goal", "region": "Start", "category": ["Toon_Goal"], "requires": "|Eggson|"},
+    {"name": "Flyte Goal", "region": "Start", "category": ["Toon_Goal"], "requires": "|Flyte|"},
+
+    {"name": "Eclipse Goal", "region": "Start", "category": ["Toon_Goal"], "requires": "|Eclipse|"},
+    {"name": "Gourdy Goal", "region": "Start", "category": ["Toon_Goal"], "requires": "|Gourdy|"},
+    {"name": "Ribecca Goal", "region": "Start", "category": ["Toon_Goal"], "requires": "|Ribecca|"},
+    {"name": "Soulvester Goal", "region": "Start", "category": ["Toon_Goal"], "requires": "|Soulvester|"},
+
+
+
+    {"name": "Alarm Goal", "region": "Start", "category": ["Trinket_Goal"], "requires": "|Alarm|", "hint_entrance": "Reach floor 10 with Alarm equipped."},
+    {"name": "Brick Goal", "region": "Start", "category": ["Trinket_Goal"], "requires": "|Brick|"},
+    {"name": "Blue_Bandana Goal", "region": "Start", "category": ["Trinket_Goal"], "requires": "|Blue_Bandana|"},
+    {"name": "Bone Goal", "region": "Start", "category": ["Trinket_Goal"], "requires": "|Bone|"},
+    {"name": "Bone_Needle_And_Thread Goal", "region": "Start", "category": ["Trinket_Goal"], "requires": "|Bone_Needle_And_Thread|"},
+    {"name": "Cardboard_Armor Goal", "region": "Start", "category": ["Trinket_Goal"], "requires": "|Cardboard_Armor|"},
+    {"name": "Cherished_Blanket Goal", "region": "Start", "category": ["Trinket_Goal"], "requires": "|Cherished_Blanket|"},
+    {"name": "Clown_Horn Goal", "region": "Start", "category": ["Trinket_Goal"], "requires": "|Clown_Horn|"},
+    {"name": "Coal_Trinket Goal", "region": "Start", "category": ["Trinket_Goal"], "requires": "|Coal_Trinket|"},
+    {"name": "Coin_Purse Goal", "region": "Start", "category": ["Trinket_Goal"], "requires": "|Coin_Purse|"},
+    {"name": "Cooler Goal", "region": "Start", "category": ["Trinket_Goal"], "requires": "|Cooler|"},
+    {"name": "Crayon_Set Goal", "region": "Start", "category": ["Trinket_Goal"], "requires": "|Crayon_Set|"},
+    {"name": "Dandy_Plush Goal", "region": "Start", "category": ["Trinket_Goal"], "requires": "|Dandy_Plush|"},
+    {"name": "Diary Goal", "region": "Start", "category": ["Trinket_Goal"], "requires": "|Diary|"},
+    {"name": "Dog_Plush Goal", "region": "Start", "category": ["Trinket_Goal"], "requires": "|Dog_Plush|"},
+    {"name": "Egg_Radar Goal", "region": "Start", "category": ["Trinket_Goal"], "requires": "|Egg_Radar|"},
+    {"name": "Fancy_Purse Goal", "region": "Start", "category": ["Trinket_Goal"], "requires": "|Fancy_Purse|"},
+    {"name": "Feather_Duster Goal", "region": "Start", "category": ["Trinket_Goal"], "requires": "|Feather_Duster|"},
+    {"name": "Festive_Lights Goal", "region": "Start", "category": ["Trinket_Goal"], "requires": "|Festive_Lights|"},
+    {"name": "Fishing_Rod Goal", "region": "Start", "category": ["Trinket_Goal"], "requires": "|Fishing_Rod|"},
+    {"name": "Friendship_Bracelet Goal", "region": "Start", "category": ["Trinket_Goal"], "requires": "|Friendship_Bracelet|"},
+    {"name": "Ghost_Snakes_In_A_Can Goal", "region": "Start", "category": ["Trinket_Goal"], "requires": "|Ghost_Snakes_In_A_Can|"},
+    {"name": "Glazed_Fondant_Bag Goal", "region": "Start", "category": ["Trinket_Goal"], "requires": "|Glazed_Fondant_Bag|"},
+    {"name": "Lucky_Coin Goal", "region": "Start", "category": ["Trinket_Goal"], "requires": "|Lucky_Coin|"},
+    {"name": "Machine_Manual Goal", "region": "Start", "category": ["Trinket_Goal"], "requires": "|Machine_Manual|"},
+    {"name": "Magnifying_Glass Goal", "region": "Start", "category": ["Trinket_Goal"], "requires": "|Magnifying_Glass|"},
+    {"name": "Megaphone Goal", "region": "Start", "category": ["Trinket_Goal"], "requires": "|Megaphone|"},
+    {"name": "Memory_Locket Goal", "region": "Start", "category": ["Trinket_Goal"], "requires": "|Memory_Locket|"},
+    {"name": "Mime_Makeup Goal", "region": "Start", "category": ["Trinket_Goal"], "requires": "|Mime_Makeup|"},
+    {"name": "Moon_Pack_Heirloom Goal", "region": "Start", "category": ["Trinket_Goal"], "requires": "|Moon_Pack_Heirloom|"},
+    {"name": "Paint_Bucket Goal", "region": "Start", "category": ["Trinket_Goal"], "requires": "|Paint_Bucket|"},
+    {"name": "Participation_Award Goal", "region": "Start", "category": ["Trinket_Goal"], "requires": "|Participation_Award|"},
+    {"name": "Party_Popper Goal", "region": "Start", "category": ["Trinket_Goal"], "requires": "|Party_Popper|"},
+    {"name": "Peppermint_Icing Goal", "region": "Start", "category": ["Trinket_Goal"], "requires": "|Peppermint_Icing|"},
+    {"name": "Pink_Bow Goal", "region": "Start", "category": ["Trinket_Goal"], "requires": "|Pink_Bow|"},
+    {"name": "Pop_Pack Goal", "region": "Start", "category": ["Trinket_Goal"], "requires": "|Pop_Pack|"},
+    {"name": "Pull_Toy Goal", "region": "Start", "category": ["Trinket_Goal"], "requires": "|Pull_Toy|"},
+    {"name": "Research_Map Goal", "region": "Start", "category": ["Trinket_Goal"], "requires": "|Research_Map|"},
+    {"name": "Ribbon_Spool Goal", "region": "Start", "category": ["Trinket_Goal"], "requires": "|Ribbon_Spool|"},
+    {"name": "Savory_Charm Goal", "region": "Start", "category": ["Trinket_Goal"], "requires": "|Savory_Charm|"},
+    {"name": "Scrapbook Goal", "region": "Start", "category": ["Trinket_Goal"], "requires": "|Scrapbook|"},
+    {"name": "Soul_Sword Goal", "region": "Start", "category": ["Trinket_Goal"], "requires": "|Soul_Sword|"},
+    {"name": "Spare_Bulb Goal", "region": "Start", "category": ["Trinket_Goal"], "requires": "|Spare_Bulb|"},
+    {"name": "Speedometer Goal", "region": "Start", "category": ["Trinket_Goal"], "requires": "|Speedometer|"},
+    {"name": "Speedy_Shoes Goal", "region": "Start", "category": ["Trinket_Goal"], "requires": "|Speedy_Shoes|"},
+    {"name": "Star_Pillow Goal", "region": "Start", "category": ["Trinket_Goal"], "requires": "|Star_Pillow|"},
+    {"name": "Stress_Ball Goal", "region": "Start", "category": ["Trinket_Goal"], "requires": "|Stress_Ball|"},
+    {"name": "Sweet_Charm Goal", "region": "Start", "category": ["Trinket_Goal"], "requires": "|Sweet_Charm|"},
+    {"name": "Thermos Goal", "region": "Start", "category": ["Trinket_Goal"], "requires": "|Thermos|"},
+    {"name": "Thinking Goal", "region": "Start", "category": ["Trinket_Goal"], "requires": "|Thinking_Cap|"},
+    {"name": "Toy_Kit Goal", "region": "Start", "category": ["Trinket_Goal"], "requires": "|Toy_Kit|"},
+    {"name": "Train_Whistle Goal", "region": "Start", "category": ["Trinket_Goal"], "requires": "|Train_Whistle|"},
+    {"name": "Vanity_Mirror Goal", "region": "Start", "category": ["Trinket_Goal"], "requires": "|Vanity_Mirror|"},
+    {"name": "Vees_Remote Goal", "region": "Start", "category": ["Trinket_Goal"], "requires": "|Vees_Remote|"},
+    {"name": "Whispering_Flower Goal", "region": "Start", "category": ["Trinket_Goal"], "requires": "|Whispering_Flower|"},
+    {"name": "Wrench Goal", "region": "Start", "category": ["Trinket_Goal"], "requires": "|Wrench|"},
+
+
+
+
+
+    {"name": "Twisted Astro", "region": "Start", "category": ["Twisted"], "hint_entrance": "Complete a floor where you were spotted by twisted Astro."},
+    {"name": "Twisted Blot", "region": "Start", "category": ["Twisted"]},
+    {"name": "Twisted Boxten", "region": "Start", "category": ["Twisted"]},
+    {"name": "Twisted Brightney", "region": "Start", "category": ["Twisted"]},
+    {"name": "Twisted Brusha", "region": "Start", "category": ["Twisted"]},
+    {"name": "Twisted Connie", "region": "Start", "category": ["Twisted"]},
+    {"name": "Twisted Cosmo", "region": "Start", "category": ["Twisted"]},
+    {"name": "Twisted Finn", "region": "Start", "category": ["Twisted"]},
+    {"name": "Twisted Flutter", "region": "Start", "category": ["Twisted"]},
+    {"name": "Twisted Gigi", "region": "Start", "category": ["Twisted"]},
+    {"name": "Twisted Glisten", "region": "Start", "category": ["Twisted"]},
+    {"name": "Twisted Goob", "region": "Start", "category": ["Twisted"]},
+    {"name": "Twisted Looey", "region": "Start", "category": ["Twisted"]},
+    {"name": "Twisted Pebble", "region": "Start", "category": ["Twisted"]},
+    {"name": "Twisted Poppy", "region": "Start", "category": ["Twisted"]},
+    {"name": "Twisted Scraps", "region": "Start", "category": ["Twisted"]},
+    {"name": "Twisted Shelly", "region": "Start", "category": ["Twisted"]},
+    {"name": "Twisted Shrimpo", "region": "Start", "category": ["Twisted"]},
+    {"name": "Twisted Sprout", "region": "Start", "category": ["Twisted"]},
+    {"name": "Twisted Squirm", "region": "Start", "category": ["Twisted"]},
+    {"name": "Twisted Teagan", "region": "Start", "category": ["Twisted"]},
+    {"name": "Twisted Tisha", "region": "Start", "category": ["Twisted"]},
+    {"name": "Twisted Toodles", "region": "Start", "category": ["Twisted"]},
+    {"name": "Twisted Razzle_&_Dazzle", "region": "Start", "category": ["Twisted"]},
+    {"name": "Twisted Rodger", "region": "Start", "category": ["Twisted"]},
+    {"name": "Twisted Vee", "region": "Start", "category": ["Twisted"]},
+    {"name": "Twisted Waxwell", "region": "Start", "category": ["Twisted"]},
+    {"name": "Twisted Yatta", "region": "Start", "category": ["Twisted"]},
+
+    {"name": "Twisted Dandy", "region": "Start", "category": ["Twisted"], "twisted_toggle": "Lethal"},
+    {"name": "Twisted Dyle", "region": "Start", "category": ["Twisted"], "twisted_toggle": "Lethal"},
+
+    {"name": "Twisted Rudie", "region": "Start", "category": ["Twisted"], "twisted_toggle": "Christmas"},
+    {"name": "Twisted Ginger", "region": "Start", "category": ["Twisted"], "twisted_toggle": "Christmas"},
+    {"name": "Twisted Coal", "region": "Start", "category": ["Twisted"], "twisted_toggle": "Christmas"},
+    {"name": "Twisted Bobette", "region": "Start", "category": ["Twisted"], "twisted_toggle": "Christmas"},
+
+    {"name": "Twisted Eggson", "region": "Start", "category": ["Twisted"], "twisted_toggle": "Easter"},
+    {"name": "Twisted Flyte", "region": "Start", "category": ["Twisted"], "twisted_toggle": "Easter"},
+    {"name": "Twisted Cocoa", "region": "Start", "category": ["Twisted"], "twisted_toggle": "Easter"},
+    {"name": "Twisted Bassie", "region": "Start", "category": ["Twisted"], "twisted_toggle": "Easter"},
+
+    {"name": "Twisted Ribecca", "region": "Start", "category": ["Twisted"], "twisted_toggle": "Halloween"},
+    {"name": "Twisted Soulvester", "region": "Start", "category": ["Twisted"], "twisted_toggle": "Halloween"},
+    {"name": "Twisted Eclipse", "region": "Start", "category": ["Twisted"], "twisted_toggle": "Halloween"},
+    {"name": "Twisted Gourdy", "region": "Start", "category": ["Twisted"], "twisted_toggle": "Halloween"}
   ]
 }

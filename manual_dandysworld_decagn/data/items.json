@@ -120,7 +120,7 @@
     },
     {
       "count": 1,
-      "name": "Razzle&Dazzle",
+      "name": "Razzle_&_Dazzle",
       "category": [
         "Collect",
         "Toon"
@@ -939,20 +939,47 @@
       "useful": true
     },
     {
-      "count": "60",
-      "name": "Ichor(500)",
+      "count": "10",
+      "name": "Small_Ichor",
+      "amount": 250,
       "category": [
         "Ichor"
       ],
       "filler": true
     },
     {
-      "count": "34",
-      "name": "Ichor(1000)",
+      "count": "10",
+      "name": "Medium_Ichor",
+      "amount": 500,
       "category": [
         "Ichor"
       ],
       "filler": true
+    },
+    {
+      "count": "10",
+      "name": "Large_Ichor",
+      "amount": 1000,
+      "category": [
+        "Ichor"
+      ],
+      "filler": true
+    },
+    {
+      "count": 4,
+      "name": "Progressive_Toon_Shop_Unlock",
+      "category": [
+        "Shop"
+      ],
+      "progression": true
+    },
+    {
+      "count": 1,
+      "name": "Trinket_Shop_Unlock",
+      "category": [
+        "Shop"
+      ],
+      "progression": true
     }
   ]
 }

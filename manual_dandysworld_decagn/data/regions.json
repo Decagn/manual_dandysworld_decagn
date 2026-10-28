@@ -3,103 +3,44 @@
   "Start": {
     "starting": true,
     "connects_to": [
-      "Shop1",
-      "Uncommon"
+      "Common",
+      "Trinket_Shop",
+      "Goal"
     ],
     "requires": ""
   },
-  "Goal": {
-    "connects_to": [],
-    "requires": "|@Collect:50|"
-  },
-  "Shop1": {
+  "Common": {
     "connects_to": [
-      "Shop2"
+      "Uncommon"
     ],
-    "requires": "|@Collect:3|"
-  },
-  "Shop2": {
-    "connects_to": [
-      "Shop3"
-    ],
-    "requires": "|@Collect:5|"
-  },
-  "Shop3": {
-    "connects_to": [
-      "Shop4"
-    ],
-    "requires": "|@Collect:7|"
-  },
-  "Shop4": {
-    "connects_to": [
-      "Shop5"
-    ],
-    "requires": "|@Collect:9|"
-  },
-  "Shop5": {
-    "connects_to": [
-      "Shop6"
-    ],
-    "requires": "|@Collect:11|"
-  },
-  "Shop6": {
-    "connects_to": [
-      "Shop7"
-    ],
-    "requires": "|@Collect:13|"
-  },
-  "Shop7": {
-    "connects_to": [
-      "Shop8"
-    ],
-    "requires": "|@Collect:15|"
-  },
-  "Shop8": {
-    "connects_to": [
-      "Shop9"
-    ],
-    "requires": "|@Collect:17|"
-  },
-  "Shop9": {
-    "connects_to": [
-      "Shop10"
-    ],
-    "requires": "|@Collect:19|"
-  },
-  "Shop10": {
-    "connects_to": [
-      "Shop11"
-    ],
-    "requires": "|@Collect:21|"
-  },
-  "Shop11": {
-    "connects_to": [
-      "Goal"
-    ],
-    "requires": "|@Collect:23|"
+    "requires": "|Progressive_Toon_Shop_Unlock:1|"
   },
   "Uncommon": {
     "connects_to": [
       "Rare"
     ],
-    "requires": "|@Trinket:9|"
+    "requires": "|Progressive_Toon_Shop_Unlock:2|"
   },
   "Rare": {
     "connects_to": [
       "Main"
     ],
-    "requires": "|@Trinket:17|"
+    "requires": "|Progressive_Toon_Shop_Unlock:3|"
   },
   "Main": {
     "connects_to": [
-      "Lethal"
+      "Goal"
     ],
-    "requires": "|@Trinket:22|"
+    "requires": "|Progressive_Toon_Shop_Unlock:4|"
   },
-  "Lethal": {
+  "Trinket_Shop": {
     "connects_to": [
       "Goal"
     ],
-    "requires": "|@Trinket:24|"
+    "requires": "|Trinket_Shop_Unlock|"
+  },
+  "Goal": {
+    "connects_to": [],
+    "requires": "|@Collect:40 OR |@Shop:5|"
   }
 }
