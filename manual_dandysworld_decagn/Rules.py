@@ -376,8 +376,8 @@ def set_rules(world: "ManualWorld", multiworld: MultiWorld, player: int):
         raise ValueError(f"Unsupported Goal_Toon_Mode value: {toons_required}")
 
     victory_location_name = world.victory_names[get_option_value(multiworld, player, "goal")]
-    if victory_location_name == "Beat Final Floor":
-        victory_location_name = f"Beat Final Floor {get_option_value(multiworld, player, 'Final_Floor_Num')}"
+    if victory_location_name == "Beat Floor X":
+        victory_location_name = f"Beat Floor {get_option_value(multiworld, player, 'Final_Floor_Num')}"
     victory_location = multiworld.get_location(victory_location_name, player)
     if toons_required == 0:
         add_rule(
