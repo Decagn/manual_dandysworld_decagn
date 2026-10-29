@@ -181,7 +181,7 @@
         },
         "Enable_Event_Twisteds":{
             "type": "Choice",
-            "display_name": "Enable Event Twisted Location Checks",
+            "display_name": "Enable Event Related Location Checks",
             "default": "none",
             "values": {
                 "none": 0,
@@ -191,7 +191,8 @@
             },
             "group": "Content_Options",
             "description": [
-                "Enable or disable the seasonal event Twisted location checks.",
+                "Enables or disables the seasonal event Twisted location checks.",
+                "Enables or disables certain location checks that require event twisteds (such as some Bond locations).",
                 "This only affects the event Twisted checks, not event toons or trinkets.",
                 "Currently the only seasonal events are \"christmas\", \"easter\", and \"halloween\".",
                 "Leave on \"none\" to only stick to original twisteds."

@@ -14,9 +14,9 @@ victory_names: list[str] = []
 # Keep a check available for each supported final-floor option so the active goal
 # location can display the selected floor number.
 location_table.extend({
-    "name": f"Beat Final Floor {floor_number}",
+    "name": f"Beat Floor {floor_number}",
     "region": "Goal",
-    "category": ["Win", "Floor"],
+    "category": ["Win"],
     "requires": ""
 } for floor_number in range(1, 101))
 

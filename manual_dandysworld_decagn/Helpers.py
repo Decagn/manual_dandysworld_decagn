@@ -132,60 +132,49 @@ def _option_names(multiworld: MultiWorld, player: int, option_name: str) -> set[
     value = get_option_value(multiworld, player, option_name)
     return value if isinstance(value, set) else set()
 
+# Returns true for toon/trinket items or anything.
 def _is_pool_item_allowed(multiworld: MultiWorld, player: int, item_name: str, item_type: str) -> bool:
-    option_item_type = item_type.title() + "s"
-    included = _option_names(multiworld, player, f"Include_{option_item_type}")
-    excluded = _option_names(multiworld, player, f"Exclude_{option_item_type}")
-    return item_name not in excluded and (not included or item_name in included)
+    included = _option_names(multiworld, player, f"Include_{item_type}")
+    return not included or item_name in included
 
 def _is_item_allowed_by_pool_options(multiworld: MultiWorld, player: int, item: dict[str, Any]) -> bool:
     categories = item.get("category", [])
     if "Toon" in categories:
-        return _is_pool_item_allowed(multiworld, player, item["name"], "toon")
+        return _is_pool_item_allowed(multiworld, player, item["name"], "toons")
     if "Trinket" in categories:
-        return _is_pool_item_allowed(multiworld, player, item["name"], "trinket")
+        return _is_pool_item_allowed(multiworld, player, item["name"], "trinkets")
     return True
 
 def _is_location_allowed_by_pool_options(multiworld: MultiWorld, player: int, location: dict[str, Any]) -> bool:
     categories = location.get("category", [])
     location_name = location.get("name", "")
+    region = location.get("region", "")
 
-    floor_goal_match = re.fullmatch(r"Beat Final Floor (\d+)", location_name)
+    # Floor goal locations first identifies the floor number (if the selected option is "Beat Final Floor")
+    floor_goal_match = re.match(r"Beat Floor (\d+)+", location_name)
     if floor_goal_match:
         return get_option_value(multiworld, player, "goal") == 0 and \
             get_option_value(multiworld, player, "Final_Floor_Num") == int(floor_goal_match.group(1))
     if location_name == "Beat Final Floor":
         return False
 
-    if "Toon" in categories:
-        toon_name = location_name.split("(", 1)[0]
-        toon_name = {"Coal": "Coal_Toon", "Rude": "Rudie"}.get(toon_name, toon_name)
-        return _is_pool_item_allowed(multiworld, player, toon_name, "toon")
+    if "Shop" in categories:
+        item_name = location_name.split(maxsplit=1)[1]
+        item_type = "trinket" if "Trinket_Shop" in region else "toon"
+        return _is_pool_item_allowed(multiworld, player, item_name, item_type)
 
     if "Toon_Goal" in categories or "Trinket_Goal" in categories:
-        if location_name.endswith("_Mini_Goal"):
-            item_name = location_name.removesuffix("_Mini_Goal")
-        else:
-            item_name = location_name.removesuffix(" Goal")
+        item_name = location_name.removesuffix(" Goal")
         item_type = "toon" if "Toon_Goal" in categories else "trinket"
         return _is_pool_item_allowed(multiworld, player, item_name, item_type)
 
-    if "Twisted" in categories:
-        twisted_toggle = location.get("twisted_toggle")
-        if twisted_toggle == "Lethal":
+    if "Twisted" in categories or "Bonds" in categories:
+        event_toggle = location.get("event_toggle")
+        if event_toggle == "Lethal":
             return is_option_enabled(multiworld, player, "Enable_Lethal_Twisteds")
-
-        event_names = {"Christmas", "Easter", "Halloween"}
-        event_categories = set(categories).intersection(event_names)
-        if twisted_toggle in event_names:
-            event_categories.add(twisted_toggle)
-        if event_categories:
-            selected_event = get_option_value(multiworld, player, "Enable_Event_Twisteds")
-            selected_event_name = {1: "Christmas", 2: "Easter", 3: "Halloween"}.get(selected_event)
-            return selected_event_name in event_categories
-
-        return True
-
+        
+        return event_toggle in get_option_value(multiworld, player, "Enable_Event_Twisteds")
+    
     return True
 
 def get_items_for_player(multiworld: MultiWorld, player: int, includePrecollected: bool = False) -> List[Item]:

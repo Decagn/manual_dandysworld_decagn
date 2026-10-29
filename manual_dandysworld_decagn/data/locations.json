@@ -2,7 +2,7 @@
   "$schema": "https://github.com/ManualForArchipelago/Manual/raw/main/schemas/Manual.locations.schema.json",
   "data": [
     {
-      "comment": "Minimum floor is set in options to complete.",
+      "comment": "READ THIS: This goal is setup in Locations.py and adjusted. This is just an indicator for the yaml!",
       "name": "Beat Final Floor", 
       "victory": true, 
       "region": "Goal", 
@@ -249,23 +249,23 @@
     {"name": "Twisted Waxwell", "region": "Start", "category": ["Twisted"]},
     {"name": "Twisted Yatta", "region": "Start", "category": ["Twisted"]},
 
-    {"name": "Twisted Dandy", "region": "Start", "category": ["Twisted"], "twisted_toggle": "Lethal"},
-    {"name": "Twisted Dyle", "region": "Start", "category": ["Twisted"], "twisted_toggle": "Lethal"},
+    {"name": "Twisted Dandy", "region": "Start", "category": ["Twisted"], "event_toggle": "Lethal"},
+    {"name": "Twisted Dyle", "region": "Start", "category": ["Twisted"], "event_toggle": "Lethal"},
 
-    {"name": "Twisted Rudie", "region": "Start", "category": ["Twisted"], "twisted_toggle": "Christmas"},
-    {"name": "Twisted Ginger", "region": "Start", "category": ["Twisted"], "twisted_toggle": "Christmas"},
-    {"name": "Twisted Coal", "region": "Start", "category": ["Twisted"], "twisted_toggle": "Christmas"},
-    {"name": "Twisted Bobette", "region": "Start", "category": ["Twisted"], "twisted_toggle": "Christmas"},
+    {"name": "Twisted Rudie", "region": "Start", "category": ["Twisted"], "event_toggle": "Christmas"},
+    {"name": "Twisted Ginger", "region": "Start", "category": ["Twisted"], "event_toggle": "Christmas"},
+    {"name": "Twisted Coal", "region": "Start", "category": ["Twisted"], "event_toggle": "Christmas"},
+    {"name": "Twisted Bobette", "region": "Start", "category": ["Twisted"], "event_toggle": "Christmas"},
 
-    {"name": "Twisted Eggson", "region": "Start", "category": ["Twisted"], "twisted_toggle": "Easter"},
-    {"name": "Twisted Flyte", "region": "Start", "category": ["Twisted"], "twisted_toggle": "Easter"},
-    {"name": "Twisted Cocoa", "region": "Start", "category": ["Twisted"], "twisted_toggle": "Easter"},
-    {"name": "Twisted Bassie", "region": "Start", "category": ["Twisted"], "twisted_toggle": "Easter"},
+    {"name": "Twisted Eggson", "region": "Start", "category": ["Twisted"], "event_toggle": "Easter"},
+    {"name": "Twisted Flyte", "region": "Start", "category": ["Twisted"], "event_toggle": "Easter"},
+    {"name": "Twisted Cocoa", "region": "Start", "category": ["Twisted"], "event_toggle": "Easter"},
+    {"name": "Twisted Bassie", "region": "Start", "category": ["Twisted"], "event_toggle": "Easter"},
 
-    {"name": "Twisted Ribecca", "region": "Start", "category": ["Twisted"], "twisted_toggle": "Halloween"},
-    {"name": "Twisted Soulvester", "region": "Start", "category": ["Twisted"], "twisted_toggle": "Halloween"},
-    {"name": "Twisted Eclipse", "region": "Start", "category": ["Twisted"], "twisted_toggle": "Halloween"},
-    {"name": "Twisted Gourdy", "region": "Start", "category": ["Twisted"], "twisted_toggle": "Halloween"},
+    {"name": "Twisted Ribecca", "region": "Start", "category": ["Twisted"], "event_toggle": "Halloween"},
+    {"name": "Twisted Soulvester", "region": "Start", "category": ["Twisted"], "event_toggle": "Halloween"},
+    {"name": "Twisted Eclipse", "region": "Start", "category": ["Twisted"], "event_toggle": "Halloween"},
+    {"name": "Twisted Gourdy", "region": "Start", "category": ["Twisted"], "event_toggle": "Halloween"},
 
 
 
@@ -321,7 +321,7 @@
       "hint_entrance": "Complete a floor with Toodles and Gourdy as either twisteds or toons, while playing as one of them."
     },
     {
-      "name": "Sweet and Savoury Bond: Cosmo/Sprout", 
+      "name": "Sweet and Savory Bond: Cosmo/Sprout", 
       "region": "Start", 
       "category": ["Bonds"], 
       "requires": "|Cosmo| OR |Sprout|",
@@ -340,7 +340,7 @@
       "category": ["Bonds"], 
       "requires": "|Bassie| OR |Cocoa|",
       "hint_entrance": "Complete a floor with Bassie and Cocoa as either twisteds or toons, while playing as one of them.",
-      "twisted_toggle": "Easter"
+      "event_toggle": "Easter"
     },
     {
       "name": "Showtime Bond: Glisten/Vee", 
@@ -376,7 +376,7 @@
       "category": ["Bonds"], 
       "requires": "|Gourdy| OR |Soulvester|",
       "hint_entrance": "Complete a floor with Gourdy and Soulvester as either twisteds or toons, while playing as one of them.",
-      "twisted_toggle": "Halloween"
+      "event_toggle": "Halloween"
     },
     {
       "name": "Old People Bond: Eggson/Eggson", 
@@ -384,7 +384,7 @@
       "category": ["Bonds"], 
       "requires": "|Eggson|",
       "hint_entrance": "Complete a floor with 2 Eggsons as either a twisted or toon, while playing as Eggson.",
-      "twisted_toggle": "Easter"
+      "event_toggle": "Easter"
     },
     {
       "name": "Circus Bond: Blot/Looey/Yatta", 
@@ -406,7 +406,7 @@
       "category": ["Bonds"], 
       "requires": "|Connie| OR |Eclipse| OR |Ribecca|",
       "hint_entrance": "Complete a floor with Connie, Eclipse and Ribecca as either twisteds or toons, while playing as one of them.",
-      "twisted_toggle": "Halloween"
+      "event_toggle": "Halloween"
     },
     {
       "name": "Book Club Bond: Astro/Brightney/Razzle_&_Dazzle/Squirm",
