@@ -118,6 +118,17 @@
                 "WARNING: It is recommended to only start with less than 5 toons, otherwise too much early logic."
             ]
         },
+        "Ichor_Balancing": {
+            "type": "Range",
+            "range_start": 0,
+            "range_end": 100,
+            "default": 10,
+            "group": "Content_Options",
+            "description": [
+                "This setting adjusts the amount that ichor costs in the shops, and the ichor earned from,",
+                "the ichor filler items. Range is between 0-100% (10% mean 0.1 * Original_Values)"
+            ]
+        },
         "Include_Toons":{
             "type": "OptionSet",
             "display_name": "Include Toons",
