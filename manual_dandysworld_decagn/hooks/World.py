@@ -117,19 +117,16 @@ def after_set_rules(world: World, multiworld: MultiWorld, player: int):
     for location in multiworld.get_locations(player):
         # if the event is not active, then the bond check can only be obtained when the specified toon item is obtained.
         location_data = world.location_name_to_location.get(location.name, {})
-
-        if "Bonds" in location_data.get("category", []):
-            event_requirement = location_data.get("event_require_toggle", [])
-
+        event_requirement = location_data.get("event_require_toggle", [])
+        if "Bonds" in location_data.get("category", []) and event_requirement:
             if selected_event.casefold() not in event_requirement[0].casefold():
                 required_toon = event_requirement[1]  # The second element is the required toon item
                 
                 if required_toon:
                     # Set the new rule to require the specific toon.
-                    existing_region = location.parent_region
                     location.access_rule = (
-                        lambda state, region=existing_region, requires=required_toon, player=player: 
-                            state.can_reach(region) and state.has(requires, player)
+                        lambda state, requires=required_toon, player=player: 
+                            state.has(requires, player)
                     )
 
 
