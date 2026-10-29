@@ -15,6 +15,9 @@ from ..Data import game_table, item_table, location_table, region_table
 # These helper methods allow you to determine if an option has been set, or what its value is, for any player in the multiworld
 from ..Helpers import is_option_enabled, get_option_value, format_state_prog_items_key, ProgItemsCat, remove_specific_item
 
+# Hook functions to help with checking validity of items and locations.
+from ..Hooks import is_item_enabled, is_location_enabled
+
 # calling logging.info("message") anywhere below in this file will output the message to both console and log file
 import logging
 
@@ -115,19 +118,32 @@ def after_set_rules(world: World, multiworld: MultiWorld, player: int):
     # Adding a special rule for Bond locations effected by certain events being active.
     selected_event = multiworld.worlds[player].options.Enable_Event_Location.current_key
     for location in multiworld.get_locations(player):
+
         # if the event is not active, then the bond check can only be obtained when the specified toon item is obtained.
         location_data = world.location_name_to_location.get(location.name, {})
         event_requirement = location_data.get("event_require_toggle", [])
+
         if "Bonds" in location_data.get("category", []) and event_requirement:
-            if selected_event.casefold() not in event_requirement[0].casefold():
-                required_toon = event_requirement[1]  # The second element is the required toon item
-                
-                if required_toon:
-                    # Set the new rule to require the specific toon.
-                    location.access_rule = (
-                        lambda state, requires=required_toon, player=player: 
-                            state.has(requires, player)
-                    )
+            required_toon = event_requirement[1]  # The second element is the required toon item
+            
+            # If the toon is not in the item pool, remove the location check.
+            toon_data = world.item_name_to_item.get(required_toon, {})
+            toon_available = (
+                toon_data is not None 
+                and (
+                    is_item_enabled(multiworld, player, toon_data)
+                    or world.start_inventory.get(required_toon, 0) > 0
+                )
+            )
+            if not toon_available:
+                location.access_rule = lambda state: False
+            elif selected_event.casefold() not in event_requirement[0].casefold() and required_toon:
+            
+                # Set the new rule to require the specific toon.
+                location.access_rule = (
+                    lambda state, requires=required_toon, player=player: 
+                        state.has(requires, player)
+                )
 
 
     def Example_Rule(state: CollectionState) -> bool:
