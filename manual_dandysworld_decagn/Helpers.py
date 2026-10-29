@@ -163,18 +163,28 @@ def _is_location_allowed_by_pool_options(multiworld: MultiWorld, player: int, lo
         return _is_pool_item_allowed(multiworld, player, toon_name, "toon")
 
     if "Toon_Goal" in categories or "Trinket_Goal" in categories:
-        item_name = location_name.removesuffix("_Mini_Goal")
+        if location_name.endswith("_Mini_Goal"):
+            item_name = location_name.removesuffix("_Mini_Goal")
+        else:
+            item_name = location_name.removesuffix(" Goal")
         item_type = "toon" if "Toon_Goal" in categories else "trinket"
         return _is_pool_item_allowed(multiworld, player, item_name, item_type)
 
     if "Twisted" in categories:
-        event_categories = set(categories).intersection({"Christmas", "Easter", "Halloween"})
-        if not event_categories:
-            return True
+        twisted_toggle = location.get("twisted_toggle")
+        if twisted_toggle == "Lethal":
+            return is_option_enabled(multiworld, player, "Enable_Lethal_Twisteds")
 
-        selected_event = get_option_value(multiworld, player, "Event_Twisteds")
-        selected_event_name = {1: "Christmas", 2: "Easter", 3: "Halloween"}.get(selected_event)
-        return selected_event_name in event_categories
+        event_names = {"Christmas", "Easter", "Halloween"}
+        event_categories = set(categories).intersection(event_names)
+        if twisted_toggle in event_names:
+            event_categories.add(twisted_toggle)
+        if event_categories:
+            selected_event = get_option_value(multiworld, player, "Enable_Event_Twisteds")
+            selected_event_name = {1: "Christmas", 2: "Easter", 3: "Halloween"}.get(selected_event)
+            return selected_event_name in event_categories
+
+        return True
 
     return True
 

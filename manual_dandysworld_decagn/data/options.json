@@ -26,7 +26,7 @@
         }
     },
     "user": {
-        "_Final_Floor_Num":{
+        "Final_Floor_Num":{
             "type": "Range",
             "display_name": "Final Floor Number",
             "range_start": 1,
@@ -35,7 +35,7 @@
             "group": "Goal_Options",
             "description": [
                 "The selected final floor for the Beat Final Floor goal.",
-                "This value is currently not used in logic and so is commented out.", 
+                "This value is currently not used in logic and just changes the goal name.", 
                 "Value is only relevant when \"Final Floor Goal\" is selected.", 
                 "Logic should use relevant values of floors 43/45 or floor 6 for dyle/dandy goals."
             ]

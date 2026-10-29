@@ -224,8 +224,7 @@ class ManualWorld(World):
         if not isinstance(starting_toon_selection, set):
             raise TypeError(f"Starting_Toons must be a list of toon names; Instead got {type(starting_toon_selection).__name__}: {starting_toon_selection!r}")
         if not starting_toon_selection:
-            logging.warning("Starting_Toons was empty; assigning one random toon to ensure the player can progress.")
-            starting_toon_selection = {"Random"}
+            logging.warning("Starting_Toons was empty; at least one random toon will be assigned.")
 
         # obtain all toons that are available for the archipelago:
         known_toon_names = {
@@ -241,13 +240,13 @@ class ManualWorld(World):
         available_toons = known_toon_names - starting_toon_selection # the toons left after validating (excluding random)
 
         # replacing each Random with a random toon (if any).
-        random_toon_count = get_option_value(self.multiworld, self.player, "Random_Starting_Toons") + ("Random" in starting_toon_selection)
+        random_toon_count = get_option_value(self.multiworld, self.player, "Random_Starting_Toons") + (not starting_toon_selection)
         random_toon_count = min(random_toon_count, len(known_toon_names) - len(valid_toons_selection)) # limit the number of random toons to the limits.
         
         if random_toon_count > 0:
             valid_toons_selection.update(random.sample(list(available_toons), random_toon_count))
 
-        # AI did this part
+        # AI did this part. It just adds the toons from the options to the starting pool.
         for starting_toon_name in valid_toons_selection:
             starting_toon = next((item for item in pool if item.name == starting_toon_name), None)
             if starting_toon is None:
@@ -256,6 +255,8 @@ class ManualWorld(World):
                 remove_specific_item(pool, starting_toon)
             items_started.append(starting_toon)
             self.multiworld.push_precollected(starting_toon)
+
+        # Code here for what trinkets are allowed.
 
         # I dunno what this code does, what follows is not AI or me (Decagn~)
         if starting_items:
