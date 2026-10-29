@@ -124,6 +124,18 @@ def before_create_items_filler(item_pool: list, world: World, multiworld: MultiW
         item = next(i for i in item_pool if i.name == itemName)
         remove_specific_item(item_pool, item)
 
+    # Balancing Ichor items to fill the pool based on pairing location checks with normal items.
+    total_shop_cost = sum(i.cost for i in item_pool if i.category and "Shop" in i.category)
+    total_locations = sum(1 for l in multiworld.get_unfilled_locations(player=player))
+    total_items = sum(1 for i in item_pool if i.player == player)
+    total_ichor_items = total_locations - total_items
+    
+
+    for i in range((total_ichor_items / 3)):
+        item_pool.append(world.create_item("Small_Ichor"))
+        item_pool.append(world.create_item("Medium_Ichor"))
+        item_pool.append(world.create_item("Large_Ichor"))
+
     return item_pool
 
     # Some other useful hook options:

@@ -899,27 +899,27 @@
       "useful": true
     },
     {
-      "count": "10",
+      "count": "0",
       "name": "Small_Ichor",
-      "amount": 250,
+      "value": {"Ichor": 250},
       "category": [
         "Ichor"
       ],
       "filler": true
     },
     {
-      "count": "10",
+      "count": "0",
       "name": "Medium_Ichor",
-      "amount": 500,
+      "value": {"Ichor": 500},
       "category": [
         "Ichor"
       ],
       "filler": true
     },
     {
-      "count": "10",
+      "count": "0",
       "name": "Large_Ichor",
-      "amount": 1000,
+      "value": {"Ichor": 1000},
       "category": [
         "Ichor"
       ],
