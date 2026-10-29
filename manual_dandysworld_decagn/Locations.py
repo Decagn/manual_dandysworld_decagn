@@ -13,12 +13,12 @@ victory_names: list[str] = []
 
 # Keep a check available for each supported final-floor option so the active goal
 # location can display the selected floor number.
-# location_table.extend({
-#     "name": f"Beat Floor {floor_number}",
-#     "region": "Goal",
-#     "category": ["Win"],
-#     "requires": ""
-# } for floor_number in range(1, 101))
+location_table.extend({
+    "name": f"Beat Floor {floor_number}",
+    "region": "Goal",
+    "category": ["Win"],
+    "requires": ""
+} for floor_number in range(1, 101))
 
 # add sequential generated ids to the lists
 for key, _ in enumerate(location_table):

@@ -13,10 +13,7 @@ from ..Locations import ManualLocation
 from ..Data import game_table, item_table, location_table, region_table
 
 # These helper methods allow you to determine if an option has been set, or what its value is, for any player in the multiworld
-from ..Helpers import is_option_enabled, get_option_value, format_state_prog_items_key, ProgItemsCat, remove_specific_item
-
-# Hook functions to help with checking validity of items and locations.
-from ..Hooks import is_item_enabled, is_location_enabled
+from ..Helpers import is_option_enabled, get_option_value, format_state_prog_items_key, ProgItemsCat, remove_specific_item, is_item_enabled
 
 # calling logging.info("message") anywhere below in this file will output the message to both console and log file
 import logging
@@ -58,6 +55,40 @@ def after_create_regions(world: World, multiworld: MultiWorld, player: int):
 
     # Add your code here to calculate which locations to remove
 
+    # First locations to remove are based upon the availability of toons for Bond locations
+    selected_event = multiworld.worlds[player].options.Enable_Event_Location.current_key
+    
+    for location in multiworld.get_locations(player):
+        location_data = world.location_name_to_location.get(location.name, {})
+        event_requirement = location_data.get("event_require_toggle", [])
+        
+        if "Bonds" in location_data.get("category", []) and event_requirement:
+            required_toon = event_requirement[1]  # The second element is the required toon item
+            
+            if selected_event.casefold() not in event_requirement[0].casefold() and required_toon:
+                
+                # If the toon is not in the item pool, remove the location check.
+                toon_data = world.item_name_to_item.get(required_toon, None)
+                toon_available = (
+                    toon_data and is_item_enabled(multiworld, player, toon_data)
+                )
+                if not toon_available:
+                    locationNamesToRemove.append(location.name)
+
+    # Second, removing locations for unused floor checks.
+    final_floor_num = get_option_value(multiworld, player, "Final_Floor_Num")
+    floor_location = f"Beat Floor {final_floor_num}"
+    floor_locations = {f"Beat Floor {floor_number}" for floor_number in range(1, 101)}
+
+    # if goal is not floor number, then all floors should be removed anyway.
+    if multiworld.worlds[player].options.Goal.current_key == "Beat Floor X":
+        for location in multiworld.get_locations(player):
+            if location.name in floor_locations and location.name != floor_location:
+                locationNamesToRemove.append(location.name)
+    else:
+        locationNamesToRemove.extend(floor_locations)
+
+    # Locations are removed here.
     for region in multiworld.regions:
         if region.player == player:
             for location in list(region.locations):
@@ -126,20 +157,8 @@ def after_set_rules(world: World, multiworld: MultiWorld, player: int):
         if "Bonds" in location_data.get("category", []) and event_requirement:
             required_toon = event_requirement[1]  # The second element is the required toon item
             
-            # If the toon is not in the item pool, remove the location check.
-            toon_data = world.item_name_to_item.get(required_toon, {})
-            toon_available = (
-                toon_data is not None 
-                and (
-                    is_item_enabled(multiworld, player, toon_data)
-                    or world.start_inventory.get(required_toon, 0) > 0
-                )
-            )
-            if not toon_available:
-                location.access_rule = lambda state: False
-            elif selected_event.casefold() not in event_requirement[0].casefold() and required_toon:
-            
-                # Set the new rule to require the specific toon.
+            if selected_event.casefold() not in event_requirement[0].casefold() and required_toon:
+                # Set the new rule to require the specific toon if rule should be there.
                 location.access_rule = (
                     lambda state, requires=required_toon, player=player: 
                         state.has(requires, player)
