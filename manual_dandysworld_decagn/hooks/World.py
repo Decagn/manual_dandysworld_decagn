@@ -127,21 +127,33 @@ def before_create_items_filler(item_pool: list, world: World, multiworld: MultiW
     # Balancing Ichor items to fill the pool based on pairing location checks with normal items.
     locations = multiworld.get_locations(player)
     total_shop_cost = 0.5 * float(sum(location.cost for location in locations if "Shop" in location.category))
-    total_ichor_items = len(locations) - len(item_pool) # Filler should fill the difference.
+    total_ichor_items_needed = len(locations) - len(item_pool) # Filler should fill the difference.
 
     # Calculation should start with a ratio 1:1 between each Ichor filler item to start with, evenly splitting half the 
     # total shop cost such that the player is guaranteed to afford half the shop after obtaining all ichor items.
-    # Iteration is used to change the ratio between how many of each ichor drop to fit the actual amount of fillers,
-    # that should exist.
+    # Iteration is used to change the ratio between how many of each size Ichor item to fit the actual amount of 
+    # fillers that should exist.
     ichor_group = [item for item in world.item_name_to_item if item.category == "Ichor"]
+    ichor_list_size = len(ichor_group)
     ichor_ratios_from_smallest = [ichor_group[0]/group for group in ichor_group]
     total_ichor_per_group = sum(item.value for item in ichor_group)
     total_ichor_groups = total_shop_cost / total_ichor_per_group
-    amount_of_each_ichor_item = [total_ichor_groups] * len(ichor_group)
-    remaining_ichor = total_shop_cost - total_ichor_per_group * total_ichor_groups
-    for i in range(ichor_group):
-        remaining_ichor -= ichor_group[0]
-        if remaining_ichor
+    amount_of_each_ichor_item = [total_ichor_groups] * ichor_list_size
+    remaining_ichor = total_shop_cost - (total_ichor_per_group * total_ichor_groups)
+    for i in range(ichor_list_size-1, -1, -1):
+        remaining_ichor -= ichor_group[i]
+        if remaining_ichor > 0:
+            amount_of_each_ichor_item[i] += 1
+        else:
+            break
+
+    total_ichor_items = sum(amount_of_each_ichor_item)
+    while total_ichor_items != total_ichor_items_needed:
+        if total_ichor_items > total_ichor_items_needed: # this means too many items have been added so far.
+            max_index = amount_of_each_ichor_item.index(max(amount_of_each_ichor_item))
+            min_index = ichor_list_size - 1 - amount_of_each_ichor_item[::-1].index(min(amount_of_each_ichor_item))
+        elif total_ichor_items < total_ichor_items_needed: # this means not enough items have been added so far.
+            pass
 
     for i in range((total_ichor_items / 3)):
         item_pool.append(world.create_item("Small_Ichor"))
