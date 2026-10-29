@@ -81,7 +81,7 @@ def after_create_regions(world: World, multiworld: MultiWorld, player: int):
     floor_locations = {f"Beat Floor {floor_number}" for floor_number in range(1, 101)}
 
     # if goal is not floor number, then all floors should be removed anyway.
-    if multiworld.worlds[player].options.Goal.current_key == "Beat Floor X":
+    if get_option_value(multiworld, player, "goal") == world.victory_names.index("Beat Floor X"):
         for location in multiworld.get_locations(player):
             if location.name in floor_locations and location.name != floor_location:
                 locationNamesToRemove.append(location.name)
