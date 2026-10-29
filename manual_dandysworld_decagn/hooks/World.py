@@ -125,11 +125,23 @@ def before_create_items_filler(item_pool: list, world: World, multiworld: MultiW
         remove_specific_item(item_pool, item)
 
     # Balancing Ichor items to fill the pool based on pairing location checks with normal items.
-    total_shop_cost = sum(i.cost for i in item_pool if i.category and "Shop" in i.category)
-    total_locations = sum(1 for l in multiworld.get_unfilled_locations(player=player))
-    total_items = sum(1 for i in item_pool if i.player == player)
-    total_ichor_items = total_locations - total_items
-    
+    locations = multiworld.get_locations(player)
+    total_shop_cost = 0.5 * float(sum(location.cost for location in locations if "Shop" in location.category))
+    total_ichor_items = len(locations) - len(item_pool) # Filler should fill the difference.
+
+    # Calculation should start with a ratio 1:1 between each Ichor filler item to start with, evenly splitting half the 
+    # total shop cost such that the player is guaranteed to afford half the shop after obtaining all ichor items.
+    # Iteration is used to change the ratio between how many of each ichor drop to fit the actual amount of fillers,
+    # that should exist.
+    ichor_group = [item for item in world.item_name_to_item if item.category == "Ichor"]
+    ichor_ratios_from_smallest = [ichor_group[0]/group for group in ichor_group]
+    total_ichor_per_group = sum(item.value for item in ichor_group)
+    total_ichor_groups = total_shop_cost / total_ichor_per_group
+    amount_of_each_ichor_item = [total_ichor_groups] * len(ichor_group)
+    remaining_ichor = total_shop_cost - total_ichor_per_group * total_ichor_groups
+    for i in range(ichor_group):
+        remaining_ichor -= ichor_group[0]
+        if remaining_ichor
 
     for i in range((total_ichor_items / 3)):
         item_pool.append(world.create_item("Small_Ichor"))
