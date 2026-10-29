@@ -150,13 +150,12 @@ def _is_location_allowed_by_pool_options(multiworld: MultiWorld, player: int, lo
     location_name = location.get("name", "")
     region = location.get("region", "")
 
-    # Floor goal locations first identifies the floor number (if the selected option is "Beat Final Floor")
-    floor_goal_match = re.match(r"Beat Floor (\d+)+", location_name)
-    if floor_goal_match:
-        return get_option_value(multiworld, player, "goal") == 0 and \
-            get_option_value(multiworld, player, "Final_Floor_Num") == int(floor_goal_match.group(1))
-    if location_name == "Beat Final Floor":
-        return False
+    # floor_goal_match = re.match(r"Beat Floor (\d+)+", location_name)
+    # if floor_goal_match:
+    #     return get_option_value(multiworld, player, "goal") == 0 and \
+    #         get_option_value(multiworld, player, "Final_Floor_Num") == int(floor_goal_match.group(1))
+    # if location_name == "Beat Final Floor":
+    #     return False
 
     if "Shop" in categories:
         item_name = location_name.split(maxsplit=1)[1]
@@ -172,8 +171,9 @@ def _is_location_allowed_by_pool_options(multiworld: MultiWorld, player: int, lo
         event_toggle = location.get("event_toggle")
         if event_toggle == "Lethal":
             return is_option_enabled(multiworld, player, "Enable_Lethal_Twisteds")
-        
-        return event_toggle in get_option_value(multiworld, player, "Enable_Event_Twisteds")
+        if event_toggle:
+            selected_event = multiworld.worlds[player].options.Enable_Event_Location.current_key
+            return event_toggle.casefold() in selected_event.casefold()
     
     return True
 

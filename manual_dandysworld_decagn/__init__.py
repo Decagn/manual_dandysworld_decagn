@@ -116,8 +116,8 @@ class ManualWorld(World):
         create_events(self, self.multiworld, self.player)
 
         victory_location_name = victory_names[get_option_value(self.multiworld, self.player, 'goal')]
-        if victory_location_name == "Beat Final Floor":
-            victory_location_name = f"Beat Final Floor {get_option_value(self.multiworld, self.player, 'Final_Floor_Num')}"
+        if victory_location_name == "Beat Floor X":
+            victory_location_name = f"Beat Floor {get_option_value(self.multiworld, self.player, 'Final_Floor_Num')}"
 
         location_game_complete = self.multiworld.get_location(victory_location_name, self.player)
         location_game_complete.address = None

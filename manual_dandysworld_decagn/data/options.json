@@ -179,7 +179,7 @@
                 "Enable or disable the Lethal Twisted location checks."
             ]
         },
-        "Enable_Event_Twisteds":{
+        "Enable_Event_Location":{
             "type": "Choice",
             "display_name": "Enable Event Related Location Checks",
             "default": "none",
