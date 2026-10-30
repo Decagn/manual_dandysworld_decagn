@@ -1,0 +1,330 @@
+﻿# Q. What is this file?
+# A. This file contains options which allow you to configure your multiworld experience while allowing
+#    others to play how they want as well.
+#
+# Q. How do I use it?
+# A. The options in this file are weighted. This means the higher number you assign to a value, the
+#    more chances you have for that option to be chosen. For example, an option like this:
+#
+#    map_shuffle:
+#      on: 5
+#      off: 15
+#
+#    Means you have 5 chances for map shuffle to occur, and 15 chances for map shuffle to be turned
+#    off.
+#
+# Q. I've never seen a file like this before. What characters am I allowed to use?
+# A. This is a .yaml file. You are allowed to use most characters.
+#    To test if your yaml is valid or not, you can use this website:
+#        http://www.yamllint.com/
+#    You can also verify that your Archipelago options are valid at this site:
+#        https://archipelago.gg/check
+
+# Your name in-game, limited to 16 characters.
+#     {player} will be replaced with the player's slot number.
+#     {PLAYER} will be replaced with the player's slot number, if that slot number is greater than 1.
+#     {number} will be replaced with the counter value of the name.
+#     {NUMBER} will be replaced with the counter value of the name, if the counter value is greater than 1.
+name: Player{number}
+
+# Used to describe your yaml. Useful if you have multiple files.
+description: Default Manual_DandysWorld_Decagn Template
+
+game: Manual_DandysWorld_Decagn
+requires:
+  version: 0.6.8 # Version of Archipelago required for this yaml to work as expected.
+
+Manual_DandysWorld_Decagn:
+  ################
+  # Game Options #
+  ################
+  progression_balancing:
+    # A system that can move progression earlier, to try and prevent the player from getting stuck and bored early.
+    # 
+    # A lower setting means more getting stuck. A higher setting means less getting stuck.
+    #
+    # You can define additional values between the minimum and maximum values.
+    # Minimum value is 0
+    # Maximum value is 99
+    random: 0
+    random-low: 0 # random value weighted towards lower values
+    random-high: 0 # random value weighted towards higher values
+    random-range-0-99: 0 # random value between 0 and 99
+    disabled: 0 # equivalent to 0
+    normal: 50 # equivalent to 50
+    extreme: 0 # equivalent to 99
+
+  accessibility:
+    # Set rules for reachability of your items/locations.
+    # 
+    # **Full:** ensure everything can be reached and acquired.
+    # 
+    # **Minimal:** ensure what is needed to reach your goal can be acquired.
+    full: 50
+    minimal: 0
+
+  goal:
+    # How to End your Randomized playthrough.
+    # Currently this is simply achieved by beating a specific floor number
+    # or by beating Dyle's floor
+    beat floor x: 50
+    beat dyle floor: 0
+    beat dandy floor: 0
+
+  ################
+  # Goal_Options #
+  ################
+  Final_Floor_Num:
+    # The selected final floor for the Beat Final Floor goal.
+    # This value is currently not used in logic and just changes the goal name.
+    # Value is only relevant when "Final Floor Goal" is selected.
+    # Logic should use relevant values of floors 43/45 or floor 6 for dyle/dandy goals.
+    #
+    # You can define additional values between the minimum and maximum values.
+    # Minimum value is 1
+    # Maximum value is 100
+    25: 50
+    random: 0
+    random-low: 0 # random value weighted towards lower values
+    random-high: 0 # random value weighted towards higher values
+    random-range-1-100: 0 # random value between 1 and 100
+
+  Number_Of_Toons_To_Reach_Goal:
+    # Here you can specify how many toons you must reach the goal with in order to win.
+    # Used by Any and Random in "Toons_Required"; This is ignored if the "Specific" option is selected
+    # Because there are 40 toons in the game, you can set this value to any number between 1 and 40.
+    #
+    # You can define additional values between the minimum and maximum values.
+    # Minimum value is 1
+    # Maximum value is 40
+    1: 50
+    random: 0
+    random-low: 0 # random value weighted towards lower values
+    random-high: 0 # random value weighted towards higher values
+    random-range-1-40: 0 # random value between 1 and 40
+
+  Toons_Required:
+    # Choose whether the goal requires any toon/s, a random toon or set of toons, or specific named toons.
+    # Specific requires toons to be named below and ignores the "Number_Of_Toons_To_Reach_Goal" value.
+    any: 50
+    random: 0
+    specific: 0
+
+  Toons_To_Win_With:
+    # In Specific mode, every toon listed here is required at the victory location.
+    # Enter toon names as a YAML list, for example: [Astro, Razzle_&_Dazzle, Pebble].
+    []
+
+  ####################
+  # Starting_Options #
+  ####################
+  Starting_Toons:
+    # Choose one or more toons to start with. Below is a list of toon names for quick reference if needed:
+    # Astro, Bassie, Blot, Bobette, Boxten, Brightney, Brusha, Coal_Toon, Cocoa, Connie, Cosmo,
+    # Eclipse, Eggson, Finn, Flutter, Flyte, Gigi, Ginger, Glisten, Goob, Gourdy, Looey,
+    # Pebble, Poppy, Razzle_&_Dazzle, Ribecca, Rodger, Rudie, Scraps, Shelly, Shrimpo,
+    # Soulvester, Sprout, Squirm, Teagan, Tisha, Toodles, Vee, Waxwell, Yatta.
+    # If left blank, defaults to selecting a random toon to start with.
+    # WARNING: It is recommended to only start with less than 5 toons, otherwise too much early logic.
+    ['Boxten', 'Poppy']
+
+  Random_Starting_Toons:
+    # This setting is optional, for those who wish to start with Random Toons.
+    # The previous option for starting toons is prioritised over this, and this option adds additional toons.
+    # Because there are 40 toons in the game, you can set this value to any number between 0 and 40.
+    # WARNING: It is recommended to only start with less than 5 toons, otherwise too much early logic.
+    #
+    # You can define additional values between the minimum and maximum values.
+    # Minimum value is 0
+    # Maximum value is 39
+    0: 50
+    random: 0
+    random-low: 0 # random value weighted towards lower values
+    random-high: 0 # random value weighted towards higher values
+    random-range-0-39: 0 # random value between 0 and 39
+
+  ###################
+  # Content_Options #
+  ###################
+  Ichor_Balancing:
+    # This setting adjusts the amount that ichor costs in the shops, and the ichor earned from,
+    # the ichor filler items. Range is between 0-100% (10% mean 0.1 * Original_Values)
+    #
+    # You can define additional values between the minimum and maximum values.
+    # Minimum value is 0
+    # Maximum value is 100
+    10: 50
+    random: 0
+    random-low: 0 # random value weighted towards lower values
+    random-high: 0 # random value weighted towards higher values
+    random-range-0-100: 0 # random value between 0 and 100
+
+  Include_Toons:
+    # The inclusion list for what toons are available as items to receive.
+    # Remove any you don't own. Leaving this field empty will include all toons.
+    # Valid Toons are:
+    # Astro
+    # Bassie
+    # Blot
+    # Bobette
+    # Boxten
+    # Brightney
+    # Brusha
+    # Coal_Toon
+    # Cocoa
+    # Connie
+    # Cosmo
+    # Eclipse
+    # Eggson
+    # Finn
+    # Flutter
+    # Flyte
+    # Gigi
+    # Ginger
+    # Glisten
+    # Goob
+    # Gourdy
+    # Looey
+    # Pebble
+    # Poppy
+    # Razzle_&_Dazzle
+    # Ribecca
+    # Rodger
+    # Rudie
+    # Scraps
+    # Shelly
+    # Shrimpo
+    # Soulvester
+    # Sprout
+    # Squirm
+    # Teagan
+    # Tisha
+    # Toodles
+    # Vee
+    # Waxwell
+    # Yatta
+    ['Vee', 'Bassie', 'Sprout', 'Eggson', 'Waxwell', 'Cocoa', 'Gourdy', 'Connie', 'Gigi', 'Coal_Toon', 'Rodger', 'Goob', 'Toodles', 'Eclipse', 'Flutter', 'Razzle_&_Dazzle', 'Poppy', 'Blot', 'Ribecca', 'Glisten', 'Shelly', 'Shrimpo', 'Pebble', 'Looey', 'Astro', 'Cosmo', 'Boxten', 'Tisha', 'Rudie', 'Soulvester', 'Squirm', 'Finn', 'Ginger', 'Teagan', 'Brusha', 'Brightney', 'Flyte', 'Scraps', 'Bobette', 'Yatta']
+
+  Include_Trinkets:
+    # The inclusion list for what trinkets are available as items to receive.
+    # Remove any you don't own. Leaving this field empty will include all trinkets.
+    # Valid Trinkets are:
+    # Alarm
+    # Blue_Bandana
+    # Blushy_Bat
+    # Bone
+    # Bone_Needle_And_Thread
+    # Brick
+    # Cardboard_Armor
+    # Cherished_Blanket
+    # Clown_Horn
+    # Coal_Trinket
+    # Coin_Purse
+    # Cooler
+    # Crayon_Set
+    # Dandy_Plush
+    # Diary
+    # Dog_Plush
+    # Egg_Radar
+    # Fancy_Purse
+    # Feather_Duster
+    # Festive_Lights
+    # Fishing_Rod
+    # Friendship_Bracelet
+    # Ghost_Snakes_In_A_Can
+    # Glazed_Fondant_Bag
+    # Lucky_Coin
+    # Machine_Manual
+    # Magnifying_Glass
+    # Megaphone
+    # Memory_Locket
+    # Mime_Makeup
+    # Moon_Pack_Heirloom
+    # Paint_Bucket
+    # Participation_Award
+    # Party_Popper
+    # Peppermint_Icing
+    # Pink_Bow
+    # Pop_Pack
+    # Pull_Toy
+    # Research_Map
+    # Ribbon_Spool
+    # Savory_Charm
+    # Scrapbook
+    # Soul_Sword
+    # Spare_Bulb
+    # Speedometer
+    # Speedy_Shoes
+    # Star_Pillow
+    # Stress_Ball
+    # Sweet_Charm
+    # Thermos
+    # Thinking_Cap
+    # Toy_Kit
+    # Train_Whistle
+    # Vanity_Mirror
+    # Vees_Remote
+    # Whispering_Flower
+    # Wrench
+    ['Egg_Radar', 'Feather_Duster', 'Savory_Charm', 'Dandy_Plush', 'Bone_Needle_And_Thread', 'Brick', 'Star_Pillow', 'Paint_Bucket', 'Wrench', 'Pink_Bow', 'Lucky_Coin', 'Clown_Horn', 'Bone', 'Party_Popper', 'Cherished_Blanket', 'Stress_Ball', 'Crayon_Set', 'Ghost_Snakes_In_A_Can', 'Coal_Trinket', 'Vees_Remote', 'Diary', 'Magnifying_Glass', 'Blue_Bandana', 'Moon_Pack_Heirloom', 'Megaphone', 'Pop_Pack', 'Sweet_Charm', 'Thermos', 'Toy_Kit', 'Mime_Makeup', 'Speedy_Shoes', 'Friendship_Bracelet', 'Participation_Award', 'Whispering_Flower', 'Thinking_Cap', 'Alarm', 'Vanity_Mirror', 'Dog_Plush', 'Speedometer', 'Festive_Lights', 'Cooler', 'Pull_Toy', 'Ribbon_Spool', 'Blushy_Bat', 'Scrapbook', 'Soul_Sword', 'Machine_Manual', 'Fishing_Rod', 'Spare_Bulb', 'Peppermint_Icing', 'Cardboard_Armor', 'Fancy_Purse', 'Memory_Locket', 'Glazed_Fondant_Bag', 'Train_Whistle', 'Coin_Purse', 'Research_Map']
+
+  Enable_Lethal_Twisteds:
+    # Enable or disable the Lethal Twisted location checks.
+    'false': 0
+    'true': 50
+
+  Enable_Event_Location:
+    # Enables or disables the seasonal event Twisted location checks.
+    # Enables or disables certain location checks that require event twisteds (such as some Bond locations).
+    # This only affects the event Twisted checks, not event toons or trinkets.
+    # Currently the only seasonal events are "christmas", "easter", and "halloween".
+    # Leave on "none" to only stick to original twisteds.
+    none: 50
+    christmas: 0
+    easter: 0
+    halloween: 0
+
+  ###########################
+  # Item & Location Options #
+  ###########################
+  local_items:
+    # Forces these items to be in their native world.
+    []
+
+  non_local_items:
+    # Forces these items to be outside their native world.
+    []
+
+  start_inventory:
+    # Start with the specified amount of these items. Example: {Bomb: 1, Arrow: 3}
+    {}
+
+  start_inventory_from_pool:
+    # Start with the specified amount of these items and don't place them in the world. Example: {Bomb: 1, Arrow: 3}
+    # 
+    # The game decides what the replacement items will be.
+    {}
+
+  start_hints:
+    # Start with these item's locations prefilled into the ``!hint`` command.
+    []
+
+  start_location_hints:
+    # Start with these locations and their item prefilled into the ``!hint`` command.
+    []
+
+  exclude_locations:
+    # Prevent these locations from having an important item.
+    []
+
+  priority_locations:
+    # Prevent these locations from having an unimportant item.
+    []
+
+  item_links:
+    # Share part of your item pool with other players.
+    []
+
+  plando_items:
+    # Generic items plando.
+    []

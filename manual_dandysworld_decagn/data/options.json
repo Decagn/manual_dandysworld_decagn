@@ -147,7 +147,12 @@
             ],
             "description": [
                 "The inclusion list for what toons are available as items to receive.",
-                "Remove any you don't own. Leaving this field empty will include all toons."
+                "Remove any you don't own. Leaving this field empty will include all toons.",
+                "Valid Toons are:",
+                "Astro", "Bassie", "Blot", "Bobette", "Boxten", "Brightney", "Brusha", "Coal_Toon", "Cocoa", "Connie", 
+                "Cosmo", "Eclipse", "Eggson", "Finn", "Flutter", "Flyte", "Gigi", "Ginger", "Glisten", "Goob", "Gourdy", 
+                "Looey", "Pebble", "Poppy", "Razzle_&_Dazzle", "Ribecca", "Rodger", "Rudie", "Scraps", "Shelly", 
+                "Shrimpo", "Soulvester", "Sprout", "Squirm", "Teagan", "Tisha", "Toodles", "Vee", "Waxwell", "Yatta" 
             ]
         },
         "Include_Trinkets":{
@@ -178,7 +183,17 @@
             ],
             "description": [
                 "The inclusion list for what trinkets are available as items to receive.",
-                "Remove any you don't own. Leaving this field empty will include all trinkets."
+                "Remove any you don't own. Leaving this field empty will include all trinkets.",
+                "Valid Trinkets are:",
+                "Alarm", "Blue_Bandana", "Blushy_Bat", "Bone", "Bone_Needle_And_Thread", "Brick", "Cardboard_Armor", 
+                "Cherished_Blanket", "Clown_Horn", "Coal_Trinket", "Coin_Purse", "Cooler", "Crayon_Set", "Dandy_Plush", 
+                "Diary", "Dog_Plush", "Egg_Radar", "Fancy_Purse", "Feather_Duster", "Festive_Lights", "Fishing_Rod", 
+                "Friendship_Bracelet", "Ghost_Snakes_In_A_Can", "Glazed_Fondant_Bag", "Lucky_Coin", "Machine_Manual", 
+                "Magnifying_Glass", "Megaphone", "Memory_Locket", "Mime_Makeup", "Moon_Pack_Heirloom", "Paint_Bucket", 
+                "Participation_Award", "Party_Popper", "Peppermint_Icing", "Pink_Bow", "Pop_Pack", "Pull_Toy", 
+                "Research_Map", "Ribbon_Spool", "Savory_Charm", "Scrapbook", "Soul_Sword", "Spare_Bulb", "Speedometer", 
+                "Speedy_Shoes", "Star_Pillow", "Stress_Ball", "Sweet_Charm", "Thermos", "Thinking_Cap", "Toy_Kit", 
+                "Train_Whistle", "Vanity_Mirror", "Vees_Remote", "Whispering_Flower", "Wrench" 
             ]
         },
         "Enable_Lethal_Twisteds":{
