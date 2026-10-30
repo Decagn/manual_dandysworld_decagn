@@ -4,6 +4,16 @@ def after_load_game_file(game_table: dict) -> dict:
 # called after the items.json file has been loaded, before any item loading or processing has occurred
 # if you need access to the items after processing to add ids, etc., you should use the hooks in World.py
 def after_load_item_file(item_table: list) -> list:
+
+    # Add 2000 ichor items for each variant of ichor that might be used.
+    for i in 2000:
+        item_table.append({
+            "name": "Ichor({i})",
+            "count": 0,
+            "value": {"ichor": i},
+            "category": ["Ichor"],
+            "filler": True
+            })
     return item_table
 
 # NOTE: Progressive items are not currently supported in Manual. Once they are,
