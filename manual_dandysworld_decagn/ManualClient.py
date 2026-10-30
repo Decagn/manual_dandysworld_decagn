@@ -161,6 +161,9 @@ class ManualContext(SuperContext):
         self.game = game
         self.username = player_name
 
+        # Adding field for displaying Ichor
+        self.ichor_display_value = None
+
     async def server_auth(self, password_requested: bool = False):
         if password_requested and not self.password:
             await super(ManualContext, self).server_auth(password_requested)
@@ -215,6 +218,13 @@ class ManualContext(SuperContext):
             item = AutoWorldRegister.world_types[self.game].item_name_to_item.get(name, {"name": name})
         return item
 
+    # Display helper for Ichor
+    def get_ichor_display_name(self, name):
+            if name != "Ichor" or self.ichor_display_value is None:
+                return name
+
+            return f"Ichor [{self.ichor_display_value}]"
+
     def get_item_by_id(self, id):
         name = self.item_names.lookup_in_game(id)
         return self.get_item_by_name(name)
@@ -261,6 +271,9 @@ class ManualContext(SuperContext):
                         self.last_death_link = 0
                     self.visible_events = args['slot_data'].get('visible_events', {})
                     logger.info(f"Slot data: {args['slot_data']}")
+
+                    # Add value for ichor
+                    self.ichor_display_value = args["slot_data"].get("ichor_value")
 
             self.ui.build_tracker_and_locations_table()
             self.ui.request_update_tracker_and_locations_table(update_highlights=True)
@@ -861,7 +874,12 @@ class ManualContext(SuperContext):
                                     if type(item) is Label:
                                         # Get the item name from the item Label, minus quantity, then do a lookup for count
                                         old_item_text = item.text
-                                        item_name = re.sub(r"\s\(\d+\)$", "", item.text)
+                                        display_name = re.sub(r"\s\(\d+\)$", "", item.text)
+                                        item_name = (
+                                            "Ichor"
+                                            if display_name.startswith("Ichor [") and display_name.endswith("]")
+                                            else display_name
+                                        )
                                         item_id = self.ctx.item_names_to_id.get(item_name, False)
                                         if item_id:
                                             item_count = len(list(i for i in self.ctx.items_received if i.item == item_id))
@@ -883,7 +901,10 @@ class ManualContext(SuperContext):
                                                 category_unique_name_count += 1
 
                                         # Update the label quantity
-                                        item.text="%s (%s)" % (item_name, item_count)
+                                        item.text = "%s (%s)" % (
+                                            self.ctx.get_item_display_name(item_name),
+                                            item_count,
+                                        )
 
                                         if update_highlights and (old_item_text != item.text):
                                             bold_item_labels.append(item_name)
@@ -937,6 +958,7 @@ class ManualContext(SuperContext):
 
                                     if category_name in item_data["category"] and network_item not in self.listed_items[category_name]:
                                         item_count = len(list(i for i in self.ctx.items_received if i.item == network_item))
+                                        display_name = self.ctx.get_item_display_name(item_name) # added for ichor viewing
                                         item_text = Label(text="%s (%s)" % (item_name, item_count),
                                                     size_hint=(None, None), height=dp(30), width=dp(400), bold=True)
 
