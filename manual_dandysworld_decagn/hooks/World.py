@@ -125,40 +125,10 @@ def before_create_items_filler(item_pool: list, world: World, multiworld: MultiW
         remove_specific_item(item_pool, item)
 
     # Balancing Ichor items to fill the pool based on pairing location checks with normal items.
-    locations = multiworld.get_locations(player)
-    total_shop_cost = 0.5 * float(sum(location.cost for location in locations if "Shop" in location.category))
-    total_ichor_items_needed = len(locations) - len(item_pool) # Filler should fill the difference.
-
-    # Calculation should start with a ratio 1:1 between each Ichor filler item to start with, evenly splitting half the 
-    # total shop cost such that the player is guaranteed to afford half the shop after obtaining all ichor items.
-    # Iteration is used to change the ratio between how many of each size Ichor item to fit the actual amount of 
-    # fillers that should exist.
-    ichor_group = [item for item in world.item_name_to_item if item.category == "Ichor"]
-    ichor_list_size = len(ichor_group)
-    ichor_ratios_from_smallest = [ichor_group[0]/group for group in ichor_group]
-    total_ichor_per_group = sum(item.value for item in ichor_group)
-    total_ichor_groups = total_shop_cost / total_ichor_per_group
-    amount_of_each_ichor_item = [total_ichor_groups] * ichor_list_size
-    remaining_ichor = total_shop_cost - (total_ichor_per_group * total_ichor_groups)
-    for i in range(ichor_list_size-1, -1, -1):
-        remaining_ichor -= ichor_group[i]
-        if remaining_ichor > 0:
-            amount_of_each_ichor_item[i] += 1
-        else:
-            break
-
-    total_ichor_items = sum(amount_of_each_ichor_item)
-    while total_ichor_items != total_ichor_items_needed:
-        if total_ichor_items > total_ichor_items_needed: # this means too many items have been added so far.
-            max_index = amount_of_each_ichor_item.index(max(amount_of_each_ichor_item))
-            min_index = ichor_list_size - 1 - amount_of_each_ichor_item[::-1].index(min(amount_of_each_ichor_item))
-        elif total_ichor_items < total_ichor_items_needed: # this means not enough items have been added so far.
-            pass
-
-    for i in range((total_ichor_items / 3)):
-        item_pool.append(world.create_item("Small_Ichor"))
-        item_pool.append(world.create_item("Medium_Ichor"))
-        item_pool.append(world.create_item("Large_Ichor"))
+    # locations = multiworld.get_locations(player)
+    # total_shop_cost = 0.5 * float(sum(location.cost for location in locations if "Shop" in location.category))
+    # total_ichor_items_needed = len(locations) - len(item_pool) # Filler should fill the difference.
+    # ichor_value_scaled = (total_shop_cost // total_ichor_items_needed) + 1
 
     return item_pool
 
@@ -279,7 +249,16 @@ def before_extend_hint_information(hint_data: dict[int, dict[int, str]], world: 
     pass
 
 def after_extend_hint_information(hint_data: dict[int, dict[int, str]], world: World, multiworld: MultiWorld, player: int) -> None:
-    pass
+
+    # Player_hints for adjusting the value
+    player_hints = hint_data.setdefault(player, {})
+    scaling = float(get_option_value(multiworld, player, "Ichor_Balancing")) / 100.0
+
+    # Adjust each shop hint to say the cost
+    for location in multiworld.get_locations(player):
+        location_data = world.location_name_to_location.get(location.name, {})
+        if "Shop" in location_data.get("category", [] and "cost" in location_data):
+            player_hints[location.address] = f"Costs {int(location_data.cost * scaling)} Ichor"
 
 def hook_interpret_slot_data(world: World, player: int, slot_data: dict[str, Any]) -> dict[str, Any]:
     """

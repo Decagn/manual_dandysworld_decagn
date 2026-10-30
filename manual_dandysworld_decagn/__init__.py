@@ -478,6 +478,15 @@ class ManualWorld(World):
             option_value = get_option_value(self.multiworld, self.player, option_key)
             slot_data[option_key] = sorted(option_value) if isinstance(option_value, set) else option_value
 
+        # Balancing Ichor items to fill the pool based on pairing location checks with normal items. This just changes item/location hints.
+        locations = self.multiworld.get_locations(self.player)
+        items = self.multiworld.get_items(self.player)
+        scaling = float(get_option_value(self.multiworld, self.player, "Ichor_Balancing")) / 100.0
+        total_shop_cost = int((scaling) * 0.5 * float(sum(location.cost for location in locations if "Shop" in location.category)))
+        total_ichor_items_needed = len(locations) - len(items) # Filler should fill the difference.
+        ichor_value_scaled = (total_shop_cost // total_ichor_items_needed) + 1
+        slot_data["ichor_value"] = ichor_value_scaled
+
         if hasattr(self, "goal_toons"):
             slot_data["assigned_goal_toons"] = self.goal_toons
 

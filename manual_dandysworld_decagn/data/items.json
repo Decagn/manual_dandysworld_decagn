@@ -900,26 +900,8 @@
     },
     {
       "count": "0",
-      "name": "Small_Ichor",
-      "value": {"Ichor": 250},
-      "category": [
-        "Ichor"
-      ],
-      "filler": true
-    },
-    {
-      "count": "0",
-      "name": "Medium_Ichor",
-      "value": {"Ichor": 500},
-      "category": [
-        "Ichor"
-      ],
-      "filler": true
-    },
-    {
-      "count": "0",
-      "name": "Large_Ichor",
-      "value": {"Ichor": 1000},
+      "name": "Ichor",
+      "value": {"ichor": 100},
       "category": [
         "Ichor"
       ],

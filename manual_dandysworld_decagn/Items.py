@@ -16,10 +16,8 @@ lastItemId = -1
 count = starting_index
 
 # add the filler item to the list of items for lookup
-if filler_item_name:
-    item_table.append({
-        "name": filler_item_name
-    })
+if filler_item_name and not any(item.get("name") == filler_item_name for item in item_table):
+    item_table.append({"name": filler_item_name})
 
 # add sequential generated ids to the lists
 for key, val in enumerate(item_table):
