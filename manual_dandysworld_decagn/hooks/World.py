@@ -126,10 +126,11 @@ def before_create_items_filler(item_pool: list, world: World, multiworld: MultiW
 
     # Balancing Ichor items to fill the pool based on pairing location checks with normal items. This just changes item/location hints.
     locations = multiworld.get_locations(player)
-    items = multiworld.get_items(player)
     scaling = float(get_option_value(multiworld, player, "Ichor_Balancing")) / 100.0
-    total_shop_cost = int((scaling) * 0.5 * float(sum(location.cost for location in locations if "Shop" in location.category)))
-    total_ichor_items_needed = len(locations) - len(items) # Filler should fill the difference.
+    total_shop_cost = int((scaling) * 0.5 * float(sum(location.cost for location in locations if "Shop" in 
+                                                      world.location_name_to_location(location.name, {}).get("category", [])
+                                                      )))
+    total_ichor_items_needed = len(locations) - len(item_pool) # Filler should fill the difference.
     ichor_value_scaled = (total_shop_cost // total_ichor_items_needed) + 1
     world.ichor_filler_name = f"Ichor({ichor_value_scaled})"
 
