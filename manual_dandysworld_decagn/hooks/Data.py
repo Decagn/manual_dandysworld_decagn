@@ -6,7 +6,7 @@ def after_load_game_file(game_table: dict) -> dict:
 def after_load_item_file(item_table: list) -> list:
 
     # Add 2000 ichor items for each variant of ichor that might be used.
-    for i in 2000:
+    for i in range(2000):
         item_table.append({
             "name": "Ichor({i})",
             "count": 0,
