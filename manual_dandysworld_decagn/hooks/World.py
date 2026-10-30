@@ -257,11 +257,19 @@ def after_extend_hint_information(hint_data: dict[int, dict[int, str]], world: W
     player_hints = hint_data.setdefault(player, {})
     scaling = float(get_option_value(multiworld, player, "Ichor_Balancing")) / 100.0
 
-    # Adjust each shop hint to say the cost
+   
     for location in multiworld.get_locations(player):
         location_data = world.location_name_to_location.get(location.name, {})
+
+         # Adjust each shop hint to say the cost
         if "Shop" in location_data.get("category", [] and "cost" in location_data):
             player_hints[location.address] = f"Costs {int(location_data.cost * scaling)} Ichor"
+
+        # Adjust toon_goals and toon_trinkets to have some hint
+        elif "Toon_Goal" in location_data.get("category", []):
+            player_hints[location.address] = f"Reach floor 10 while playing as {location.name.split(' ', 1)[1]}."
+        elif "Trinket_Goal" in location_data.get("category", []):
+            player_hints[location.address] = f"Reach floor 10 with {location.name.split(' ', 1)[1]} equipped."
 
 def hook_interpret_slot_data(world: World, player: int, slot_data: dict[str, Any]) -> dict[str, Any]:
     """
