@@ -31,8 +31,10 @@
     },
 
 
+    
 
-    {"_comment": [
+   
+    {"comment": [
       "Toon/Trinket Shops Description:",
 
       "The following are the shop toons with their associated costs.",
@@ -40,9 +42,8 @@
       "The costs here help to both evaluate total ichor to be put into the,",
       "the filler pool, and also with the overlay client for the game (if made).",
       "Also, hint_entrance, dont_place_item_category, and prehint info,",
-      "should be added via code to save time (cuz they all have the same info)"]},
-
-    {"name": "Buy Boxten", "cost": 250, "region": "Common", "category": ["Shop"], "hint_entrance": "Costs 250 Ichor", "dont_place_item_category": ["Ichor"], "prehint": true},
+      "should be added via code to save time (cuz they all have the same info)"],
+    "name": "Buy Boxten", "cost": 250, "region": "Common", "category": ["Shop"], "hint_entrance": "Costs 250 Ichor", "dont_place_item_category": ["Ichor"], "prehint": true},
     {"name": "Buy Brusha", "cost": 1250, "region": "Common", "category": ["Shop"], "dont_place_item_category": ["Ichor"], "prehint": true},
     {"name": "Buy Cosmo", "cost": 1000, "region": "Common", "category": ["Shop"], "dont_place_item_category": ["Ichor"], "prehint": true},
     {"name": "Buy Looey", "cost": 1000, "region": "Common", "category": ["Shop"], "dont_place_item_category": ["Ichor"], "prehint": true},
@@ -108,12 +109,11 @@
 
 
 
-    {"_comment": [
+    {"comment": [
       "Goal description:",
       "The following toons/trinkets mini_goals (for now reach floor 10)",
-      "require the related toon/trinket in order to reach the location."]},
-
-    {"name": "Astro Goal","region": "Start", "category": ["Toon_Goal"], "requires": "|Astro|", "hint_entrance": "Reach floor 10 while playing as Astro."},
+      "require the related toon/trinket in order to reach the location."],
+    "name": "Astro Goal","region": "Start", "category": ["Toon_Goal"], "requires": "|Astro|", "hint_entrance": "Reach floor 10 while playing as Astro."},
     {"name": "Blot Goal", "region": "Start", "category": ["Toon_Goal"], "requires": "|Blot|"},
     {"name": "Boxten Goal", "region": "Start", "category": ["Toon_Goal"], "requires": "|Boxten|"},
     {"name": "Brightney Goal", "region": "Start", "category": ["Toon_Goal"], "requires": "|Brightney|"},
@@ -269,8 +269,9 @@
 
 
 
+
     {
-      "_comment":[
+      "comment": [
         "Bonds Description:",
         "Bonds are optional checks to be added for a bit of fun extra mini goals to aim for.",
         "The toons named in a bond must all be found on the same floor in any combination of twisteds and toons, with ",
@@ -278,9 +279,7 @@
         "Once such a floor is completed, the check can then be obtained.",
         "event_require_toggle means that if the event is not active, the bond check can only be obtained when the",
         "specified toon items are obtained."
-      ]
-    },
-    {
+      ],
       "name": "Family Bond: Flutter/Flyte", 
       "region": "Start", 
       "category": ["Bonds"], 
