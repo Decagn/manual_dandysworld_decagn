@@ -127,9 +127,15 @@ def before_create_items_filler(item_pool: list, world: World, multiworld: MultiW
     # Balancing Ichor items to fill the pool based on pairing location checks with normal items. This just changes item/location hints.
     locations = multiworld.get_locations(player)
     scaling = float(get_option_value(multiworld, player, "Ichor_Balancing")) / 100.0
-    total_shop_cost = int((scaling) * 0.5 * float(sum(location.cost for location in locations if "Shop" in 
-                                                      world.location_name_to_location(location.name, {}).get("category", [])
-                                                      )))
+    location_data = (
+        world.location_name_to_location.get(location.name, {})
+        for location in locations
+    )
+    total_shop_cost = int((scaling) * 0.5 * float(sum(
+        data.get("cost", 0)
+        for data in location_data
+        if "Shop" in data.get("category", [])
+    )))
     total_ichor_items_needed = len(locations) - len(item_pool) # Filler should fill the difference.
     ichor_value_scaled = (total_shop_cost // total_ichor_items_needed) + 1
     world.ichor_filler_name = f"Ichor({ichor_value_scaled})"
@@ -263,8 +269,8 @@ def after_extend_hint_information(hint_data: dict[int, dict[int, str]], world: W
         location_data = world.location_name_to_location.get(location.name, {})
 
          # Adjust each shop hint to say the cost
-        if "Shop" in location_data.get("category", [] and "cost" in location_data):
-            player_hints[location.address] = f"Costs {int(location_data.cost * scaling)} Ichor"
+        if "Shop" in location_data.get("category", []) and "cost" in location_data:
+            player_hints[location.address] = f"Costs {int(location_data['cost'] * scaling)} Ichor"
 
         # Adjust toon_goals and toon_trinkets to have some hint
         elif "Toon_Goal" in location_data.get("category", []):
