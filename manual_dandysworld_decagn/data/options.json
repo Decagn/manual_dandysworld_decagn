@@ -97,10 +97,10 @@
             "default": ["Boxten", "Poppy"],
             "description": [
                 "Choose one or more toons to start with. Below is a list of toon names for quick reference if needed:",
-                ["Astro", "Bassie", "Blot", "Bobette", "Boxten", "Brightney", "Brusha", "Coal_Toon", "Cocoa", "Connie", 
-                "Cosmo", "Eclipse", "Eggson", "Finn", "Flutter", "Flyte", "Gigi", "Ginger", "Glisten", "Goob", "Gourdy", 
-                "Looey", "Pebble", "Poppy", "Razzle_&_Dazzle", "Ribecca", "Rodger", "Rudie", "Scraps", "Shelly", 
-                "Shrimpo", "Soulvester", "Sprout", "Squirm", "Teagan", "Tisha", "Toodles", "Vee", "Waxwell", "Yatta"], 
+                "Astro, Bassie, Blot, Bobette, Boxten, Brightney, Brusha, Coal_Toon, Cocoa, Connie, Cosmo,",
+                "Eclipse, Eggson, Finn, Flutter, Flyte, Gigi, Ginger, Glisten, Goob, Gourdy, Looey,",
+                "Pebble, Poppy, Razzle_&_Dazzle, Ribecca, Rodger, Rudie, Scraps, Shelly, Shrimpo,",
+                "Soulvester, Sprout, Squirm, Teagan, Tisha, Toodles, Vee, Waxwell, Yatta.",
                 "If left blank, defaults to selecting a random toon to start with.",
                 "WARNING: It is recommended to only start with less than 5 toons, otherwise too much early logic."
             ]
